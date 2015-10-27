@@ -47,34 +47,16 @@ function bloom(g::SimpleGraph, s::Integer, niter::Integer)
     bloomvec = Vector{Vector{Int}}()
     itervec = Vector{Int}()
     sizehint!(bloomvec, niter)
-    # for i = 1:niter
-    #     push!(bloomvec, Vector{Int}())
-    # end
     push!(bloomvec, [s])
     for i = 2 : niter
-        newneighbors = unique(vcat(bloomvec[i-1], [out_neighbors(g,x) for x in bloomvec[i-1]]...))
+        newneighbors = unique(
+            vcat(
+                bloomvec[i-1],
+                [out_neighbors(g,x) for x in bloomvec[i-1]]...
+            )
+        )
         length(newneighbors) == length(bloomvec[i-1]) && break
         push!(bloomvec,newneighbors)
     end
     return bloomvec
-end
-
-# recursive bloom at level iternum: returns srcs for iternum+1.
-function bloom!(
-    nvec::Vector{Vector{Int}},
-    g::SimpleGraph,
-    srcs::Vector{Int},
-    itervec::Int,
-    itermax::Int
-    )
-    itervec > itermax && return nothing
-    println("srcs = $srcs, nvec[itervec-1] = $(nvec[itervec-1])")
-    (Set(srcs) == Set(nvec[itervec-1])) && return nothing
-    nvec[itervec] = union(nvec[itervec-1],srcs)
-    sset = Set{Int}()
-    for i in srcs
-        union!(sset, out_neighbors(g,i))
-    end
-    bloom!(nvec, g, collect(sset), itervec+1, itermax)
-    return nothing
 end
