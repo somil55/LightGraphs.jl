@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <meta name="author" content="Seth Bromberger">
+  
+  <title>Community Structures - LightGraphs.jl</title>
+  
+
+  <link rel="shortcut icon" href="../img/favicon.ico">
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../css/highlight.css">
+  <link href="../assets/Documenter.css" rel="stylesheet">
+
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Community Structures";
+    var mkdocs_page_input_path = "community.md";
+    var mkdocs_page_url = "/community/";
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js"></script>
+  <script src="../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../js/highlight.pack.js"></script>
+  <script src="../js/theme.js"></script> 
+  <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
+  <script src="../assets/mathjaxhelper.js"></script>
+
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> LightGraphs.jl</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        <ul class="current">
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="..">Getting Started</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../basicmeasures/">Basic Functions</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../operators/">Operators</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../pathing/">Path and Traversal</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../distance/">Distance</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../centrality/">Centrality Measures</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../linalg/">Linear Algebra</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../matching/">Matching</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 current">
+        <a class="current" href="./">Community Structures</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#community-structures">Community Structures</a></li>
+                
+            
+            </ul>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../flowcut/">Flow and Cut</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../generators/">Graph Generators</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../persistence/">Reading / Writing Graphs</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../integration/">Integration with other packages</a>
+        
+    </li>
+<li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">LightGraphs.jl</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Community Structures</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        
+          <a href="https://github.com/JuliaGraphs/LightGraphs.jl/" class="icon icon-github"> Edit on GitHub</a>
+        
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <p><a id='Community-Structures-1'></a></p>
+<h1 id="community-structures">Community Structures</h1>
+<p><em>LightGraphs.jl</em> contains many algorithm to detect and analyze community structures in graphs.</p>
+<p><a id='LightGraphs.global_clustering_coefficient-Tuple{Union{LightGraphs.DiGraph,LightGraphs.Graph}}' href='#LightGraphs.global_clustering_coefficient-Tuple{Union{LightGraphs.DiGraph,LightGraphs.Graph}}'>#</a>
+<strong><code>LightGraphs.global_clustering_coefficient</code></strong> &mdash; <em>Method</em>.</p>
+<pre><code>global_clustering_coefficient(g)
+</code></pre>
+
+<p>Computes the <a href="https://en.wikipedia.org/wiki/Clustering_coefficient">global clustering coefficient</a>.</p>
+<p><a id='LightGraphs.local_clustering' href='#LightGraphs.local_clustering'>#</a>
+<strong><code>LightGraphs.local_clustering</code></strong> &mdash; <em>Function</em>.</p>
+<pre><code>local_clustering(g, vlist = vertices(g))
+</code></pre>
+
+<p>Returns two vectors, respectively containing  the first and second result of <code>local_clustering_coefficients(g, v)</code> for each <code>v</code> in <code>vlist</code>.</p>
+<p><a id='LightGraphs.local_clustering-Tuple{Union{LightGraphs.DiGraph,LightGraphs.Graph},Integer}' href='#LightGraphs.local_clustering-Tuple{Union{LightGraphs.DiGraph,LightGraphs.Graph},Integer}'>#</a>
+<strong><code>LightGraphs.local_clustering</code></strong> &mdash; <em>Method</em>.</p>
+<pre><code>local_clustering(g, v)
+</code></pre>
+
+<p>Returns a tuple <code>(a,b)</code>, where <code>a</code> is the number of triangles in the neighborhood of <code>v</code> and <code>b</code> is the maximum number of possible triangles. It is related to the local clustering coefficient  by <code>r=a/b</code>.</p>
+<p><a id='LightGraphs.local_clustering_coefficient' href='#LightGraphs.local_clustering_coefficient'>#</a>
+<strong><code>LightGraphs.local_clustering_coefficient</code></strong> &mdash; <em>Function</em>.</p>
+<pre><code>local_clustering_coefficient(g, vlist = vertices(g))
+</code></pre>
+
+<p>Returns a vector containing  the <a href="https://en.wikipedia.org/wiki/Clustering_coefficient">local clustering coefficients</a> for vertices <code>vlist</code>.</p>
+<p><a id='LightGraphs.local_clustering_coefficient-Tuple{Union{LightGraphs.DiGraph,LightGraphs.Graph},Integer}' href='#LightGraphs.local_clustering_coefficient-Tuple{Union{LightGraphs.DiGraph,LightGraphs.Graph},Integer}'>#</a>
+<strong><code>LightGraphs.local_clustering_coefficient</code></strong> &mdash; <em>Method</em>.</p>
+<pre><code>local_clustering_coefficient(g, v)
+</code></pre>
+
+<p>Computes the <a href="https://en.wikipedia.org/wiki/Clustering_coefficient">local clustering coefficient</a> for node <code>v</code>.</p>
+<p><a id='LightGraphs.triangles' href='#LightGraphs.triangles'>#</a>
+<strong><code>LightGraphs.triangles</code></strong> &mdash; <em>Function</em>.</p>
+<pre><code>triangles(g, vlist = vertices(g))
+</code></pre>
+
+<p>Returns a vector containing the number of triangles for vertices <code>vlist</code>.</p>
+<p><a id='LightGraphs.triangles-Tuple{Union{LightGraphs.DiGraph,LightGraphs.Graph},Integer}' href='#LightGraphs.triangles-Tuple{Union{LightGraphs.DiGraph,LightGraphs.Graph},Integer}'>#</a>
+<strong><code>LightGraphs.triangles</code></strong> &mdash; <em>Method</em>.</p>
+<pre><code>triangles(g, v)
+</code></pre>
+
+<p>Returns the number of triangles in the neighborhood for node <code>v</code>.</p>
+<p><a id='LightGraphs.core_periphery_deg-Tuple{LightGraphs.Graph}' href='#LightGraphs.core_periphery_deg-Tuple{LightGraphs.Graph}'>#</a>
+<strong><code>LightGraphs.core_periphery_deg</code></strong> &mdash; <em>Method</em>.</p>
+<pre><code>core_periphery_deg(g)
+</code></pre>
+
+<p>A simple degree-based core-periphery detection algorithm (see <a href="http://arxiv.org/abs/1102.5511">Lip</a>). Returns the vertex assignments (1 for core and 2 for periphery).</p>
+<p><a id='LightGraphs.label_propagation-Tuple{Union{LightGraphs.DiGraph,LightGraphs.Graph}}' href='#LightGraphs.label_propagation-Tuple{Union{LightGraphs.DiGraph,LightGraphs.Graph}}'>#</a>
+<strong><code>LightGraphs.label_propagation</code></strong> &mdash; <em>Method</em>.</p>
+<p>Community detection using the label propagation algorithm (see <a href="http://arxiv.org/abs/0709.2938">Raghavan et al.</a>). <code>g</code>: input Graph <code>maxiter</code>: maximum number of iterations return : vertex assignments and the convergence history</p>
+<p><a id='LightGraphs.modularity-Tuple{LightGraphs.Graph,Any}' href='#LightGraphs.modularity-Tuple{LightGraphs.Graph,Any}'>#</a>
+<strong><code>LightGraphs.modularity</code></strong> &mdash; <em>Method</em>.</p>
+<pre><code>modularity(g, c)
+</code></pre>
+
+<p>Computes Newman's modularity <code>Q</code> for graph <code>g</code> given the partitioning <code>c</code>.</p>
+<p><a id='LightGraphs.maximal_cliques-Tuple{LightGraphs.Graph}' href='#LightGraphs.maximal_cliques-Tuple{LightGraphs.Graph}'>#</a>
+<strong><code>LightGraphs.maximal_cliques</code></strong> &mdash; <em>Method</em>.</p>
+<p>Finds all maximal cliques of an undirected graph.</p>
+<pre><code>julia&gt; using LightGraphs
+julia&gt; g = Graph(3)
+julia&gt; add_edge!(g, 1, 2)
+julia&gt; add_edge!(g, 2, 3)
+julia&gt; maximal_cliques(g)
+2-element Array{Array{Int64,N},1}:
+ [2,3]
+ [2,1]
+</code></pre>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../flowcut/" class="btn btn-neutral float-right" title="Flow and Cut">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../matching/" class="btn btn-neutral" title="Matching"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+<div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/JuliaGraphs/LightGraphs.jl/" class="icon icon-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+        <span><a href="../matching/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../flowcut/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+
+</body>
+</html>

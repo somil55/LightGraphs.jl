@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <meta name="author" content="Seth Bromberger">
+  
+  <title>Integration with other packages - LightGraphs.jl</title>
+  
+
+  <link rel="shortcut icon" href="../img/favicon.ico">
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../css/highlight.css">
+  <link href="../assets/Documenter.css" rel="stylesheet">
+
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Integration with other packages";
+    var mkdocs_page_input_path = "integration.md";
+    var mkdocs_page_url = "/integration/";
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js"></script>
+  <script src="../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../js/highlight.pack.js"></script>
+  <script src="../js/theme.js"></script> 
+  <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
+  <script src="../assets/mathjaxhelper.js"></script>
+
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> LightGraphs.jl</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        <ul class="current">
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="..">Getting Started</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../basicmeasures/">Basic Functions</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../operators/">Operators</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../pathing/">Path and Traversal</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../distance/">Distance</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../centrality/">Centrality Measures</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../linalg/">Linear Algebra</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../matching/">Matching</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../community/">Community Structures</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../flowcut/">Flow and Cut</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../generators/">Graph Generators</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../persistence/">Reading / Writing Graphs</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 current">
+        <a class="current" href="./">Integration with other packages</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#integration-with-other-packages">Integration with other packages</a></li>
+                
+                    <li><a class="toctree-l4" href="#graphsjl">Graphs.jl</a></li>
+                
+                    <li><a class="toctree-l4" href="#graphlayoutjl">GraphLayout.jl</a></li>
+                
+                    <li><a class="toctree-l4" href="#tikzgraphsjl">TikzGraphs.jl</a></li>
+                
+                    <li><a class="toctree-l4" href="#graphplotjl">GraphPlot.jl</a></li>
+                
+                    <li><a class="toctree-l4" href="#metisjl">Metis.jl</a></li>
+                
+                    <li><a class="toctree-l4" href="#networkvizjl-networkvizjl-is-tightly-coupled-with-lightgraphsjl-graphs-can-be-visualized-in-2d-as-well-as-3d-using-threejsjl-and-escherjl">NetworkViz.jl NetworkViz.jl is tightly coupled with LightGraphs.jl. Graphs can be visualized in 2D as well as 3D using ThreeJS.jl and Escher.jl.</a></li>
+                
+            
+            </ul>
+        
+    </li>
+<li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">LightGraphs.jl</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Integration with other packages</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        
+          <a href="https://github.com/JuliaGraphs/LightGraphs.jl/" class="icon icon-github"> Edit on GitHub</a>
+        
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <p><a id='Integration-with-other-packages-1'></a></p>
+<h1 id="integration-with-other-packages">Integration with other packages</h1>
+<p><em>LightGraphs.jl</em>'s integration with other Julia packages is designed to be straightforward. Here are a few examples.</p>
+<p><a id='<a href="http://github.com/JuliaLang/Graphs.jl">Graphs.jl</a>-1'></a></p>
+<h2 id="graphsjl"><a href="http://github.com/JuliaLang/Graphs.jl">Graphs.jl</a></h2>
+<p>Creating a Graphs.jl <code>simple_graph</code> is easy:</p>
+<pre><code class="julia">julia&gt; s = simple_graph(nv(g), is_directed=LightGraphs.is_directed(g))
+julia&gt; for e in LightGraphs.edges(g)
+           add_edge!(s,src(e), dst(e))
+       end
+</code></pre>
+
+<p><a id='<a href="https://github.com/IainNZ/GraphLayout.jl">GraphLayout.jl</a>-1'></a></p>
+<h2 id="graphlayoutjl"><a href="https://github.com/IainNZ/GraphLayout.jl">GraphLayout.jl</a></h2>
+<p>This excellent graph visualization package can be used with <em>LightGraphs.jl</em> as follows:</p>
+<pre><code class="julia">julia&gt; g = WheelGraph(10); am = full(adjacency_matrix(g))
+julia&gt; loc_x, loc_y = layout_spring_adj(am)
+julia&gt; draw_layout_adj(am, loc_x, loc_y, filename=&quot;wheel10.svg&quot;)
+</code></pre>
+
+<p>producing a graph like this:</p>
+<p><img alt="Wheel Graph" src="https://cloud.githubusercontent.com/assets/941359/8960521/35582c1e-35c5-11e5-82d7-cd641dff424c.png" /></p>
+<p><a id='<a href="https://github.com/sisl/TikzGraphs.jl">TikzGraphs.jl</a>-1'></a></p>
+<h2 id="tikzgraphsjl"><a href="https://github.com/sisl/TikzGraphs.jl">TikzGraphs.jl</a></h2>
+<p>Another nice graph visualization package. (<a href="https://github.com/sisl/TikzPictures.jl">TikzPictures.jl</a> required to render/save):</p>
+<pre><code class="julia">julia&gt; g = WheelGraph(10); t = plot(g)
+
+julia&gt; save(SVG(&quot;wheel10.svg&quot;), t)
+</code></pre>
+
+<p>producing a graph like this:</p>
+<p><img alt="Wheel Graph" src="https://cloud.githubusercontent.com/assets/941359/8960499/17f703c0-35c5-11e5-935e-044be51bc531.png" /></p>
+<p><a id='<a href="https://github.com/afternone/GraphPlot.jl">GraphPlot.jl</a>-1'></a></p>
+<h2 id="graphplotjl"><a href="https://github.com/afternone/GraphPlot.jl">GraphPlot.jl</a></h2>
+<p>Another graph visualization package that is very simple to use. <a href="https://github.com/dcjones/Compose.jl">Compose.jl</a> is required for most rendering functionality:</p>
+<pre><code class="julia">julia&gt; using GraphPlot, Compose
+
+julia&gt; g = WheelGraph(10)
+
+julia&gt; draw(PNG(&quot;/tmp/wheel10.png&quot;, 16cm, 16cm), gplot(g))
+</code></pre>
+
+<p><a id='<a href="https://github.com/JuliaSparse/Metis.jl">Metis.jl</a>-1'></a></p>
+<h2 id="metisjl"><a href="https://github.com/JuliaSparse/Metis.jl">Metis.jl</a></h2>
+<p>The Metis graph partitioning package can interface with <em>LightGraphs.jl</em>:</p>
+<pre><code class="julia">julia&gt; using LightGraphs
+
+julia&gt; g = Graph(100,1000)
+{100, 1000} undirected graph
+
+julia&gt; partGraphKway(g, 6)  # 6 partitions
+</code></pre>
+
+<h2 id="networkvizjl-networkvizjl-is-tightly-coupled-with-lightgraphsjl-graphs-can-be-visualized-in-2d-as-well-as-3d-using-threejsjl-and-escherjl"><a href="https://github.com/abhijithanilkumar/NetworkViz.jl">NetworkViz.jl</a> NetworkViz.jl is tightly coupled with <em>LightGraphs.jl</em>. Graphs can be visualized in 2D as well as 3D using <a href="https://github.com/rohitvarkey/ThreeJS.jl">ThreeJS.jl</a> and <a href="https://github.com/shashi/Escher.jl">Escher.jl</a>.</h2>
+<pre><code class="julia">#Run this code in Escher
+
+using NetworkViz
+using LightGraphs
+
+main(window) = begin
+  push!(window.assets, &quot;widgets&quot;)
+  push!(window.assets,(&quot;ThreeJS&quot;,&quot;threejs&quot;))
+  g = CompleteGraph(10)
+  drawGraph(g)
+end
+</code></pre>
+
+<p>The above code produces the following output:</p>
+<p><img alt="alt tag" src="https://raw.githubusercontent.com/abhijithanilkumar/NetworkViz.jl/master/examples/networkviz.gif" /></p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="../persistence/" class="btn btn-neutral" title="Reading / Writing Graphs"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+<div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/JuliaGraphs/LightGraphs.jl/" class="icon icon-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+        <span><a href="../persistence/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+    </span>
+</div>
+
+</body>
+</html>

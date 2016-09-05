@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <meta name="author" content="Seth Bromberger">
+  
+  <title>Operators - LightGraphs.jl</title>
+  
+
+  <link rel="shortcut icon" href="../img/favicon.ico">
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../css/highlight.css">
+  <link href="../assets/Documenter.css" rel="stylesheet">
+
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Operators";
+    var mkdocs_page_input_path = "operators.md";
+    var mkdocs_page_url = "/operators/";
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js"></script>
+  <script src="../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../js/highlight.pack.js"></script>
+  <script src="../js/theme.js"></script> 
+  <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
+  <script src="../assets/mathjaxhelper.js"></script>
+
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> LightGraphs.jl</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        <ul class="current">
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="..">Getting Started</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../basicmeasures/">Basic Functions</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 current">
+        <a class="current" href="./">Operators</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#operators">Operators</a></li>
+                
+            
+            </ul>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../pathing/">Path and Traversal</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../distance/">Distance</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../centrality/">Centrality Measures</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../linalg/">Linear Algebra</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../matching/">Matching</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../community/">Community Structures</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../flowcut/">Flow and Cut</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../generators/">Graph Generators</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../persistence/">Reading / Writing Graphs</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../integration/">Integration with other packages</a>
+        
+    </li>
+<li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">LightGraphs.jl</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Operators</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        
+          <a href="https://github.com/JuliaGraphs/LightGraphs.jl/" class="icon icon-github"> Edit on GitHub</a>
+        
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <p><a id='Operators-1'></a></p>
+<h1 id="operators">Operators</h1>
+<p><em>LightGraphs.jl</em> implements the following graph operators. In general, functions with two graph arguments will require them to be of the same type (either both <code>Graph</code> or both <code>DiGraph</code>).</p>
+<ul>
+<li><a href="./#Base.SparseMatrix.blkdiag-Tuple{T&lt;:Union{LightGraphs.DiGraph,LightGraphs.Graph},T&lt;:Union{LightGraphs.DiGraph,LightGraphs.Graph}}"><code>Base.SparseMatrix.blkdiag</code></a></li>
+<li><a href="./#Base.complement-Tuple{LightGraphs.Graph}"><code>Base.complement</code></a></li>
+<li><a href="./#Base.intersect-Tuple{T&lt;:Union{LightGraphs.DiGraph,LightGraphs.Graph},T&lt;:Union{LightGraphs.DiGraph,LightGraphs.Graph}}"><code>Base.intersect</code></a></li>
+<li><a href="./#Base.join-Tuple{LightGraphs.Graph,LightGraphs.Graph}"><code>Base.join</code></a></li>
+<li><a href="./#Base.reverse-Tuple{LightGraphs.DiGraph}"><code>Base.reverse</code></a></li>
+<li><a href="./#Base.reverse!-Tuple{LightGraphs.DiGraph}"><code>Base.reverse!</code></a></li>
+<li><a href="./#Base.union-Tuple{T&lt;:Union{LightGraphs.DiGraph,LightGraphs.Graph},T&lt;:Union{LightGraphs.DiGraph,LightGraphs.Graph}}"><code>Base.union</code></a></li>
+<li><a href="./#LightGraphs.cartesian_product-Tuple{G&lt;:Union{LightGraphs.DiGraph,LightGraphs.Graph},G&lt;:Union{LightGraphs.DiGraph,LightGraphs.Graph}}"><code>LightGraphs.cartesian_product</code></a></li>
+<li><a href="./#LightGraphs.crosspath-Tuple{Integer,LightGraphs.Graph}"><code>LightGraphs.crosspath</code></a></li>
+<li><a href="./#LightGraphs.difference-Tuple{T&lt;:Union{LightGraphs.DiGraph,LightGraphs.Graph},T&lt;:Union{LightGraphs.DiGraph,LightGraphs.Graph}}"><code>LightGraphs.difference</code></a></li>
+<li><a href="./#LightGraphs.induced_subgraph-Tuple{T&lt;:Union{LightGraphs.DiGraph,LightGraphs.Graph},Any}"><code>LightGraphs.induced_subgraph</code></a></li>
+<li><a href="./#LightGraphs.symmetric_difference-Tuple{T&lt;:Union{LightGraphs.DiGraph,LightGraphs.Graph},T&lt;:Union{LightGraphs.DiGraph,LightGraphs.Graph}}"><code>LightGraphs.symmetric_difference</code></a></li>
+<li><a href="./#LightGraphs.tensor_product-Tuple{G&lt;:Union{LightGraphs.DiGraph,LightGraphs.Graph},G&lt;:Union{LightGraphs.DiGraph,LightGraphs.Graph}}"><code>LightGraphs.tensor_product</code></a></li>
+</ul>
+<p><a id='Base.SparseMatrix.blkdiag-Tuple{T<:Union{LightGraphs.DiGraph,LightGraphs.Graph},T<:Union{LightGraphs.DiGraph,LightGraphs.Graph}}' href='#Base.SparseMatrix.blkdiag-Tuple{T<:Union{LightGraphs.DiGraph,LightGraphs.Graph},T<:Union{LightGraphs.DiGraph,LightGraphs.Graph}}'>#</a>
+<strong><code>Base.SparseMatrix.blkdiag</code></strong> &mdash; <em>Method</em>.</p>
+<pre><code>blkdiag(g, h)
+</code></pre>
+
+<p>Produces a graph with $|V(g)| + |V(h)|$ vertices and $|E(g)| + |E(h)|$ edges.</p>
+<p>Put simply, the vertices and edges from graph <code>h</code> are appended to graph <code>g</code>.</p>
+<p><a id='Base.complement-Tuple{LightGraphs.Graph}' href='#Base.complement-Tuple{LightGraphs.Graph}'>#</a>
+<strong><code>Base.complement</code></strong> &mdash; <em>Method</em>.</p>
+<pre><code>complement(g)
+</code></pre>
+
+<p>Produces the <a href="https://en.wikipedia.org/wiki/Complement_graph">graph complement</a> of a graph.</p>
+<p><a id='Base.intersect-Tuple{T<:Union{LightGraphs.DiGraph,LightGraphs.Graph},T<:Union{LightGraphs.DiGraph,LightGraphs.Graph}}' href='#Base.intersect-Tuple{T<:Union{LightGraphs.DiGraph,LightGraphs.Graph},T<:Union{LightGraphs.DiGraph,LightGraphs.Graph}}'>#</a>
+<strong><code>Base.intersect</code></strong> &mdash; <em>Method</em>.</p>
+<pre><code>intersect(g, h)
+</code></pre>
+
+<p>Produces a graph with edges that are only in both graph <code>g</code> and graph <code>h</code>.</p>
+<p>Note that this function may produce a graph with 0-degree vertices.</p>
+<p><a id='Base.join-Tuple{LightGraphs.Graph,LightGraphs.Graph}' href='#Base.join-Tuple{LightGraphs.Graph,LightGraphs.Graph}'>#</a>
+<strong><code>Base.join</code></strong> &mdash; <em>Method</em>.</p>
+<pre><code>join(g, h)
+</code></pre>
+
+<p>Merges graphs <code>g</code> and <code>h</code> using <code>blkdiag</code> and then adds all the edges between  the vertices in <code>g</code> and those in <code>h</code>.</p>
+<p><a id='Base.reverse!-Tuple{LightGraphs.DiGraph}' href='#Base.reverse!-Tuple{LightGraphs.DiGraph}'>#</a>
+<strong><code>Base.reverse!</code></strong> &mdash; <em>Method</em>.</p>
+<pre><code>reverse!(g::DiGraph)
+</code></pre>
+
+<p>In-place reverse (modifies the original graph).</p>
+<p><a id='Base.reverse-Tuple{LightGraphs.DiGraph}' href='#Base.reverse-Tuple{LightGraphs.DiGraph}'>#</a>
+<strong><code>Base.reverse</code></strong> &mdash; <em>Method</em>.</p>
+<pre><code>reverse(g::DiGraph)
+</code></pre>
+
+<p>Produces a graph where all edges are reversed from the original.</p>
+<p><a id='Base.union-Tuple{T<:Union{LightGraphs.DiGraph,LightGraphs.Graph},T<:Union{LightGraphs.DiGraph,LightGraphs.Graph}}' href='#Base.union-Tuple{T<:Union{LightGraphs.DiGraph,LightGraphs.Graph},T<:Union{LightGraphs.DiGraph,LightGraphs.Graph}}'>#</a>
+<strong><code>Base.union</code></strong> &mdash; <em>Method</em>.</p>
+<pre><code>union(g, h)
+</code></pre>
+
+<p>Merges graphs <code>g</code> and <code>h</code> by taking the set union of all vertices and edges.</p>
+<p><a id='LightGraphs.cartesian_product-Tuple{G<:Union{LightGraphs.DiGraph,LightGraphs.Graph},G<:Union{LightGraphs.DiGraph,LightGraphs.Graph}}' href='#LightGraphs.cartesian_product-Tuple{G<:Union{LightGraphs.DiGraph,LightGraphs.Graph},G<:Union{LightGraphs.DiGraph,LightGraphs.Graph}}'>#</a>
+<strong><code>LightGraphs.cartesian_product</code></strong> &mdash; <em>Method</em>.</p>
+<pre><code>cartesian_product(g, h)
+</code></pre>
+
+<p>Returns the (cartesian product)[https://en.wikipedia.org/wiki/Tensor_product_of_graphs] of <code>g</code> and <code>h</code></p>
+<p><a id='LightGraphs.crosspath-Tuple{Integer,LightGraphs.Graph}' href='#LightGraphs.crosspath-Tuple{Integer,LightGraphs.Graph}'>#</a>
+<strong><code>LightGraphs.crosspath</code></strong> &mdash; <em>Method</em>.</p>
+<pre><code>crosspath(len::Integer, g::Graph)
+</code></pre>
+
+<p>Replicate <code>len</code> times <code>h</code> and connect each vertex with its copies in a path</p>
+<p><a id='LightGraphs.difference-Tuple{T<:Union{LightGraphs.DiGraph,LightGraphs.Graph},T<:Union{LightGraphs.DiGraph,LightGraphs.Graph}}' href='#LightGraphs.difference-Tuple{T<:Union{LightGraphs.DiGraph,LightGraphs.Graph},T<:Union{LightGraphs.DiGraph,LightGraphs.Graph}}'>#</a>
+<strong><code>LightGraphs.difference</code></strong> &mdash; <em>Method</em>.</p>
+<pre><code>difference(g, h)
+</code></pre>
+
+<p>Produces a graph with edges in graph <code>g</code> that are not in graph <code>h</code>.</p>
+<p>Note that this function may produce a graph with 0-degree vertices.</p>
+<p><a id='LightGraphs.induced_subgraph-Tuple{T<:Union{LightGraphs.DiGraph,LightGraphs.Graph},Any}' href='#LightGraphs.induced_subgraph-Tuple{T<:Union{LightGraphs.DiGraph,LightGraphs.Graph},Any}'>#</a>
+<strong><code>LightGraphs.induced_subgraph</code></strong> &mdash; <em>Method</em>.</p>
+<pre><code>induced_subgraph(g, iter)
+</code></pre>
+
+<p>Filters graph <code>g</code> to include only the vertices present in the iterable argument <code>vs</code>. Returns the subgraph of <code>g</code> induced by <code>vs</code>.</p>
+<p><a id='LightGraphs.symmetric_difference-Tuple{T<:Union{LightGraphs.DiGraph,LightGraphs.Graph},T<:Union{LightGraphs.DiGraph,LightGraphs.Graph}}' href='#LightGraphs.symmetric_difference-Tuple{T<:Union{LightGraphs.DiGraph,LightGraphs.Graph},T<:Union{LightGraphs.DiGraph,LightGraphs.Graph}}'>#</a>
+<strong><code>LightGraphs.symmetric_difference</code></strong> &mdash; <em>Method</em>.</p>
+<pre><code>symmetric_difference(g, h)
+</code></pre>
+
+<p>Produces a graph with edges from graph <code>g</code> that do not exist in graph <code>h</code>, and vice versa.</p>
+<p>Note that this function may produce a graph with 0-degree vertices.</p>
+<p><a id='LightGraphs.tensor_product-Tuple{G<:Union{LightGraphs.DiGraph,LightGraphs.Graph},G<:Union{LightGraphs.DiGraph,LightGraphs.Graph}}' href='#LightGraphs.tensor_product-Tuple{G<:Union{LightGraphs.DiGraph,LightGraphs.Graph},G<:Union{LightGraphs.DiGraph,LightGraphs.Graph}}'>#</a>
+<strong><code>LightGraphs.tensor_product</code></strong> &mdash; <em>Method</em>.</p>
+<pre><code>tensor_product(g, h)
+</code></pre>
+
+<p>Returns the (tensor product)[https://en.wikipedia.org/wiki/Tensor_product_of_graphs] of <code>g</code> and <code>h</code></p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../pathing/" class="btn btn-neutral float-right" title="Path and Traversal">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../basicmeasures/" class="btn btn-neutral" title="Basic Functions"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+<div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/JuliaGraphs/LightGraphs.jl/" class="icon icon-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+        <span><a href="../basicmeasures/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../pathing/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+
+</body>
+</html>

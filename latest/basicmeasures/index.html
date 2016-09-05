@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <meta name="author" content="Seth Bromberger">
+  
+  <title>Basic Functions - LightGraphs.jl</title>
+  
+
+  <link rel="shortcut icon" href="../img/favicon.ico">
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../css/highlight.css">
+  <link href="../assets/Documenter.css" rel="stylesheet">
+
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Basic Functions";
+    var mkdocs_page_input_path = "basicmeasures.md";
+    var mkdocs_page_url = "/basicmeasures/";
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js"></script>
+  <script src="../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../js/highlight.pack.js"></script>
+  <script src="../js/theme.js"></script> 
+  <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
+  <script src="../assets/mathjaxhelper.js"></script>
+
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> LightGraphs.jl</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        <ul class="current">
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="..">Getting Started</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 current">
+        <a class="current" href="./">Basic Functions</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#basic-functions">Basic Functions</a></li>
+                
+            
+            </ul>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../operators/">Operators</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../pathing/">Path and Traversal</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../distance/">Distance</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../centrality/">Centrality Measures</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../linalg/">Linear Algebra</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../matching/">Matching</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../community/">Community Structures</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../flowcut/">Flow and Cut</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../generators/">Graph Generators</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../persistence/">Reading / Writing Graphs</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../integration/">Integration with other packages</a>
+        
+    </li>
+<li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">LightGraphs.jl</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Basic Functions</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        
+          <a href="https://github.com/JuliaGraphs/LightGraphs.jl/" class="icon icon-github"> Edit on GitHub</a>
+        
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <p><a id='Basic-Functions-1'></a></p>
+<h1 id="basic-functions">Basic Functions</h1>
+<p><em>LightGraphs.jl</em> defines the following basic types and functionalities:</p>
+<ul>
+<li><a href="./#LightGraphs.DiGraph"><code>LightGraphs.DiGraph</code></a></li>
+<li><a href="./#LightGraphs.Edge"><code>LightGraphs.Edge</code></a></li>
+<li><a href="./#LightGraphs.Graph"><code>LightGraphs.Graph</code></a></li>
+<li><a href="./#LightGraphs.add_edge!-Tuple{Union{LightGraphs.DiGraph,LightGraphs.Graph},Int64,Int64}"><code>LightGraphs.add_edge!</code></a></li>
+<li><a href="./#LightGraphs.add_vertex!-Tuple{LightGraphs.Graph}"><code>LightGraphs.add_vertex!</code></a></li>
+<li><a href="./#LightGraphs.add_vertices!-Tuple{Union{LightGraphs.DiGraph,LightGraphs.Graph},Integer}"><code>LightGraphs.add_vertices!</code></a></li>
+<li><a href="./#LightGraphs.all_neighbors-Tuple{LightGraphs.DiGraph,Int64}"><code>LightGraphs.all_neighbors</code></a></li>
+<li><a href="./#LightGraphs.attracting_components-Tuple{LightGraphs.DiGraph}"><code>LightGraphs.attracting_components</code></a></li>
+<li><a href="./#LightGraphs.badj-Tuple{LightGraphs.Graph}"><code>LightGraphs.badj</code></a></li>
+<li><a href="./#LightGraphs.common_neighbors-Tuple{Union{LightGraphs.DiGraph,LightGraphs.Graph},Int64,Int64}"><code>LightGraphs.common_neighbors</code></a></li>
+<li><a href="./#LightGraphs.condensation-Tuple{LightGraphs.DiGraph,Array{Array{Int64,1},1}}"><code>LightGraphs.condensation</code></a></li>
+<li><a href="./#LightGraphs.condensation-Tuple{LightGraphs.DiGraph}"><code>LightGraphs.condensation</code></a></li>
+<li><a href="./#LightGraphs.connected_components-Tuple{Union{LightGraphs.DiGraph,LightGraphs.Graph}}"><code>LightGraphs.connected_components</code></a></li>
+<li><a href="./#LightGraphs.degree-Tuple{LightGraphs.Graph,Int64}"><code>LightGraphs.degree</code></a></li>
+<li><a href="./#LightGraphs.degree_histogram-Tuple{Union{LightGraphs.DiGraph,LightGraphs.Graph}}"><code>LightGraphs.degree_histogram</code></a></li>
+<li><a href="./#LightGraphs.density-Tuple{LightGraphs.Graph}"><code>LightGraphs.density</code></a></li>
+<li><a href="./#LightGraphs.dst-Tuple{Pair{Int64,Int64}}"><code>LightGraphs.dst</code></a></li>
+<li><a href="./#LightGraphs.edges-Tuple{Union{LightGraphs.DiGraph,LightGraphs.Graph}}"><code>LightGraphs.edges</code></a></li>
+<li><a href="./#LightGraphs.egonet-Tuple{Union{LightGraphs.DiGraph,LightGraphs.Graph},Int64,Int64}"><code>LightGraphs.egonet</code></a></li>
+<li><a href="./#LightGraphs.fadj-Tuple{Union{LightGraphs.DiGraph,LightGraphs.Graph}}"><code>LightGraphs.fadj</code></a></li>
+<li><a href="./#LightGraphs.has_edge-Tuple{Union{LightGraphs.DiGraph,LightGraphs.Graph},Int64,Int64}"><code>LightGraphs.has_edge</code></a></li>
+<li><a href="./#LightGraphs.has_self_loop-Tuple{Union{LightGraphs.DiGraph,LightGraphs.Graph}}"><code>LightGraphs.has_self_loop</code></a></li>
+<li><a href="./#LightGraphs.has_vertex-Tuple{Union{LightGraphs.DiGraph,LightGraphs.Graph},Int64}"><code>LightGraphs.has_vertex</code></a></li>
+<li><a href="./#LightGraphs.in_edges-Tuple{Union{LightGraphs.DiGraph,LightGraphs.Graph},Int64}"><code>LightGraphs.in_edges</code></a></li>
+<li><a href="./#LightGraphs.in_neighbors-Tuple{Union{LightGraphs.DiGraph,LightGraphs.Graph},Int64}"><code>LightGraphs.in_neighbors</code></a></li>
+<li><a href="./#LightGraphs.indegree-Tuple{Union{LightGraphs.DiGraph,LightGraphs.Graph},Int64}"><code>LightGraphs.indegree</code></a></li>
+<li><a href="./#LightGraphs.is_connected-Tuple{LightGraphs.Graph}"><code>LightGraphs.is_connected</code></a></li>
+<li><a href="./#LightGraphs.is_directed-Tuple{LightGraphs.Graph}"><code>LightGraphs.is_directed</code></a></li>
+<li><a href="./#LightGraphs.is_strongly_connected-Tuple{LightGraphs.DiGraph}"><code>LightGraphs.is_strongly_connected</code></a></li>
+<li><a href="./#LightGraphs.is_weakly_connected-Tuple{LightGraphs.DiGraph}"><code>LightGraphs.is_weakly_connected</code></a></li>
+<li><a href="./#LightGraphs.isgraphical-Tuple{Array{Int64,1}}"><code>LightGraphs.isgraphical</code></a></li>
+<li><a href="./#LightGraphs.ne-Tuple{Union{LightGraphs.DiGraph,LightGraphs.Graph}}"><code>LightGraphs.ne</code></a></li>
+<li><a href="./#LightGraphs.neighborhood-Tuple{Union{LightGraphs.DiGraph,LightGraphs.Graph},Int64,Int64}"><code>LightGraphs.neighborhood</code></a></li>
+<li><a href="./#LightGraphs.neighbors-Tuple{Union{LightGraphs.DiGraph,LightGraphs.Graph},Int64}"><code>LightGraphs.neighbors</code></a></li>
+<li><a href="./#LightGraphs.nv-Tuple{Union{LightGraphs.DiGraph,LightGraphs.Graph}}"><code>LightGraphs.nv</code></a></li>
+<li><a href="./#LightGraphs.out_edges-Tuple{Union{LightGraphs.DiGraph,LightGraphs.Graph},Int64}"><code>LightGraphs.out_edges</code></a></li>
+<li><a href="./#LightGraphs.out_neighbors-Tuple{Union{LightGraphs.DiGraph,LightGraphs.Graph},Int64}"><code>LightGraphs.out_neighbors</code></a></li>
+<li><a href="./#LightGraphs.outdegree-Tuple{Union{LightGraphs.DiGraph,LightGraphs.Graph},Int64}"><code>LightGraphs.outdegree</code></a></li>
+<li><a href="./#LightGraphs.period-Tuple{LightGraphs.DiGraph}"><code>LightGraphs.period</code></a></li>
+<li><a href="./#LightGraphs.rem_edge!-Tuple{Union{LightGraphs.DiGraph,LightGraphs.Graph},Int64,Int64}"><code>LightGraphs.rem_edge!</code></a></li>
+<li><a href="./#LightGraphs.rem_vertex!-Tuple{Union{LightGraphs.DiGraph,LightGraphs.Graph},Int64}"><code>LightGraphs.rem_vertex!</code></a></li>
+<li><a href="./#LightGraphs.src-Tuple{Pair{Int64,Int64}}"><code>LightGraphs.src</code></a></li>
+<li><a href="./#LightGraphs.strongly_connected_components-Tuple{LightGraphs.DiGraph}"><code>LightGraphs.strongly_connected_components</code></a></li>
+<li><a href="./#LightGraphs.vertices-Tuple{Union{LightGraphs.DiGraph,LightGraphs.Graph}}"><code>LightGraphs.vertices</code></a></li>
+<li><a href="./#LightGraphs.weakly_connected_components-Tuple{LightGraphs.DiGraph}"><code>LightGraphs.weakly_connected_components</code></a></li>
+<li><a href="./#LightGraphs.Δ-Tuple{Any}"><code>LightGraphs.Δ</code></a></li>
+<li><a href="./#LightGraphs.Δin-Tuple{Any}"><code>LightGraphs.Δin</code></a></li>
+<li><a href="./#LightGraphs.Δout-Tuple{Any}"><code>LightGraphs.Δout</code></a></li>
+<li><a href="./#LightGraphs.δ-Tuple{Any}"><code>LightGraphs.δ</code></a></li>
+<li><a href="./#LightGraphs.δin-Tuple{Any}"><code>LightGraphs.δin</code></a></li>
+<li><a href="./#LightGraphs.δout-Tuple{Any}"><code>LightGraphs.δout</code></a></li>
+</ul>
+<p><a id='LightGraphs.DiGraph' href='#LightGraphs.DiGraph'>#</a>
+<strong><code>LightGraphs.DiGraph</code></strong> &mdash; <em>Type</em>.</p>
+<p>A type representing a directed graph.</p>
+<p><a id='LightGraphs.Edge' href='#LightGraphs.Edge'>#</a>
+<strong><code>LightGraphs.Edge</code></strong> &mdash; <em>Type</em>.</p>
+<p>A type representing a single edge between two vertices of a graph.</p>
+<p><a id='LightGraphs.Graph' href='#LightGraphs.Graph'>#</a>
+<strong><code>LightGraphs.Graph</code></strong> &mdash; <em>Type</em>.</p>
+<p>A type representing an undirected graph.</p>
+<p><a id='LightGraphs.add_edge!-Tuple{Union{LightGraphs.DiGraph,LightGraphs.Graph},Int64,Int64}' href='#LightGraphs.add_edge!-Tuple{Union{LightGraphs.DiGraph,LightGraphs.Graph},Int64,Int64}'>#</a>
+<strong><code>LightGraphs.add_edge!</code></strong> &mdash; <em>Method</em>.</p>
+<pre><code>add_edge!(g, u, v)
+</code></pre>
+
+<p>Add a new edge to <code>g</code> from <code>u</code> to <code>v</code>.</p>
+<p><a id='LightGraphs.add_vertices!-Tuple{Union{LightGraphs.DiGraph,LightGraphs.Graph},Integer}' href='#LightGraphs.add_vertices!-Tuple{Union{LightGraphs.DiGraph,LightGraphs.Graph},Integer}'>#</a>
+<strong><code>LightGraphs.add_vertices!</code></strong> &mdash; <em>Method</em>.</p>
+<p>Add <code>n</code> new vertices to the graph <code>g</code>.</p>
+<p><a id='LightGraphs.common_neighbors-Tuple{Union{LightGraphs.DiGraph,LightGraphs.Graph},Int64,Int64}' href='#LightGraphs.common_neighbors-Tuple{Union{LightGraphs.DiGraph,LightGraphs.Graph},Int64,Int64}'>#</a>
+<strong><code>LightGraphs.common_neighbors</code></strong> &mdash; <em>Method</em>.</p>
+<p>Returns the neighbors common to vertices <code>u</code> and <code>v</code> in <code>g</code>.</p>
+<p><a id='LightGraphs.degree_histogram-Tuple{Union{LightGraphs.DiGraph,LightGraphs.Graph}}' href='#LightGraphs.degree_histogram-Tuple{Union{LightGraphs.DiGraph,LightGraphs.Graph}}'>#</a>
+<strong><code>LightGraphs.degree_histogram</code></strong> &mdash; <em>Method</em>.</p>
+<p>Produces a histogram of degree values across all vertices for the graph <code>g</code>. The number of histogram buckets is based on the number of vertices in <code>g</code>. Degree 0 vertices are excluded.</p>
+<p><code>degree_histogram(g)[i]</code> is the number of vertices in g with degree <code>i</code>.</p>
+<p><a id='LightGraphs.dst-Tuple{Pair{Int64,Int64}}' href='#LightGraphs.dst-Tuple{Pair{Int64,Int64}}'>#</a>
+<strong><code>LightGraphs.dst</code></strong> &mdash; <em>Method</em>.</p>
+<p>Return destination of an edge.</p>
+<p><a id='LightGraphs.edges-Tuple{Union{LightGraphs.DiGraph,LightGraphs.Graph}}' href='#LightGraphs.edges-Tuple{Union{LightGraphs.DiGraph,LightGraphs.Graph}}'>#</a>
+<strong><code>LightGraphs.edges</code></strong> &mdash; <em>Method</em>.</p>
+<p>Return an iterator to the edges of a graph. The returned iterator is valid for one pass over the edges, and is invalidated by changes to <code>g</code>.</p>
+<p><a id='LightGraphs.fadj-Tuple{Union{LightGraphs.DiGraph,LightGraphs.Graph}}' href='#LightGraphs.fadj-Tuple{Union{LightGraphs.DiGraph,LightGraphs.Graph}}'>#</a>
+<strong><code>LightGraphs.fadj</code></strong> &mdash; <em>Method</em>.</p>
+<p>Returns the forward adjacency list of a graph.</p>
+<p>The Array, where each vertex the Array of destinations for each of the edges eminating from that vertex. This is equivalent to:</p>
+<pre><code>fadj = [Vector{Int}() for _ in vertices(g)]
+for e in edges(g)
+    push!(fadj[src(e)], dst(e))
+end
+fadj
+</code></pre>
+
+<p>For most graphs types this is pre-calculated.</p>
+<p>The optional second argument take the <code>v</code>th vertex adjacency list, that is:</p>
+<pre><code>fadj(g, v::Int) == fadj(g)[v]
+</code></pre>
+
+<p>NOTE: returns a reference, not a copy. Do not modify result.</p>
+<p><a id='LightGraphs.has_edge-Tuple{Union{LightGraphs.DiGraph,LightGraphs.Graph},Int64,Int64}' href='#LightGraphs.has_edge-Tuple{Union{LightGraphs.DiGraph,LightGraphs.Graph},Int64,Int64}'>#</a>
+<strong><code>LightGraphs.has_edge</code></strong> &mdash; <em>Method</em>.</p>
+<p>Return true if the graph <code>g</code> has an edge from <code>u</code> to <code>v</code>.</p>
+<p><a id='LightGraphs.has_self_loop-Tuple{Union{LightGraphs.DiGraph,LightGraphs.Graph}}' href='#LightGraphs.has_self_loop-Tuple{Union{LightGraphs.DiGraph,LightGraphs.Graph}}'>#</a>
+<strong><code>LightGraphs.has_self_loop</code></strong> &mdash; <em>Method</em>.</p>
+<p>Returns true if <code>g</code> has any self loops.</p>
+<p><a id='LightGraphs.has_vertex-Tuple{Union{LightGraphs.DiGraph,LightGraphs.Graph},Int64}' href='#LightGraphs.has_vertex-Tuple{Union{LightGraphs.DiGraph,LightGraphs.Graph},Int64}'>#</a>
+<strong><code>LightGraphs.has_vertex</code></strong> &mdash; <em>Method</em>.</p>
+<p>Return true if <code>v</code> is a vertex of <code>g</code>.</p>
+<p><a id='LightGraphs.in_edges-Tuple{Union{LightGraphs.DiGraph,LightGraphs.Graph},Int64}' href='#LightGraphs.in_edges-Tuple{Union{LightGraphs.DiGraph,LightGraphs.Graph},Int64}'>#</a>
+<strong><code>LightGraphs.in_edges</code></strong> &mdash; <em>Method</em>.</p>
+<pre><code>in_edges(g, v)
+</code></pre>
+
+<p>Returns an Array of the edges in <code>g</code> that arrive at vertex <code>v</code>. <code>v=dst(e)</code> for each returned edge <code>e</code>.</p>
+<p><a id='LightGraphs.in_neighbors-Tuple{Union{LightGraphs.DiGraph,LightGraphs.Graph},Int64}' href='#LightGraphs.in_neighbors-Tuple{Union{LightGraphs.DiGraph,LightGraphs.Graph},Int64}'>#</a>
+<strong><code>LightGraphs.in_neighbors</code></strong> &mdash; <em>Method</em>.</p>
+<p>Returns a list of all neighbors connected to vertex <code>v</code> by an incoming edge.</p>
+<p>NOTE: returns a reference, not a copy. Do not modify result.</p>
+<p><a id='LightGraphs.indegree-Tuple{Union{LightGraphs.DiGraph,LightGraphs.Graph},Int64}' href='#LightGraphs.indegree-Tuple{Union{LightGraphs.DiGraph,LightGraphs.Graph},Int64}'>#</a>
+<strong><code>LightGraphs.indegree</code></strong> &mdash; <em>Method</em>.</p>
+<p>Return the number of edges which start at vertex <code>v</code>.</p>
+<p><a id='LightGraphs.ne-Tuple{Union{LightGraphs.DiGraph,LightGraphs.Graph}}' href='#LightGraphs.ne-Tuple{Union{LightGraphs.DiGraph,LightGraphs.Graph}}'>#</a>
+<strong><code>LightGraphs.ne</code></strong> &mdash; <em>Method</em>.</p>
+<pre><code>ne(g)
+</code></pre>
+
+<p>The number of edges in <code>g</code>.</p>
+<p><a id='LightGraphs.neighbors-Tuple{Union{LightGraphs.DiGraph,LightGraphs.Graph},Int64}' href='#LightGraphs.neighbors-Tuple{Union{LightGraphs.DiGraph,LightGraphs.Graph},Int64}'>#</a>
+<strong><code>LightGraphs.neighbors</code></strong> &mdash; <em>Method</em>.</p>
+<p>Returns a list of all neighbors of vertex <code>v</code> in <code>g</code>.</p>
+<p>For DiGraphs, this is equivalent to <code>out_neighbors(g, v)</code>.</p>
+<p>NOTE: returns a reference, not a copy. Do not modify result.</p>
+<p><a id='LightGraphs.nv-Tuple{Union{LightGraphs.DiGraph,LightGraphs.Graph}}' href='#LightGraphs.nv-Tuple{Union{LightGraphs.DiGraph,LightGraphs.Graph}}'>#</a>
+<strong><code>LightGraphs.nv</code></strong> &mdash; <em>Method</em>.</p>
+<pre><code>nv(g)
+</code></pre>
+
+<p>The number of vertices in <code>g</code>.</p>
+<p><a id='LightGraphs.out_edges-Tuple{Union{LightGraphs.DiGraph,LightGraphs.Graph},Int64}' href='#LightGraphs.out_edges-Tuple{Union{LightGraphs.DiGraph,LightGraphs.Graph},Int64}'>#</a>
+<strong><code>LightGraphs.out_edges</code></strong> &mdash; <em>Method</em>.</p>
+<pre><code>out_edges(g, v)
+</code></pre>
+
+<p>Returns an Array of the edges in <code>g</code> that depart from vertex <code>v</code>. <code>v = src(e)</code> for each returned edge <code>e</code>.</p>
+<p><a id='LightGraphs.out_neighbors-Tuple{Union{LightGraphs.DiGraph,LightGraphs.Graph},Int64}' href='#LightGraphs.out_neighbors-Tuple{Union{LightGraphs.DiGraph,LightGraphs.Graph},Int64}'>#</a>
+<strong><code>LightGraphs.out_neighbors</code></strong> &mdash; <em>Method</em>.</p>
+<p>Returns a list of all neighbors connected to vertex <code>v</code> by an outgoing edge.</p>
+<p>NOTE: returns a reference, not a copy. Do not modify result.</p>
+<p><a id='LightGraphs.outdegree-Tuple{Union{LightGraphs.DiGraph,LightGraphs.Graph},Int64}' href='#LightGraphs.outdegree-Tuple{Union{LightGraphs.DiGraph,LightGraphs.Graph},Int64}'>#</a>
+<strong><code>LightGraphs.outdegree</code></strong> &mdash; <em>Method</em>.</p>
+<p>Return the number of edges which end at vertex <code>v</code>.</p>
+<p><a id='LightGraphs.rem_edge!-Tuple{Union{LightGraphs.DiGraph,LightGraphs.Graph},Int64,Int64}' href='#LightGraphs.rem_edge!-Tuple{Union{LightGraphs.DiGraph,LightGraphs.Graph},Int64,Int64}'>#</a>
+<strong><code>LightGraphs.rem_edge!</code></strong> &mdash; <em>Method</em>.</p>
+<pre><code>rem_edge!(g, u, v)
+</code></pre>
+
+<p>Remove the edge from <code>u</code> to <code>v</code>.</p>
+<p>Note: An exception will be raised if the edge is not in the graph.</p>
+<p><a id='LightGraphs.rem_vertex!-Tuple{Union{LightGraphs.DiGraph,LightGraphs.Graph},Int64}' href='#LightGraphs.rem_vertex!-Tuple{Union{LightGraphs.DiGraph,LightGraphs.Graph},Int64}'>#</a>
+<strong><code>LightGraphs.rem_vertex!</code></strong> &mdash; <em>Method</em>.</p>
+<pre><code>rem_vertex!(g, v)
+</code></pre>
+
+<p>Remove the vertex <code>v</code> from graph <code>g</code>. This operation has to be performed carefully if one keeps external data structures indexed by edges or vertices in the graph, since internally the removal is performed swapping the vertices <code>v</code>  and <code>n=nv(g)</code>, and removing the vertex <code>n</code> from the graph. After removal the vertices in the <code>g</code> will be indexed by 1:n-1. This is an O(k^2) operation, where <code>k</code> is the max of the degrees of vertices <code>v</code> and <code>n</code>. Note: An exception will be raised if the vertex <code>v</code>  is not in the <code>g</code>.</p>
+<p><a id='LightGraphs.src-Tuple{Pair{Int64,Int64}}' href='#LightGraphs.src-Tuple{Pair{Int64,Int64}}'>#</a>
+<strong><code>LightGraphs.src</code></strong> &mdash; <em>Method</em>.</p>
+<p>Return source of an edge.</p>
+<p><a id='LightGraphs.vertices-Tuple{Union{LightGraphs.DiGraph,LightGraphs.Graph}}' href='#LightGraphs.vertices-Tuple{Union{LightGraphs.DiGraph,LightGraphs.Graph}}'>#</a>
+<strong><code>LightGraphs.vertices</code></strong> &mdash; <em>Method</em>.</p>
+<p>Return the vertices of a graph.</p>
+<p><a id='LightGraphs.Δ-Tuple{Any}' href='#LightGraphs.Δ-Tuple{Any}'>#</a>
+<strong><code>LightGraphs.Δ</code></strong> &mdash; <em>Method</em>.</p>
+<p>Return the maximum <code>degree</code> of vertices in <code>g</code>.</p>
+<p><a id='LightGraphs.Δin-Tuple{Any}' href='#LightGraphs.Δin-Tuple{Any}'>#</a>
+<strong><code>LightGraphs.Δin</code></strong> &mdash; <em>Method</em>.</p>
+<p>Return the minimum <code>indegree</code> of vertices in <code>g</code>.</p>
+<p><a id='LightGraphs.Δout-Tuple{Any}' href='#LightGraphs.Δout-Tuple{Any}'>#</a>
+<strong><code>LightGraphs.Δout</code></strong> &mdash; <em>Method</em>.</p>
+<p>Return the maxium <code>outdegree</code> of vertices in <code>g</code>.</p>
+<p><a id='LightGraphs.δ-Tuple{Any}' href='#LightGraphs.δ-Tuple{Any}'>#</a>
+<strong><code>LightGraphs.δ</code></strong> &mdash; <em>Method</em>.</p>
+<p>Return the minimum <code>degree</code> of vertices in <code>g</code>.</p>
+<p><a id='LightGraphs.δin-Tuple{Any}' href='#LightGraphs.δin-Tuple{Any}'>#</a>
+<strong><code>LightGraphs.δin</code></strong> &mdash; <em>Method</em>.</p>
+<p>Return the maximum <code>indegree</code> of vertices in <code>g</code>.</p>
+<p><a id='LightGraphs.δout-Tuple{Any}' href='#LightGraphs.δout-Tuple{Any}'>#</a>
+<strong><code>LightGraphs.δout</code></strong> &mdash; <em>Method</em>.</p>
+<p>Return the minimum <code>outdegree</code> of vertices in <code>g</code>.</p>
+<p><a id='LightGraphs.add_vertex!-Tuple{LightGraphs.Graph}' href='#LightGraphs.add_vertex!-Tuple{LightGraphs.Graph}'>#</a>
+<strong><code>LightGraphs.add_vertex!</code></strong> &mdash; <em>Method</em>.</p>
+<p>Add a new vertex to the graph <code>g</code>.</p>
+<p><a id='LightGraphs.all_neighbors-Tuple{LightGraphs.DiGraph,Int64}' href='#LightGraphs.all_neighbors-Tuple{LightGraphs.DiGraph,Int64}'>#</a>
+<strong><code>LightGraphs.all_neighbors</code></strong> &mdash; <em>Method</em>.</p>
+<p>Returns all the vertices which share an edge with <code>v</code>.</p>
+<p><a id='LightGraphs.badj-Tuple{LightGraphs.Graph}' href='#LightGraphs.badj-Tuple{LightGraphs.Graph}'>#</a>
+<strong><code>LightGraphs.badj</code></strong> &mdash; <em>Method</em>.</p>
+<p>Returns the backwards adjacency list of a graph. For each vertex the Array of <code>dst</code> for each edge eminating from that vertex.</p>
+<p>NOTE: returns a reference, not a copy. Do not modify result.</p>
+<p><a id='LightGraphs.degree-Tuple{LightGraphs.Graph,Int64}' href='#LightGraphs.degree-Tuple{LightGraphs.Graph,Int64}'>#</a>
+<strong><code>LightGraphs.degree</code></strong> &mdash; <em>Method</em>.</p>
+<p>Return the number of edges (both ingoing and outgoing) from the vertex <code>v</code>.</p>
+<p><a id='LightGraphs.density-Tuple{LightGraphs.Graph}' href='#LightGraphs.density-Tuple{LightGraphs.Graph}'>#</a>
+<strong><code>LightGraphs.density</code></strong> &mdash; <em>Method</em>.</p>
+<p>Density is defined as the ratio of the number of actual edges to the number of possible edges. This is $|v| |v-1|$ for directed graphs and $(|v| |v-1|) / 2$ for undirected graphs.</p>
+<p><a id='LightGraphs.is_directed-Tuple{LightGraphs.Graph}' href='#LightGraphs.is_directed-Tuple{LightGraphs.Graph}'>#</a>
+<strong><code>LightGraphs.is_directed</code></strong> &mdash; <em>Method</em>.</p>
+<p>Returns <code>true</code> if <code>g</code> is a <code>DiGraph</code>.</p>
+<p><a id='LightGraphs.attracting_components-Tuple{LightGraphs.DiGraph}' href='#LightGraphs.attracting_components-Tuple{LightGraphs.DiGraph}'>#</a>
+<strong><code>LightGraphs.attracting_components</code></strong> &mdash; <em>Method</em>.</p>
+<p>Returns a vector of vectors of integers representing lists of attracting components in <code>g</code>. The attracting components are a subset of the strongly connected components in which the components do not have any leaving edges.</p>
+<p><a id='LightGraphs.condensation-Tuple{LightGraphs.DiGraph,Array{Array{Int64,1},1}}' href='#LightGraphs.condensation-Tuple{LightGraphs.DiGraph,Array{Array{Int64,1},1}}'>#</a>
+<strong><code>LightGraphs.condensation</code></strong> &mdash; <em>Method</em>.</p>
+<p>Computes the condensation graph of the strongly connected components.</p>
+<p><a id='LightGraphs.condensation-Tuple{LightGraphs.DiGraph}' href='#LightGraphs.condensation-Tuple{LightGraphs.DiGraph}'>#</a>
+<strong><code>LightGraphs.condensation</code></strong> &mdash; <em>Method</em>.</p>
+<p>Returns the condensation graph associated with <code>g</code>. The condensation <code>h</code> of a graph <code>g</code> is the directed graph where every node in <code>h</code> represents a strongly connected component in <code>g</code>, and the presence of an edge between between nodes in <code>h</code> indicates that there is at least one edge between the associated strongly connected components in <code>g</code>. The node numbering in <code>h</code> corresponds to the ordering of the components output from <code>strongly_connected_components</code>.</p>
+<p><a id='LightGraphs.connected_components-Tuple{Union{LightGraphs.DiGraph,LightGraphs.Graph}}' href='#LightGraphs.connected_components-Tuple{Union{LightGraphs.DiGraph,LightGraphs.Graph}}'>#</a>
+<strong><code>LightGraphs.connected_components</code></strong> &mdash; <em>Method</em>.</p>
+<pre><code>connected_components(g)
+</code></pre>
+
+<p>Returns the <a href="https://en.wikipedia.org/wiki/Connectivity_(graph_theory)">connected components</a> of <code>g</code> as a vector of components, each represented by a vector of vertices belonging to the component.</p>
+<p><a id='LightGraphs.egonet-Tuple{Union{LightGraphs.DiGraph,LightGraphs.Graph},Int64,Int64}' href='#LightGraphs.egonet-Tuple{Union{LightGraphs.DiGraph,LightGraphs.Graph},Int64,Int64}'>#</a>
+<strong><code>LightGraphs.egonet</code></strong> &mdash; <em>Method</em>.</p>
+<pre><code>egonet(g, v::Int, d::Int; dir=:out)
+</code></pre>
+
+<p>Returns the subgraph of <code>g</code> induced by the neighbors of <code>v</code> up to distance <code>d</code>. If <code>g</code> is a <code>DiGraph</code> the <code>dir</code> optional argument specifies the edge direction the edge direction with respect to <code>v</code> (i.e. <code>:in</code> or <code>:out</code>) to be considered. This is equivalent to <code>induced_subgraph(g, neighborhood(g, v, d, dir=dir)).</code></p>
+<p><a id='LightGraphs.is_connected-Tuple{LightGraphs.Graph}' href='#LightGraphs.is_connected-Tuple{LightGraphs.Graph}'>#</a>
+<strong><code>LightGraphs.is_connected</code></strong> &mdash; <em>Method</em>.</p>
+<pre><code>is_connected(g)
+</code></pre>
+
+<p>Returns <code>true</code> if <code>g</code> is connected. For DiGraphs, this is equivalent to a test of weak connectivity.</p>
+<p><a id='LightGraphs.is_strongly_connected-Tuple{LightGraphs.DiGraph}' href='#LightGraphs.is_strongly_connected-Tuple{LightGraphs.DiGraph}'>#</a>
+<strong><code>LightGraphs.is_strongly_connected</code></strong> &mdash; <em>Method</em>.</p>
+<p>Returns <code>true</code> if <code>g</code> is (strongly) connected.</p>
+<p><a id='LightGraphs.is_weakly_connected-Tuple{LightGraphs.DiGraph}' href='#LightGraphs.is_weakly_connected-Tuple{LightGraphs.DiGraph}'>#</a>
+<strong><code>LightGraphs.is_weakly_connected</code></strong> &mdash; <em>Method</em>.</p>
+<p>Returns <code>true</code> if the undirected graph of <code>g</code> is connected.</p>
+<p><a id='LightGraphs.isgraphical-Tuple{Array{Int64,1}}' href='#LightGraphs.isgraphical-Tuple{Array{Int64,1}}'>#</a>
+<strong><code>LightGraphs.isgraphical</code></strong> &mdash; <em>Method</em>.</p>
+<pre><code>isgraphical(degs::Vector{Int})
+</code></pre>
+
+<p>Check whether the degree sequence <code>degs</code> is graphical, according to <a href="http://mathworld.wolfram.com/GraphicSequence.html">Erdös-Gallai condition</a>.</p>
+<p>Time complexity: O(length(degs)^2)</p>
+<p><a id='LightGraphs.neighborhood-Tuple{Union{LightGraphs.DiGraph,LightGraphs.Graph},Int64,Int64}' href='#LightGraphs.neighborhood-Tuple{Union{LightGraphs.DiGraph,LightGraphs.Graph},Int64,Int64}'>#</a>
+<strong><code>LightGraphs.neighborhood</code></strong> &mdash; <em>Method</em>.</p>
+<pre><code>neighborhood(g, v::Int, d::Int; dir=:out)
+</code></pre>
+
+<p>Returns a vector of the vertices in <code>g</code> at distance less or equal to <code>d</code> from <code>v</code>. If <code>g</code> is a <code>DiGraph</code> the <code>dir</code> optional argument specifies the edge direction the edge direction with respect to <code>v</code> (i.e. <code>:in</code> or <code>:out</code>) to be considered.</p>
+<p><a id='LightGraphs.period-Tuple{LightGraphs.DiGraph}' href='#LightGraphs.period-Tuple{LightGraphs.DiGraph}'>#</a>
+<strong><code>LightGraphs.period</code></strong> &mdash; <em>Method</em>.</p>
+<p>Computes the (common) period for all nodes in a strongly connected graph.</p>
+<p><a id='LightGraphs.strongly_connected_components-Tuple{LightGraphs.DiGraph}' href='#LightGraphs.strongly_connected_components-Tuple{LightGraphs.DiGraph}'>#</a>
+<strong><code>LightGraphs.strongly_connected_components</code></strong> &mdash; <em>Method</em>.</p>
+<p>Computes the (strongly) connected components of a directed graph.</p>
+<p><a id='LightGraphs.weakly_connected_components-Tuple{LightGraphs.DiGraph}' href='#LightGraphs.weakly_connected_components-Tuple{LightGraphs.DiGraph}'>#</a>
+<strong><code>LightGraphs.weakly_connected_components</code></strong> &mdash; <em>Method</em>.</p>
+<p>Returns connected components of the undirected graph of <code>g</code>.</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../operators/" class="btn btn-neutral float-right" title="Operators">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href=".." class="btn btn-neutral" title="Getting Started"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+<div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/JuliaGraphs/LightGraphs.jl/" class="icon icon-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+        <span><a href=".." style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../operators/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+
+</body>
+</html>

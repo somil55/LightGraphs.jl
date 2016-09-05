@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <meta name="author" content="Seth Bromberger">
+  
+  <title>Centrality Measures - LightGraphs.jl</title>
+  
+
+  <link rel="shortcut icon" href="../img/favicon.ico">
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../css/highlight.css">
+  <link href="../assets/Documenter.css" rel="stylesheet">
+
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Centrality Measures";
+    var mkdocs_page_input_path = "centrality.md";
+    var mkdocs_page_url = "/centrality/";
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js"></script>
+  <script src="../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../js/highlight.pack.js"></script>
+  <script src="../js/theme.js"></script> 
+  <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
+  <script src="../assets/mathjaxhelper.js"></script>
+
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> LightGraphs.jl</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        <ul class="current">
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="..">Getting Started</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../basicmeasures/">Basic Functions</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../operators/">Operators</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../pathing/">Path and Traversal</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../distance/">Distance</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 current">
+        <a class="current" href="./">Centrality Measures</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#centrality-measures">Centrality Measures</a></li>
+                
+            
+            </ul>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../linalg/">Linear Algebra</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../matching/">Matching</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../community/">Community Structures</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../flowcut/">Flow and Cut</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../generators/">Graph Generators</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../persistence/">Reading / Writing Graphs</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="../integration/">Integration with other packages</a>
+        
+    </li>
+<li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">LightGraphs.jl</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Centrality Measures</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        
+          <a href="https://github.com/JuliaGraphs/LightGraphs.jl/" class="icon icon-github"> Edit on GitHub</a>
+        
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <p><a id='Centrality-Measures-1'></a></p>
+<h1 id="centrality-measures">Centrality Measures</h1>
+<p><a href="https://en.wikipedia.org/wiki/Centrality">Centrality measures</a> describe the importance of a vertex to the rest of the graph using some set of criteria. Centrality measures implemented in <em>LightGraphs.jl</em> include the following:</p>
+<ul>
+<li><a href="./#LightGraphs.betweenness_centrality"><code>LightGraphs.betweenness_centrality</code></a></li>
+<li><a href="./#LightGraphs.closeness_centrality-Tuple{Union{LightGraphs.DiGraph,LightGraphs.Graph}}"><code>LightGraphs.closeness_centrality</code></a></li>
+<li><a href="./#LightGraphs.degree_centrality-Tuple{Union{LightGraphs.DiGraph,LightGraphs.Graph}}"><code>LightGraphs.degree_centrality</code></a></li>
+<li><a href="./#LightGraphs.indegree_centrality-Tuple{Union{LightGraphs.DiGraph,LightGraphs.Graph}}"><code>LightGraphs.indegree_centrality</code></a></li>
+<li><a href="./#LightGraphs.katz_centrality"><code>LightGraphs.katz_centrality</code></a></li>
+<li><a href="./#LightGraphs.outdegree_centrality-Tuple{Union{LightGraphs.DiGraph,LightGraphs.Graph}}"><code>LightGraphs.outdegree_centrality</code></a></li>
+<li><a href="./#LightGraphs.pagerank"><code>LightGraphs.pagerank</code></a></li>
+</ul>
+<p><a id='LightGraphs.betweenness_centrality' href='#LightGraphs.betweenness_centrality'>#</a>
+<strong><code>LightGraphs.betweenness_centrality</code></strong> &mdash; <em>Function</em>.</p>
+<pre><code>betweenness_centrality(g, k=0; normalize=true, endpoints=false)
+</code></pre>
+
+<p>Calculates the <a href="https://en.wikipedia.org/wiki/Centrality#Betweenness_centrality">betweenness centrality</a> of the graph <code>g</code>, or, optionally, of a random subset of <code>k</code> vertices. Can optionally include endpoints in the calculations. Normalization is enabled by default.</p>
+<p>Betweenness centrality is defined as:</p>
+<p>$bc(v) = \frac{1}{\mathcal{N}} \sum_{s \neq t \neq v}
+        \frac{\sigma_{st}(v)}{\sigma_{st}}$
+.</p>
+<p><strong>Parameters</strong></p>
+<p>g: SimpleGraph     A Graph, directed or undirected.</p>
+<p>k: Integer, optional     Use <code>k</code> nodes sample to estimate the betweenness centrality. If none,     betweenness centrality is computed using the <code>n</code> nodes in the graph.</p>
+<p>normalize: bool, optional     If true, the betweenness values are normalized by the total number     of possible distinct paths between all pairs in the graphs. For an undirected graph,     this number if <code>((n-1)*(n-2))/2</code> and for a directed graph, <code>(n-1)*(n-2)</code>     where <code>n</code> is the number of nodes in the graph.</p>
+<p>endpoints: bool, optional     If true, endpoints are included in the shortest path count.</p>
+<p><strong>Returns</strong></p>
+<p>betweenness: Array{Float64}     Betweenness centrality value per node id.</p>
+<p><strong>References</strong></p>
+<p>[1] Brandes 2001 &amp; Brandes 2008</p>
+<p><a id='LightGraphs.closeness_centrality-Tuple{Union{LightGraphs.DiGraph,LightGraphs.Graph}}' href='#LightGraphs.closeness_centrality-Tuple{Union{LightGraphs.DiGraph,LightGraphs.Graph}}'>#</a>
+<strong><code>LightGraphs.closeness_centrality</code></strong> &mdash; <em>Method</em>.</p>
+<p>Calculates the <a href="https://en.wikipedia.org/wiki/Centrality#Closeness_centrality">closeness centrality</a> of the graph <code>g</code>.</p>
+<p><a id='LightGraphs.degree_centrality-Tuple{Union{LightGraphs.DiGraph,LightGraphs.Graph}}' href='#LightGraphs.degree_centrality-Tuple{Union{LightGraphs.DiGraph,LightGraphs.Graph}}'>#</a>
+<strong><code>LightGraphs.degree_centrality</code></strong> &mdash; <em>Method</em>.</p>
+<p>Calculates the <a href="https://en.wikipedia.org/wiki/Centrality#Degree_centrality">degree centrality</a> of the graph <code>g</code>, with optional (default) normalization.</p>
+<p><a id='LightGraphs.indegree_centrality-Tuple{Union{LightGraphs.DiGraph,LightGraphs.Graph}}' href='#LightGraphs.indegree_centrality-Tuple{Union{LightGraphs.DiGraph,LightGraphs.Graph}}'>#</a>
+<strong><code>LightGraphs.indegree_centrality</code></strong> &mdash; <em>Method</em>.</p>
+<p>Calculates the <a href="https://en.wikipedia.org/wiki/Centrality#Degree_centrality">degree centrality</a> of the graph <code>g</code>, with optional (default) normalization.</p>
+<p><a id='LightGraphs.outdegree_centrality-Tuple{Union{LightGraphs.DiGraph,LightGraphs.Graph}}' href='#LightGraphs.outdegree_centrality-Tuple{Union{LightGraphs.DiGraph,LightGraphs.Graph}}'>#</a>
+<strong><code>LightGraphs.outdegree_centrality</code></strong> &mdash; <em>Method</em>.</p>
+<p>Calculates the <a href="https://en.wikipedia.org/wiki/Centrality#Degree_centrality">degree centrality</a> of the graph <code>g</code>, with optional (default) normalization.</p>
+<p><a id='LightGraphs.katz_centrality' href='#LightGraphs.katz_centrality'>#</a>
+<strong><code>LightGraphs.katz_centrality</code></strong> &mdash; <em>Function</em>.</p>
+<p>Calculates the <a href="https://en.wikipedia.org/wiki/Katz_centrality">Katz centrality</a> of the graph <code>g</code>.</p>
+<p><a id='LightGraphs.pagerank' href='#LightGraphs.pagerank'>#</a>
+<strong><code>LightGraphs.pagerank</code></strong> &mdash; <em>Function</em>.</p>
+<p>Calculates the <a href="https://en.wikipedia.org/wiki/PageRank">PageRank</a> of the graph <code>g</code>. Can optionally specify a different damping factor (<code>α</code>), number of iterations (<code>n</code>), and convergence threshold (<code>ϵ</code>). If convergence is not reached within <code>n</code> iterations, an error will be returned.</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../linalg/" class="btn btn-neutral float-right" title="Linear Algebra">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../distance/" class="btn btn-neutral" title="Distance"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+<div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/JuliaGraphs/LightGraphs.jl/" class="icon icon-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+        <span><a href="../distance/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../linalg/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+
+</body>
+</html>

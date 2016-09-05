@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <meta name="author" content="Seth Bromberger">
+  
+  <title>LightGraphs.jl</title>
+  
+
+  <link rel="shortcut icon" href="./img/favicon.ico">
+
+  
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="./css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="./css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="./css/highlight.css">
+  <link href="./assets/Documenter.css" rel="stylesheet">
+
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "None";
+    var mkdocs_page_input_path = "index.md";
+    var mkdocs_page_url = "/";
+  </script>
+  
+  <script src="./js/jquery-2.1.1.min.js"></script>
+  <script src="./js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="./js/highlight.pack.js"></script>
+  <script src="./js/theme.js"></script> 
+  <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
+  <script src="./assets/mathjaxhelper.js"></script>
+
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="." class="icon icon-home"> LightGraphs.jl</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="./search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+        <ul class="current">
+          
+            <li>
+    <li class="toctree-l1 current">
+        <a class="current" href=".">Getting Started</a>
+        
+            <ul>
+            
+                <li class="toctree-l3"><a href="#lightgraphs">LightGraphs</a></li>
+                
+                    <li><a class="toctree-l4" href="#core-concepts">Core Concepts</a></li>
+                
+                    <li><a class="toctree-l4" href="#installation">Installation</a></li>
+                
+                    <li><a class="toctree-l4" href="#usage-examples">Usage Examples</a></li>
+                
+                    <li><a class="toctree-l4" href="#current-functionality">Current functionality</a></li>
+                
+                    <li><a class="toctree-l4" href="#documentation">Documentation</a></li>
+                
+                    <li><a class="toctree-l4" href="#supported-versions">Supported Versions</a></li>
+                
+            
+                <li class="toctree-l3"><a href="#contributing-and-reporting-bugs">Contributing and Reporting Bugs</a></li>
+                
+            
+            </ul>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="basicmeasures/">Basic Functions</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="operators/">Operators</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="pathing/">Path and Traversal</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="distance/">Distance</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="centrality/">Centrality Measures</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="linalg/">Linear Algebra</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="matching/">Matching</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="community/">Community Structures</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="flowcut/">Flow and Cut</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="generators/">Graph Generators</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="persistence/">Reading / Writing Graphs</a>
+        
+    </li>
+<li>
+          
+            <li>
+    <li class="toctree-l1 ">
+        <a class="" href="integration/">Integration with other packages</a>
+        
+    </li>
+<li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href=".">LightGraphs.jl</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Getting Started</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        
+          <a href="https://github.com/JuliaGraphs/LightGraphs.jl/" class="icon icon-github"> Edit on GitHub</a>
+        
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <p><a id='LightGraphs-1'></a></p>
+<h1 id="lightgraphs">LightGraphs</h1>
+<p><a href="https://travis-ci.org/JuliaGraphs/LightGraphs.jl"><img alt="Build Status" src="https://travis-ci.org/JuliaGraphs/LightGraphs.jl.svg?branch=master" /></a> <a href="http://codecov.io/github/JuliaGraphs/LightGraphs.jl?branch=master"><img alt="codecov.io" src="http://codecov.io/github/JuliaGraphs/LightGraphs.jl/coverage.svg?branch=master" /></a> <a href="http://lightgraphsjl.readthedocs.org/en/latest/"><img alt="Documentation Status" src="https://readthedocs.org/projects/lightgraphsjl/badge/?version=latest" /></a> <a href="https://gitter.im/JuliaGraphs/LightGraphs.jl"><img alt="Join the chat at https://gitter.im/JuliaGraphs/LightGraphs.jl" src="https://badges.gitter.im/Join%20Chat.svg" /></a></p>
+<p><a href="http://pkg.julialang.org/?pkg=LightGraphs"><img alt="LightGraphs" src="http://pkg.julialang.org/badges/LightGraphs_0.3.svg" /></a> <a href="http://pkg.julialang.org/?pkg=LightGraphs&amp;ver=0.4"><img alt="LightGraphs" src="http://pkg.julialang.org/badges/LightGraphs_0.4.svg" /></a> <a href="http://pkg.julialang.org/?pkg=LightGraphs"><img alt="LightGraphs" src="http://pkg.julialang.org/badges/LightGraphs_0.5.svg" /></a></p>
+<p><strong>For 0.5 prerelease compatibility, please check out the <code>compat-0.5</code> branch.</strong></p>
+<p>An optimized graphs package.</p>
+<p>Simple graphs (not multi- or hypergraphs) are represented in a memory- and time-efficient manner with adjacency lists and edge iterators. Both directed and undirected graphs are supported via separate types, and conversion is available from directed to undirected.</p>
+<p>The project goal is to mirror the functionality of robust network and graph analysis libraries such as <a href="http://networkx.github.io">NetworkX</a> while being simpler to use and more efficient than existing Julian graph libraries such as <a href="https://github.com/JuliaLang/Graphs.jl">Graphs.jl</a>. It is an explicit design decision that any data not required for graph manipulation (attributes and other information, for example) is expected to be stored outside of the graph structure itself. Such data lends itself to storage in more traditional and better-optimized mechanisms.</p>
+<p>Also check the companion package <a href="https://github.com/JuliaGraphs/LightGraphsExtras.jl">LightGraphsExtras.jl</a>. for additional functionalities.</p>
+<p><a id='Core-Concepts-1'></a></p>
+<h2 id="core-concepts">Core Concepts</h2>
+<p>A graph <em>G</em> is described by a set of vertices <em>V</em> and edges <em>E</em>: <em>G = {V, E}</em>. <em>V</em> is an integer range <code>1:n</code>; <em>E</em> is represented as forward (and, for directed graphs, backward) adjacency lists indexed by vertices. Edges may also be accessed via an iterator that yields <code>Edge</code> types containing <code>(src::Int, dst::Int)</code> values.</p>
+<p><em>LightGraphs.jl</em> provides two graph types: <code>Graph</code> is an undirected graph, and <code>DiGraph</code> is its directed counterpart.</p>
+<p>Graphs are created using <code>Graph()</code> or <code>DiGraph()</code>; there are several options (see below for examples).</p>
+<p>Edges are added to a graph using <code>add_edge!(g, e)</code>. Instead of an edge type integers may be passed denoting the source and destination vertices (e.g., <code>add_edge!(g, 1, 2)</code>).</p>
+<p>Multiple edges between two given vertices are not allowed: an attempt to add an edge that already exists in a graph will result in a silent failure.</p>
+<p>Edges may be removed using <code>rem_edge!(g, e)</code>. Alternately, integers may be passed denoting the source and destination vertices (e.g., <code>rem_edge!(g, 1, 2)</code>). Note that, particularly for very large graphs, edge removal is a (relatively) expensive operation. An attempt to remove an edge that does not exist in the graph will result in an error.</p>
+<p>Use <code>nv(g)</code> and <code>ne(g)</code> to compute the number of vertices and edges respectively.</p>
+<p><code>rem_vertex!(g, v)</code> alters the vertex identifiers. In particular, calling <code>n=nv(g)</code>, it swaps <code>v</code> and <code>n</code> and then removes <code>n</code>.</p>
+<p><code>edges(g)</code> returns an iterator to the edge set. Use <code>collect(edge(set))</code> to fill an array with all edges in the graph.</p>
+<p><a id='Installation-1'></a></p>
+<h2 id="installation">Installation</h2>
+<p>Installation is straightforward:</p>
+<pre><code class="julia">julia&gt; Pkg.add(&quot;LightGraphs&quot;)
+</code></pre>
+
+<p><a id='Usage-Examples-1'></a></p>
+<h2 id="usage-examples">Usage Examples</h2>
+<p>(all examples apply equally to <code>DiGraph</code> unless otherwise noted):</p>
+<pre><code class="julia"># create an empty undirected graph
+g = Graph()
+
+# create a 10-node undirected graph with no edges
+g = Graph(10)
+@assert nv(g) == 10
+
+# create a 10-node undirected graph with 30 randomly-selected edges
+g = Graph(10,30)
+
+# add an edge between vertices 4 and 5
+add_edge!(g, 4, 5)
+
+# remove an edge between vertices 9 and 10
+rem_edge!(g, 9, 10)
+
+# create vertex 11
+add_vertex!(g)
+
+# remove vertex 2
+# attention: this changes the id of vertex nv(g) to 2
+rem_vertex!(g, 2)
+
+# get the neighbors of vertex 4
+neighbors(g, 4)
+
+# iterate over the edges
+m = 0
+for e in edges(g)
+    m += 1
+end
+@assert m == ne(g)
+
+# show distances between vertex 4 and all other vertices
+dijkstra_shortest_paths(g, 4).dists
+
+# as above, but with non-default edge distances
+distmx = zeros(10,10)
+distmx[4,5] = 2.5
+distmx[5,4] = 2.5
+dijkstra_shortest_paths(g, 4, distmx=distmx).dists
+
+# graph I/O
+g = load(&quot;mygraph.jgz&quot;, &quot;mygraph&quot;)
+save(&quot;mygraph.jgz&quot;, g, &quot;mygraph&quot;, compress=true)
+</code></pre>
+
+<p><a id='Current-functionality-1'></a></p>
+<h2 id="current-functionality">Current functionality</h2>
+<ul>
+<li>
+<p><strong>core functions:</strong> vertices and edges addition and removal, degree (in/out/histogram), neighbors (in/out/all/common)</p>
+</li>
+<li>
+<p><strong>distance:</strong> eccentricity, diameter, periphery, radius, center</p>
+</li>
+<li>
+<p><strong>connectivity:</strong> strongly- and weakly-connected components, bipartite checks, condensation, attracting components, neighborhood</p>
+</li>
+<li>
+<p><strong>operators:</strong> complement, reverse, reverse!, union, join, intersect, difference, symmetric difference, blkdiag, induced subgraphs, products (cartesian/scalar)</p>
+</li>
+<li>
+<p><strong>shortest paths:</strong> Dijkstra, Dijkstra with predecessors, Bellman-Ford, Floyd-Warshall, A*</p>
+</li>
+<li>
+<p><strong>small graph generators:</strong> see <a href="https://github.com/JuliaGraphs/LightGraphs.jl/blob/master/src/datasets/smallgraphs.jl">smallgraphs.jl</a> for list</p>
+</li>
+<li>
+<p><strong>random graph generators:</strong> Erdős–Rényi, Watts-Strogatz, random regular, arbitrary degree sequence, stochastic block model</p>
+</li>
+<li>
+<p><strong>centrality:</strong> betweenness, closeness, degree, pagerank, Katz</p>
+</li>
+<li>
+<p><strong>traversal operations:</strong> cycle detection, BFS and DFS DAGs, BFS and DFS traversals with visitors, DFS topological sort, maximum adjacency / minimum cut, multiple random walks</p>
+</li>
+<li>
+<p><strong>flow operations:</strong> maximum flow</p>
+</li>
+<li>
+<p><strong>matching:</strong> Matching functions have been moved to <a href="https://github.com/JuliaGraphs/LightGraphsExtras.jl">LightGraphsExtras.jl</a>.</p>
+</li>
+<li>
+<p><strong>clique enumeration:</strong> maximal cliques</p>
+</li>
+<li>
+<p><strong>linear algebra / spectral graph theory:</strong> adjacency matrix (works as input to <a href="https://github.com/IainNZ/GraphLayout.jl">GraphLayout</a> and <a href="https://github.com/JuliaSparse/Metis.jl">Metis</a>), Laplacian matrix, non-backtracking matrix</p>
+</li>
+<li>
+<p><strong>community:</strong> modularity, community detection, core-periphery, clustering coefficients</p>
+</li>
+<li>
+<p><strong>persistence formats:</strong> proprietary compressed, <a href="http://en.wikipedia.org/wiki/GraphML">GraphML</a>, <a href="https://en.wikipedia.org/wiki/Graph_Modelling_Language">GML</a>, <a href="http://gexf.net/format">Gexf</a>, <a href="https://en.wikipedia.org/wiki/DOT_(graph_description_language)">DOT</a>, <a href="http://gephi.org/users/supported-graph-formats/pajek-net-format/">Pajek NET</a></p>
+</li>
+<li>
+<p><strong>visualization:</strong> integration with <a href="https://github.com/IainNZ/GraphLayout.jl">GraphLayout</a>, <a href="https://github.com/sisl/TikzGraphs.jl">TikzGraphs</a>, <a href="https://github.com/afternone/GraphPlot.jl">GraphPlot</a>, <a href="https://github.com/abhijithanilkumar/NetworkViz.jl/">NetworkViz</a></p>
+</li>
+</ul>
+<p><a id='Documentation-1'></a></p>
+<h2 id="documentation">Documentation</h2>
+<p>Full documentation available at <a href="http://lightgraphsjl.readthedocs.org">ReadTheDocs</a>. Documentation for methods is also available via the Julia REPL help system.</p>
+<p><a id='Supported-Versions-1'></a></p>
+<h2 id="supported-versions">Supported Versions</h2>
+<ul>
+<li>Julia 0.3: LightGraphs v0.3.7 is the last version guaranteed to work with Julia 0.3.</li>
+<li>Julia 0.4: LightGraphs master is designed to work with the latest stable version of Julia (currently 0.4.x).</li>
+<li>Julia 0.5: Some functionality might not work with prerelease / unstable / nightly versions of Julia. If you run into a problem on 0.5, please file an issue. NOTE as of 2016-08-25: 0.5 prerelease support is in the <code>bleeding-edge</code> branch. Please use that branch if you're testing with 0.5.</li>
+</ul>
+<p><a id='Contributing-and-Reporting-Bugs-1'></a></p>
+<h1 id="contributing-and-reporting-bugs">Contributing and Reporting Bugs</h1>
+<p>We welcome contributions and bug reports! Please see <a href="https://github.com/JuliaGraphs/LightGraphs.jl/blob/master/CONTRIBUTING.md">CONTRIBUTING.md</a> for guidance on development and bug reporting.</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="basicmeasures/" class="btn btn-neutral float-right" title="Basic Functions">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+	  
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+<div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/JuliaGraphs/LightGraphs.jl/" class="icon icon-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+      
+        <span style="margin-left: 15px"><a href="basicmeasures/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+
+</body>
+</html>
+
+<!--
+MkDocs version : 0.15.3
+Build Date UTC : 2016-09-05 07:34:55.475674
+-->
