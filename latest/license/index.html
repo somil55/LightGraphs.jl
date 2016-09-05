@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1">
     
       
-        <title>Distance - LightGraphs.jl</title>
+        <title>License Information - LightGraphs.jl</title>
       
       
       
@@ -98,7 +98,7 @@
             
           </span>
         
-        Distance
+        License Information
       </div>
     </div>
     
@@ -204,14 +204,9 @@
           
             
   <li>
-    <a class="current" title="Distance" href="./">
+    <a class="" title="Distance" href="../distance/">
       Distance
     </a>
-    
-      
-        
-      
-      
     
   </li>
 
@@ -299,9 +294,12 @@
           
             
   <li>
-    <a class="" title="License Information" href="../license/">
+    <a class="current" title="License Information" href="./">
       License Information
     </a>
+    
+      
+      
     
   </li>
 
@@ -316,33 +314,37 @@
       <article class="article">
         <div class="wrapper">
           
-          <p><a id='Distance-1'></a></p>
-<h1 id="distance">Distance</h1>
-<p><em>LightGraphs.jl</em> includes the following distance measurements:</p>
-<p><a id='LightGraphs.center-Tuple{Array{T,1}}' href='#LightGraphs.center-Tuple{Array{T,1}}'>#</a>
-<strong><code>LightGraphs.center</code></strong> &mdash; <em>Method</em>.</p>
-<p>Returns the set of all vertices whose eccentricity is equal to the graph's radius (that is, the set of vertices with the smallest eccentricity).</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/a60348c58d53e91ac6c0720fa3b017a377247d1d/src/distance.jl#L79-L82' class='documenter-source'>source</a><br></p>
-<p><a id='LightGraphs.diameter-Tuple{Array{T,1}}' href='#LightGraphs.diameter-Tuple{Array{T,1}}'>#</a>
-<strong><code>LightGraphs.diameter</code></strong> &mdash; <em>Method</em>.</p>
-<p>Returns the maximum eccentricity of the graph.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/a60348c58d53e91ac6c0720fa3b017a377247d1d/src/distance.jl#L57' class='documenter-source'>source</a><br></p>
-<p><a id='LightGraphs.eccentricity' href='#LightGraphs.eccentricity'>#</a>
-<strong><code>LightGraphs.eccentricity</code></strong> &mdash; <em>Function</em>.</p>
-<p>Calculates the eccentricity[ies] of a vertex <code>v</code>, vertex vector <code>vs</code>, or the entire graph. An optional matrix of edge distances may be supplied.</p>
-<p>The eccentricity of a vertex is the maximum shortest-path distance between it and all other vertices in the graph.</p>
-<p>Because this function must calculate shortest paths for all vertices supplied in the argument list, it may take a long time.</p>
-<p>The output is either a single float (when a single vertex is provided) or a vector of floats corresponding to the vertex vector. If no vertex vector is provided, the vector returned corresponds to each vertex in the graph.</p>
-<p>Note: the eccentricity vector returned by <code>eccentricity()</code> may be used as input for the rest of the distance measures below. If an eccentricity vector is provided, it will be used. Otherwise, an eccentricity vector will be calculated for each call to the function. It may therefore be more efficient to calculate, store, and pass the eccentricities if multiple distance measures are desired.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/a60348c58d53e91ac6c0720fa3b017a377247d1d/src/distance.jl#L16-L35' class='documenter-source'>source</a><br></p>
-<p><a id='LightGraphs.periphery-Tuple{Array{T,1}}' href='#LightGraphs.periphery-Tuple{Array{T,1}}'>#</a>
-<strong><code>LightGraphs.periphery</code></strong> &mdash; <em>Method</em>.</p>
-<p>Returns the set of all vertices whose eccentricity is equal to the graph's diameter (that is, the set of vertices with the largest eccentricity).</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/a60348c58d53e91ac6c0720fa3b017a377247d1d/src/distance.jl#L62-L65' class='documenter-source'>source</a><br></p>
-<p><a id='LightGraphs.radius-Tuple{Array{T,1}}' href='#LightGraphs.radius-Tuple{Array{T,1}}'>#</a>
-<strong><code>LightGraphs.radius</code></strong> &mdash; <em>Method</em>.</p>
-<p>Returns the minimum eccentricity of the graph.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/a60348c58d53e91ac6c0720fa3b017a377247d1d/src/distance.jl#L74' class='documenter-source'>source</a><br></p>
+            <h1>License Information</h1>
+          
+          <p>The LightGraphs.jl package is licensed under the Simplified "2-clause" BSD License:</p>
+<blockquote>
+<p>Copyright (c) 2015: Seth Bromberger and other contributors.</p>
+<p>Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:</p>
+<ol>
+<li>Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.</li>
+<li>Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.</li>
+</ol>
+<p>THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.</p>
+</blockquote>
+<p>LightGraphs uses code derived from and/or inspired by the following packages:</p>
+<p>NetworkX:</p>
+<blockquote>
+<p>Copyright (C) 2004-2012, NetworkX Developers Aric Hagberg <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#104;&#97;&#103;&#98;&#101;&#114;&#103;&#64;&#108;&#97;&#110;&#108;&#46;&#103;&#111;&#118;">&#104;&#97;&#103;&#98;&#101;&#114;&#103;&#64;&#108;&#97;&#110;&#108;&#46;&#103;&#111;&#118;</a> Dan Schult <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#100;&#115;&#99;&#104;&#117;&#108;&#116;&#64;&#99;&#111;&#108;&#103;&#97;&#116;&#101;&#46;&#101;&#100;&#117;">&#100;&#115;&#99;&#104;&#117;&#108;&#116;&#64;&#99;&#111;&#108;&#103;&#97;&#116;&#101;&#46;&#101;&#100;&#117;</a> Pieter Swart <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#115;&#119;&#97;&#114;&#116;&#64;&#108;&#97;&#110;&#108;&#46;&#103;&#111;&#118;">&#115;&#119;&#97;&#114;&#116;&#64;&#108;&#97;&#110;&#108;&#46;&#103;&#111;&#118;</a> All rights reserved.</p>
+<p>Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:</p>
+<ul>
+<li>Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.</li>
+<li>Redistributions in binary form must reproduce the above with the distribution.</li>
+<li>Neither the name of the NetworkX Developers nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.</li>
+</ul>
+<p>THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.</p>
+</blockquote>
+<p>Graphs.jl:</p>
+<blockquote>
+<p>Copyright (c) 2012: John Myles White and other contributors.</p>
+<p>Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:</p>
+<p>The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.</p>
+<p>THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</p>
+</blockquote>
           <aside class="copyright" role="note">
             
             Documentation built with
@@ -359,7 +361,7 @@
   <nav class="pagination" aria-label="Footer">
     <div class="previous">
       
-        <a href="../pathing/" title="Path and Traversal">
+        <a href="../contributing/" title="Contributing">
           <span class="direction">
             Previous
           </span>
@@ -369,7 +371,7 @@
             </div>
             <div class="stretch">
               <div class="title">
-                Path and Traversal
+                Contributing
               </div>
             </div>
           </div>
@@ -377,22 +379,6 @@
       
     </div>
     <div class="next">
-      
-        <a href="../centrality/" title="Centrality Measures">
-          <span class="direction">
-            Next
-          </span>
-          <div class="page">
-            <div class="stretch">
-              <div class="title">
-                Centrality Measures
-              </div>
-            </div>
-            <div class="button button-next" role="button" aria-label="Next">
-              <i class="icon icon-forward"></i>
-            </div>
-          </div>
-        </a>
       
     </div>
   </nav>

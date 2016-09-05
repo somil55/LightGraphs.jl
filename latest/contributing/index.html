@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1">
     
       
-        <title>Distance - LightGraphs.jl</title>
+        <title>Contributing - LightGraphs.jl</title>
       
       
       
@@ -98,7 +98,7 @@
             
           </span>
         
-        Distance
+        Contributing
       </div>
     </div>
     
@@ -204,14 +204,9 @@
           
             
   <li>
-    <a class="current" title="Distance" href="./">
+    <a class="" title="Distance" href="../distance/">
       Distance
     </a>
-    
-      
-        
-      
-      
     
   </li>
 
@@ -290,9 +285,28 @@
           
             
   <li>
-    <a class="" title="Contributing" href="../contributing/">
+    <a class="current" title="Contributing" href="./">
       Contributing
     </a>
+    
+      
+      
+        <ul>
+          
+            <li class="anchor">
+              <a title="Bug reports" href="#bug-reports">
+                Bug reports
+              </a>
+            </li>
+          
+            <li class="anchor">
+              <a title="Development guidelines" href="#development-guidelines">
+                Development guidelines
+              </a>
+            </li>
+          
+        </ul>
+      
     
   </li>
 
@@ -316,33 +330,61 @@
       <article class="article">
         <div class="wrapper">
           
-          <p><a id='Distance-1'></a></p>
-<h1 id="distance">Distance</h1>
-<p><em>LightGraphs.jl</em> includes the following distance measurements:</p>
-<p><a id='LightGraphs.center-Tuple{Array{T,1}}' href='#LightGraphs.center-Tuple{Array{T,1}}'>#</a>
-<strong><code>LightGraphs.center</code></strong> &mdash; <em>Method</em>.</p>
-<p>Returns the set of all vertices whose eccentricity is equal to the graph's radius (that is, the set of vertices with the smallest eccentricity).</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/a60348c58d53e91ac6c0720fa3b017a377247d1d/src/distance.jl#L79-L82' class='documenter-source'>source</a><br></p>
-<p><a id='LightGraphs.diameter-Tuple{Array{T,1}}' href='#LightGraphs.diameter-Tuple{Array{T,1}}'>#</a>
-<strong><code>LightGraphs.diameter</code></strong> &mdash; <em>Method</em>.</p>
-<p>Returns the maximum eccentricity of the graph.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/a60348c58d53e91ac6c0720fa3b017a377247d1d/src/distance.jl#L57' class='documenter-source'>source</a><br></p>
-<p><a id='LightGraphs.eccentricity' href='#LightGraphs.eccentricity'>#</a>
-<strong><code>LightGraphs.eccentricity</code></strong> &mdash; <em>Function</em>.</p>
-<p>Calculates the eccentricity[ies] of a vertex <code>v</code>, vertex vector <code>vs</code>, or the entire graph. An optional matrix of edge distances may be supplied.</p>
-<p>The eccentricity of a vertex is the maximum shortest-path distance between it and all other vertices in the graph.</p>
-<p>Because this function must calculate shortest paths for all vertices supplied in the argument list, it may take a long time.</p>
-<p>The output is either a single float (when a single vertex is provided) or a vector of floats corresponding to the vertex vector. If no vertex vector is provided, the vector returned corresponds to each vertex in the graph.</p>
-<p>Note: the eccentricity vector returned by <code>eccentricity()</code> may be used as input for the rest of the distance measures below. If an eccentricity vector is provided, it will be used. Otherwise, an eccentricity vector will be calculated for each call to the function. It may therefore be more efficient to calculate, store, and pass the eccentricities if multiple distance measures are desired.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/a60348c58d53e91ac6c0720fa3b017a377247d1d/src/distance.jl#L16-L35' class='documenter-source'>source</a><br></p>
-<p><a id='LightGraphs.periphery-Tuple{Array{T,1}}' href='#LightGraphs.periphery-Tuple{Array{T,1}}'>#</a>
-<strong><code>LightGraphs.periphery</code></strong> &mdash; <em>Method</em>.</p>
-<p>Returns the set of all vertices whose eccentricity is equal to the graph's diameter (that is, the set of vertices with the largest eccentricity).</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/a60348c58d53e91ac6c0720fa3b017a377247d1d/src/distance.jl#L62-L65' class='documenter-source'>source</a><br></p>
-<p><a id='LightGraphs.radius-Tuple{Array{T,1}}' href='#LightGraphs.radius-Tuple{Array{T,1}}'>#</a>
-<strong><code>LightGraphs.radius</code></strong> &mdash; <em>Method</em>.</p>
-<p>Returns the minimum eccentricity of the graph.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/a60348c58d53e91ac6c0720fa3b017a377247d1d/src/distance.jl#L74' class='documenter-source'>source</a><br></p>
+            <h1>Contributing</h1>
+          
+          <p>We welcome all possible contributors and ask that you read these guidelines before starting to work on this project. Following these guidelines will reduce friction and improve the speed at which your code gets merged.</p>
+<p><a id='Bug-reports-1'></a></p>
+<h2 id="bug-reports">Bug reports</h2>
+<p>If you notice code that is incorrect/crashes/too slow please file a bug report. The report should be raised as a github issue with a minimal working example that reproduces the error message. The example should include any data needed. If the problem is incorrectness, then please post the correct result along with an incorrect result.</p>
+<p>Please include version numbers of all relevant libraries and Julia itself.</p>
+<p><a id='Development-guidelines-1'></a></p>
+<h2 id="development-guidelines">Development guidelines</h2>
+<ul>
+<li>PRs should contain one logical enhancement to the codebase.</li>
+<li>Squash commits in a PR.</li>
+<li>Open an issue to discuss a feature before you start coding (this maximizes the likelihood of patch acceptance).</li>
+<li>
+<p>Minimize dependencies on external packages, and avoid introducing new dependencies. In general,</p>
+<ul>
+<li>PRs introducing dependencies on core Julia packages are ok.</li>
+<li>PRs introducing dependencies on non-core "leaf" packages (no subdependencies except for core Julia packages) are less ok.</li>
+<li>PRs introducing dependencies on non-core non-leaf packages require strict scrutiny and will likely not be accepted without some compelling reason (urgent bugfix or much-needed functionality).</li>
+<li>Put type assertions on all function arguments (use abstract types, Union, or Any if necessary).</li>
+<li>If the algorithm was presented in a paper, include a reference to the paper (i.e. a proper academic citation along with an eprint link).</li>
+<li>Take steps to ensure that code works on graphs with multiple connected components efficiently.</li>
+<li>Correctness is a necessary requirement; efficiency is desirable. Once you have a correct implementation, make a PR so we can help improve performance.</li>
+<li>We can accept code that does not work for directed graphs as long as it comes with an explanation of what it would take to make it work for directed graphs.</li>
+<li>Style point: prefer the short circuiting conditional over if/else when convenient, and where state is not explicitly being mutated (<em>e.g.</em>, <code>condition &amp;&amp; error("message")</code> is good; <code>condition &amp;&amp; i += 1</code> is not).</li>
+<li>When possible write code to reuse memory. For example:</li>
+</ul>
+</li>
+</ul>
+<pre><code class="julia">function f(g, v)
+    storage = Vector{Int}(nv(g))
+    # some code operating on storage, g, and v.
+    for i in 1:nv(g)
+        storage[i] = v-i
+    end
+    return sum(storage)
+end
+</code></pre>
+
+<p>should be rewritten as two functions</p>
+<pre><code class="julia">function f(g::SimpleGraph, v::Integer)
+    storage = Vector{Int}(nv(g))
+    return inner!(storage, g, v)
+end
+
+function inner!(storage::AbstractArray{Int,1}, g::SimpleGraph, v::Integer)
+    # some code operating on storage, g, and v.
+    for i in 1:nv(g)
+        storage[i] = v-i
+    end
+    return sum(storage)
+end
+</code></pre>
+
+<p>This allows us to reuse the memory and improve performance.</p>
           <aside class="copyright" role="note">
             
             Documentation built with
@@ -359,7 +401,7 @@
   <nav class="pagination" aria-label="Footer">
     <div class="previous">
       
-        <a href="../pathing/" title="Path and Traversal">
+        <a href="../integration/" title="Integration with other packages">
           <span class="direction">
             Previous
           </span>
@@ -369,7 +411,7 @@
             </div>
             <div class="stretch">
               <div class="title">
-                Path and Traversal
+                Integration with other packages
               </div>
             </div>
           </div>
@@ -378,14 +420,14 @@
     </div>
     <div class="next">
       
-        <a href="../centrality/" title="Centrality Measures">
+        <a href="../license/" title="License Information">
           <span class="direction">
             Next
           </span>
           <div class="page">
             <div class="stretch">
               <div class="title">
-                Centrality Measures
+                License Information
               </div>
             </div>
             <div class="button button-next" role="button" aria-label="Next">
