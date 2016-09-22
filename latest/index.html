@@ -179,8 +179,8 @@
         <ul>
           
             <li class="anchor">
-              <a title="LightGraphs versions in the v0.7 series are designed for Julia 0.5. For Julia 0.4 support, please use the latest version in the 0.6 series." href="#lightgraphs-versions-in-the-v07-series-are-designed-for-julia-05-for-julia-04-support-please-use-the-latest-version-in-the-06-series">
-                LightGraphs versions in the v0.7 series are designed for Julia 0.5. For Julia 0.4 support, please use the latest version in the 0.6 series.
+              <a title="Documentation" href="#documentation">
+                Documentation
               </a>
             </li>
           
@@ -205,12 +205,6 @@
             <li class="anchor">
               <a title="Current functionality" href="#current-functionality">
                 Current functionality
-              </a>
-            </li>
-          
-            <li class="anchor">
-              <a title="Documentation" href="#documentation">
-                Documentation
               </a>
             </li>
           
@@ -366,11 +360,13 @@
 <h1 id="lightgraphs">LightGraphs</h1>
 <p><a href="https://travis-ci.org/JuliaGraphs/LightGraphs.jl"><img alt="Build Status" src="https://travis-ci.org/JuliaGraphs/LightGraphs.jl.svg?branch=master" /></a> <a href="http://codecov.io/github/JuliaGraphs/LightGraphs.jl?branch=master"><img alt="codecov.io" src="http://codecov.io/github/JuliaGraphs/LightGraphs.jl/coverage.svg?branch=master" /></a> <a href="https://juliagraphs.github.io/LightGraphs.jl/latest"><img alt="" src="https://img.shields.io/badge/docs-latest-blue.svg" /></a> <a href="https://gitter.im/JuliaGraphs/LightGraphs.jl"><img alt="Join the chat at https://gitter.im/JuliaGraphs/LightGraphs.jl" src="https://badges.gitter.im/Join%20Chat.svg" /></a></p>
 <p><a href="http://pkg.julialang.org/?pkg=LightGraphs"><img alt="LightGraphs" src="http://pkg.julialang.org/badges/LightGraphs_0.3.svg" /></a> <a href="http://pkg.julialang.org/?pkg=LightGraphs&amp;ver=0.4"><img alt="LightGraphs" src="http://pkg.julialang.org/badges/LightGraphs_0.4.svg" /></a> <a href="http://pkg.julialang.org/?pkg=LightGraphs"><img alt="LightGraphs" src="http://pkg.julialang.org/badges/LightGraphs_0.5.svg" /></a></p>
-<p><a id='LightGraphs-versions-in-the-v0.7-series-are-designed-for-Julia-0.5.-For-Julia-0.4-support,-please-use-the-latest-version-in-the-0.6-series.-1'></a></p>
-<h4 id="lightgraphs-versions-in-the-v07-series-are-designed-for-julia-05-for-julia-04-support-please-use-the-latest-version-in-the-06-series">LightGraphs versions in the v0.7 series are designed for Julia 0.5. For Julia 0.4 support, please use the latest version in the 0.6 series.</h4>
 <p>An optimized graphs package.</p>
 <p>Simple graphs (not multi- or hypergraphs) are represented in a memory- and time-efficient manner with adjacency lists and edge iterators. Both directed and undirected graphs are supported via separate types, and conversion is available from directed to undirected.</p>
 <p>The project goal is to mirror the functionality of robust network and graph analysis libraries such as <a href="http://networkx.github.io">NetworkX</a> while being simpler to use and more efficient than existing Julian graph libraries such as <a href="https://github.com/JuliaLang/Graphs.jl">Graphs.jl</a>. It is an explicit design decision that any data not required for graph manipulation (attributes and other information, for example) is expected to be stored outside of the graph structure itself. Such data lends itself to storage in more traditional and better-optimized mechanisms.</p>
+<p>Additional functionalities can be found in the companion package <a href="https://github.com/JuliaGraphs/LightGraphsExtras.jl">LightGraphsExtras.jl</a>.</p>
+<p><a id='Documentation-1'></a></p>
+<h2 id="documentation">Documentation</h2>
+<p>Full documentation available at <a href="https://juliagraphs.github.io/LightGraphs.jl/latest">GitHub Pages</a>. Documentation for methods is also available via the Julia REPL help system.</p>
 <p><a id='Core-Concepts-1'></a></p>
 <h2 id="core-concepts">Core Concepts</h2>
 <p>A graph <em>G</em> is described by a set of vertices <em>V</em> and edges <em>E</em>: <em>G = {V, E}</em>. <em>V</em> is an integer range <code>1:n</code>; <em>E</em> is represented as forward (and, for directed graphs, backward) adjacency lists indexed by vertices. Edges may also be accessed via an iterator that yields <code>Edge</code> types containing <code>(src::Int, dst::Int)</code> values.</p>
@@ -462,9 +458,6 @@ save(&quot;mygraph.jgz&quot;, g, &quot;mygraph&quot;, compress=true)
 <li><strong>persistence formats:</strong> proprietary compressed, <a href="http://en.wikipedia.org/wiki/GraphML">GraphML</a>, <a href="https://en.wikipedia.org/wiki/Graph_Modelling_Language">GML</a>, <a href="http://gexf.net/format">Gexf</a>, <a href="https://en.wikipedia.org/wiki/DOT_(graph_description_language)">DOT</a>, <a href="http://gephi.org/users/supported-graph-formats/pajek-net-format/">Pajek NET</a></li>
 <li><strong>visualization:</strong> integration with <a href="https://github.com/IainNZ/GraphLayout.jl">GraphLayout</a>, <a href="https://github.com/sisl/TikzGraphs.jl">TikzGraphs</a>, <a href="https://github.com/afternone/GraphPlot.jl">GraphPlot</a>, <a href="https://github.com/abhijithanilkumar/NetworkViz.jl/">NetworkViz</a></li>
 </ul>
-<p><a id='Documentation-1'></a></p>
-<h2 id="documentation">Documentation</h2>
-<p>Full documentation available at <a href="https://juliagraphs.github.io/LightGraphs.jl/latest">GitHub Pages</a>. Documentation for methods is also available via the Julia REPL help system.</p>
 <p><a id='Supported-Versions-1'></a></p>
 <h2 id="supported-versions">Supported Versions</h2>
 <ul>
