@@ -319,56 +319,33 @@
           <p><a id='Linear-Algebra-1'></a></p>
 <h1 id="linear-algebra">Linear Algebra</h1>
 <p><em>LightGraphs.jl</em> provides the following matrix operations on both directed and undirected graphs:</p>
-<p><a id='LightGraphs.Nonbacktracking' href='#LightGraphs.Nonbacktracking'>#</a>
-<strong><code>LightGraphs.Nonbacktracking</code></strong> &mdash; <em>Type</em>.</p>
-<p>Nonbacktracking: a compact representation of the nonbacktracking operator</p>
-<pre><code>g: the underlying graph
-edgeidmap: the association between oriented edges and index into the NBT matrix
-</code></pre>
-
-<p>The Nonbacktracking operator can be used for community detection. This representation is compact in that it uses only ne(g) additional storage and provides an implicit representation of the matrix B_g defined below.</p>
-<p>Given two oriented edges i-&gt;j and k-&gt;l in g, the non-backtraking matrix B is defined as</p>
-<p>B[i-&gt;j, k-&gt;l] = δ(j,k)* (1 - δ(i,l))</p>
-<p>This type is in the style of GraphMatrices.jl and supports the necessary operations for computed eigenvectors and conducting linear solves.</p>
-<p>Additionally the contract!(vertexspace, nbt, edgespace) method takes vectors represented in the domain of B and represents them in the domain of the adjacency matrix of g.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/4787fa3c51ca41e330d0eafbad4fa9e812931fb9/docs/../src/spectral.jl#L159-L179' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.adjacency_matrix' href='#LightGraphs.adjacency_matrix'>#</a>
 <strong><code>LightGraphs.adjacency_matrix</code></strong> &mdash; <em>Function</em>.</p>
 <p>Returns a sparse boolean adjacency matrix for a graph, indexed by <code>[u, v]</code> vertices. <code>true</code> values indicate an edge between <code>u</code> and <code>v</code>. Users may specify a direction (<code>:in</code>, <code>:out</code>, or <code>:both</code> are currently supported; <code>:out</code> is default for both directed and undirected graphs) and a data type for the matrix (defaults to <code>Int</code>).</p>
 <p>Note: This function is optimized for speed.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/4787fa3c51ca41e330d0eafbad4fa9e812931fb9/docs/../src/spectral.jl#L1-L9' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/748c30029fdfab9c0b7ae69e5916f856539e6f2c/docs/../src/linalg/./spectral.jl#L9-L17' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.adjacency_spectrum' href='#LightGraphs.adjacency_spectrum'>#</a>
 <strong><code>LightGraphs.adjacency_spectrum</code></strong> &mdash; <em>Function</em>.</p>
 <p>Returns the eigenvalues of the adjacency matrix for a graph <code>g</code>, indexed by vertex. Warning: Converts the matrix to dense with $nv^2$ memory usage. Use <code>eigs(adjacency_matrix(g);kwargs...)</code> to compute some of the eigenvalues/eigenvectors. Default values for <code>dir</code> and <code>T</code> are the same as <code>adjacency_matrix</code>.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/4787fa3c51ca41e330d0eafbad4fa9e812931fb9/docs/../src/spectral.jl#L78' class='documenter-source'>source</a><br></p>
-<p><a id='LightGraphs.contract-Tuple{LightGraphs.Nonbacktracking,Array{T,1}}' href='#LightGraphs.contract-Tuple{LightGraphs.Nonbacktracking,Array{T,1}}'>#</a>
-<strong><code>LightGraphs.contract</code></strong> &mdash; <em>Method</em>.</p>
-<p>contract(nbt, edgespace) Integrates out the edges by summing over the edges incident to each vertex.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/4787fa3c51ca41e330d0eafbad4fa9e812931fb9/docs/../src/spectral.jl#L267-L270' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/748c30029fdfab9c0b7ae69e5916f856539e6f2c/docs/../src/linalg/./spectral.jl#L90' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.incidence_matrix' href='#LightGraphs.incidence_matrix'>#</a>
 <strong><code>LightGraphs.incidence_matrix</code></strong> &mdash; <em>Function</em>.</p>
 <p>Returns a sparse node-arc incidence matrix for a graph, indexed by <code>[v, i]</code>, where <code>i</code> is in <code>1:ne(g)</code>, indexing an edge <code>e</code>. For directed graphs, a value of <code>-1</code> indicates that <code>src(e) == v</code>, while a value of <code>1</code> indicates that <code>dst(e) == v</code>. Otherwise, the value is <code>0</code>. For undirected graphs, both entries are <code>1</code>.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/4787fa3c51ca41e330d0eafbad4fa9e812931fb9/docs/../src/spectral.jl#L88-L94' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/748c30029fdfab9c0b7ae69e5916f856539e6f2c/docs/../src/linalg/./spectral.jl#L100-L106' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.laplacian_matrix' href='#LightGraphs.laplacian_matrix'>#</a>
 <strong><code>LightGraphs.laplacian_matrix</code></strong> &mdash; <em>Function</em>.</p>
 <p>Returns a sparse <a href="https://en.wikipedia.org/wiki/Laplacian_matrix">Laplacian matrix</a> for a graph <code>g</code>, indexed by <code>[u, v]</code> vertices. For undirected graphs, <code>dir</code> defaults to <code>:out</code>; for directed graphs, <code>dir</code> defaults to <code>:both</code>. <code>T</code> defaults to <code>Int</code> for both graph types.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/4787fa3c51ca41e330d0eafbad4fa9e812931fb9/docs/../src/spectral.jl#L52-L57' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/748c30029fdfab9c0b7ae69e5916f856539e6f2c/docs/../src/linalg/./spectral.jl#L64-L69' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.laplacian_spectrum' href='#LightGraphs.laplacian_spectrum'>#</a>
 <strong><code>LightGraphs.laplacian_spectrum</code></strong> &mdash; <em>Function</em>.</p>
 <p>Returns the eigenvalues of the Laplacian matrix for a graph <code>g</code>, indexed by vertex. Warning: Converts the matrix to dense with $nv^2$ memory usage. Use <code>eigs(laplacian_matrix(g);  kwargs...)</code> to compute some of the eigenvalues/eigenvectors. Default values for <code>dir</code> and <code>T</code> are the same as <code>laplacian_matrix</code>.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/4787fa3c51ca41e330d0eafbad4fa9e812931fb9/docs/../src/spectral.jl#L69' class='documenter-source'>source</a><br></p>
-<p><a id='LightGraphs.non_backtracking_matrix-Tuple{Union{LightGraphs.DiGraph,LightGraphs.Graph}}' href='#LightGraphs.non_backtracking_matrix-Tuple{Union{LightGraphs.DiGraph,LightGraphs.Graph}}'>#</a>
-<strong><code>LightGraphs.non_backtracking_matrix</code></strong> &mdash; <em>Method</em>.</p>
-<p>Given two oriented edges i-&gt;j and k-&gt;l in g, the non-backtraking matrix B is defined as</p>
-<p>B[i-&gt;j, k-&gt;l] = δ(j,k)* (1 - δ(i,l))</p>
-<p>returns a matrix B, and an edgemap storing the oriented edges' positions in B</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/4787fa3c51ca41e330d0eafbad4fa9e812931fb9/docs/../src/spectral.jl#L121-L128' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/748c30029fdfab9c0b7ae69e5916f856539e6f2c/docs/../src/linalg/./spectral.jl#L81' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.spectral_distance-Tuple{LightGraphs.Graph,LightGraphs.Graph,Integer}' href='#LightGraphs.spectral_distance-Tuple{LightGraphs.Graph,LightGraphs.Graph,Integer}'>#</a>
 <strong><code>LightGraphs.spectral_distance</code></strong> &mdash; <em>Method</em>.</p>
 <p>spectral_distance(G₁, G₂ [, k]) Compute the spectral distance between undirected n-vertex graphs G₁ and G₂ using the top k ≤ n greatest eigenvalues. If k is ommitted, uses full spectrum.</p>
 <p>For further details, please refer to:</p>
 <p>JOVANOVIC, I.; STANIC, Z., 2014. Spectral Distances of Graphs Based on their Different Matrix Representations</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/4787fa3c51ca41e330d0eafbad4fa9e812931fb9/docs/../src/spectral.jl#L276-L286' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/748c30029fdfab9c0b7ae69e5916f856539e6f2c/docs/../src/linalg/./spectral.jl#L133-L143' class='documenter-source'>source</a><br></p>
           <aside class="copyright" role="note">
             
             Documentation built with
