@@ -336,7 +336,7 @@
 
 <p>Loads a graph with name <code>name</code> from <code>file</code> in format <code>t</code>.</p>
 <p>Currently supported formats are <code>:lg, :gml, :graphml, :gexf, :dot, :net</code>.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/bf2ae4dd2c15d04fc4dfc861550be6be9f5381ce/docs/../src/persistence/common.jl#L33-L39' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/f9d531eb238b052aa306a156bd300542b420d6ea/docs/../src/persistence/common.jl#L33-L39' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.load' href='#LightGraphs.load'>#</a>
 <strong><code>LightGraphs.load</code></strong> &mdash; <em>Function</em>.</p>
 <pre><code>load(file, t=:lg)
@@ -344,7 +344,7 @@
 
 <p>Loads multiple graphs from  <code>file</code> in the format <code>t</code>. Returns a dictionary mapping graph name to graph.</p>
 <p>For unnamed graphs the default names "graph" and "digraph" will be used.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/bf2ae4dd2c15d04fc4dfc861550be6be9f5381ce/docs/../src/persistence/common.jl#L45-L52' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/f9d531eb238b052aa306a156bd300542b420d6ea/docs/../src/persistence/common.jl#L45-L52' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.loadgraph-Tuple{String,Vararg{Any,N}}' href='#LightGraphs.loadgraph-Tuple{String,Vararg{Any,N}}'>#</a>
 <strong><code>LightGraphs.loadgraph</code></strong> &mdash; <em>Method</em>.</p>
 <pre><code>loadgraph(file, t=:lg)
@@ -352,7 +352,7 @@
 
 <p>Reads a graph from  <code>file</code> in the format <code>t</code>.</p>
 <p>Supported formats are <code>:lg, :gml, :dot, :graphml, :gexf, :net, :jld</code>.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/bf2ae4dd2c15d04fc4dfc861550be6be9f5381ce/docs/../src/persistence/common.jl#L13-L19' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/f9d531eb238b052aa306a156bd300542b420d6ea/docs/../src/persistence/common.jl#L13-L19' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.save' href='#LightGraphs.save'>#</a>
 <strong><code>LightGraphs.save</code></strong> &mdash; <em>Function</em>.</p>
 <pre><code>save(file, g, t=:lg)
@@ -364,11 +364,11 @@ save(file, dict, t=:lg)
 <p>Currently supported formats are <code>:lg, :gml, :graphml, :gexf, :dot, :net</code>.</p>
 <p>For some graph formats, multiple graphs in a  <code>dict</code> <code>"name"=&gt;g</code> can be saved in the same file.</p>
 <p>Returns the number of graphs written.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/bf2ae4dd2c15d04fc4dfc861550be6be9f5381ce/docs/../src/persistence/common.jl#L72-L85' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/f9d531eb238b052aa306a156bd300542b420d6ea/docs/../src/persistence/common.jl#L72-L85' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.savegraph-Tuple{Any,Union{LightGraphs.DiGraph,LightGraphs.Graph},Vararg{Any,N}}' href='#LightGraphs.savegraph-Tuple{Any,Union{LightGraphs.DiGraph,LightGraphs.Graph},Vararg{Any,N}}'>#</a>
 <strong><code>LightGraphs.savegraph</code></strong> &mdash; <em>Method</em>.</p>
 <p>Save a graph to file. See <a href="./#LightGraphs.save"><code>save</code></a>.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/bf2ae4dd2c15d04fc4dfc861550be6be9f5381ce/docs/../src/persistence/common.jl#L67-L69' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/f9d531eb238b052aa306a156bd300542b420d6ea/docs/../src/persistence/common.jl#L67-L69' class='documenter-source'>source</a><br></p>
 <p><a id='Examples-1'></a></p>
 <h2 id="examples">Examples</h2>
 <pre><code class="julia">save(STDOUT, g)
