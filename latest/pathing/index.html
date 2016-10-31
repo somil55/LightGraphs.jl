@@ -378,29 +378,29 @@
 <strong><code>LightGraphs.bfs_tree</code></strong> &mdash; <em>Function</em>.</p>
 <p>Provides a breadth-first traversal of the graph <code>g</code> starting with source vertex <code>s</code>, and returns a directed acyclic graph of vertices in the order they were discovered.</p>
 <p>This function is a high level wrapper around bfs_tree!, use that function for more performance.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/c3fad06d21bb85c5b4685ccd1b23b2e5febd07c9/docs/../src/traversals/bfs.jl#L172-L177' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/f1703a01deab9d8c30e943de4d7341f670e24242/docs/../src/traversals/bfs.jl#L172-L177' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.dfs_tree' href='#LightGraphs.dfs_tree'>#</a>
 <strong><code>LightGraphs.dfs_tree</code></strong> &mdash; <em>Function</em>.</p>
 <pre><code>dfs_tree(g, s::Int)
 </code></pre>
 
 <p>Provides a depth-first traversal of the graph <code>g</code> starting with source vertex <code>s</code>, and returns a directed acyclic graph of vertices in the order they were discovered.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/c3fad06d21bb85c5b4685ccd1b23b2e5febd07c9/docs/../src/traversals/dfs.jl#L184-L189' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/f1703a01deab9d8c30e943de4d7341f670e24242/docs/../src/traversals/dfs.jl#L184-L189' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.maximum_adjacency_visit' href='#LightGraphs.maximum_adjacency_visit'>#</a>
 <strong><code>LightGraphs.maximum_adjacency_visit</code></strong> &mdash; <em>Function</em>.</p>
 <p>Returns the vertices in <code>g</code> traversed by maximum adjacency search. An optional <code>distmx</code> matrix may be specified; if omitted, edge distances are assumed to be 1. If <code>log</code> (default <code>false</code>) is <code>true</code>, visitor events will be printed to <code>io</code>, which defaults to <code>STDOUT</code>; otherwise, no event information will be displayed.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/c3fad06d21bb85c5b4685ccd1b23b2e5febd07c9/docs/../src/traversals/maxadjvisit.jl#L193-L199' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/f1703a01deab9d8c30e943de4d7341f670e24242/docs/../src/traversals/maxadjvisit.jl#L193-L199' class='documenter-source'>source</a><br></p>
 <p><a id='Random-walks-1'></a></p>
 <h2 id="random-walks">Random walks</h2>
 <p><em>LightGraphs</em> includes uniform random walks and self avoiding walks:</p>
 <p><a id='LightGraphs.randomwalk' href='#LightGraphs.randomwalk'>#</a>
 <strong><code>LightGraphs.randomwalk</code></strong> &mdash; <em>Function</em>.</p>
 <p>Performs a random walk on graph <code>g</code> starting at vertex <code>s</code> and continuing for a maximum of <code>niter</code> steps. Returns a vector of vertices visited in order.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/c3fad06d21bb85c5b4685ccd1b23b2e5febd07c9/docs/../src/traversals/randomwalks.jl#L1-L4' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/f1703a01deab9d8c30e943de4d7341f670e24242/docs/../src/traversals/randomwalks.jl#L1-L4' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.saw' href='#LightGraphs.saw'>#</a>
 <strong><code>LightGraphs.saw</code></strong> &mdash; <em>Function</em>.</p>
 <p>Performs a <a href="https://en.wikipedia.org/wiki/Self-avoiding_walk">self-avoiding walk</a> on graph <code>g</code> starting at vertex <code>s</code> and continuing for a maximum of <code>niter</code> steps. Returns a vector of vertices visited in order.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/c3fad06d21bb85c5b4685ccd1b23b2e5febd07c9/docs/../src/traversals/randomwalks.jl#L82-L86' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/f1703a01deab9d8c30e943de4d7341f670e24242/docs/../src/traversals/randomwalks.jl#L82-L86' class='documenter-source'>source</a><br></p>
 <p><a id='Connectivity-/-Bipartiteness-1'></a></p>
 <h2 id="connectivity-bipartiteness">Connectivity / Bipartiteness</h2>
 <p><code>Graph connectivity</code> functions are defined on both undirected and directed graphs:</p>
@@ -426,7 +426,7 @@ period
 </code></pre>
 
 <p>Tests whether a graph contains a cycle through depth-first search. It returns <code>true</code> when it finds a cycle, otherwise <code>false</code>.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/c3fad06d21bb85c5b4685ccd1b23b2e5febd07c9/docs/../src/traversals/dfs.jl#L115-L120' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/f1703a01deab9d8c30e943de4d7341f670e24242/docs/../src/traversals/dfs.jl#L115-L120' class='documenter-source'>source</a><br></p>
 <p><a id='Shortest-Path-Algorithms-1'></a></p>
 <h2 id="shortest-path-algorithms">Shortest-Path Algorithms</h2>
 <p><a id='General-properties-of-shortest-path-algorithms-1'></a></p>
@@ -438,21 +438,21 @@ period
 <p><a id='LightGraphs.a_star' href='#LightGraphs.a_star'>#</a>
 <strong><code>LightGraphs.a_star</code></strong> &mdash; <em>Function</em>.</p>
 <p>Computes the shortest path between vertices <code>s</code> and <code>t</code> using the <a href="http://en.wikipedia.org/wiki/A%2A_search_algorithm">A* search algorithm</a>. An optional heuristic function and edge distance matrix may be supplied.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/c3fad06d21bb85c5b4685ccd1b23b2e5febd07c9/docs/../src/shortestpaths/astar.jl#L39-L43' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/f1703a01deab9d8c30e943de4d7341f670e24242/docs/../src/shortestpaths/astar.jl#L39-L43' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.dijkstra_shortest_paths' href='#LightGraphs.dijkstra_shortest_paths'>#</a>
 <strong><code>LightGraphs.dijkstra_shortest_paths</code></strong> &mdash; <em>Function</em>.</p>
 <p>Performs <a href="http://en.wikipedia.org/wiki/Dijkstra%27s_algorithm">Dijkstra's algorithm</a> on a graph, computing shortest distances between a source vertex <code>s</code> and all other nodes. Returns a <code>DijkstraState</code> that contains various traversal information (see below).</p>
 <p>With <code>allpaths=true</code>, returns a <code>DijkstraState</code> that keeps track of all predecessors of a given vertex (see below).</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/c3fad06d21bb85c5b4685ccd1b23b2e5febd07c9/docs/../src/shortestpaths/dijkstra.jl#L17-L25' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/f1703a01deab9d8c30e943de4d7341f670e24242/docs/../src/shortestpaths/dijkstra.jl#L17-L25' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.bellman_ford_shortest_paths' href='#LightGraphs.bellman_ford_shortest_paths'>#</a>
 <strong><code>LightGraphs.bellman_ford_shortest_paths</code></strong> &mdash; <em>Function</em>.</p>
 <p>Uses the <a href="http://en.wikipedia.org/wiki/Bellman–Ford_algorithm">Bellman-Ford algorithm</a> to compute shortest paths between a source vertex <code>s</code> or a set of source vertices <code>ss</code>. Returns a <code>BellmanFordState</code> with relevant traversal information (see below).</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/c3fad06d21bb85c5b4685ccd1b23b2e5febd07c9/docs/../src/shortestpaths/bellman-ford.jl#L57-L62' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/f1703a01deab9d8c30e943de4d7341f670e24242/docs/../src/shortestpaths/bellman-ford.jl#L57-L62' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.floyd_warshall_shortest_paths' href='#LightGraphs.floyd_warshall_shortest_paths'>#</a>
 <strong><code>LightGraphs.floyd_warshall_shortest_paths</code></strong> &mdash; <em>Function</em>.</p>
 <p>Uses the <a href="http://en.wikipedia.org/wiki/Floyd–Warshall_algorithm">Floyd-Warshall algorithm</a> to compute shortest paths between all pairs of vertices in graph <code>g</code>. Returns a <code>FloydWarshallState</code> with relevant traversal information, each is a vertex-indexed vector of vectors containing the metric for each vertex in the graph.</p>
 <p>Note that this algorithm may return a large amount of data (it will allocate on the order of $\mathcal{O}(nv^2)$).</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/c3fad06d21bb85c5b4685ccd1b23b2e5febd07c9/docs/../src/shortestpaths/floyd-warshall.jl#L10' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/f1703a01deab9d8c30e943de4d7341f670e24242/docs/../src/shortestpaths/floyd-warshall.jl#L10' class='documenter-source'>source</a><br></p>
 <p><a id='Path-discovery-/-enumeration-1'></a></p>
 <h2 id="path-discovery-enumeration">Path discovery / enumeration</h2>
 <p><a id='LightGraphs.gdistances' href='#LightGraphs.gdistances'>#</a>
@@ -461,19 +461,19 @@ period
 </code></pre>
 
 <p>Returns a vector filled with the geodesic distances of vertices in  <code>g</code> from vertex/vertices <code>source</code>. For vertices in disconnected components the default distance is -1.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/c3fad06d21bb85c5b4685ccd1b23b2e5febd07c9/docs/../src/traversals/bfs.jl#L107-L112' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/f1703a01deab9d8c30e943de4d7341f670e24242/docs/../src/traversals/bfs.jl#L107-L112' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.gdistances!' href='#LightGraphs.gdistances!'>#</a>
 <strong><code>LightGraphs.gdistances!</code></strong> &mdash; <em>Function</em>.</p>
 <pre><code>gdistances!(g, source, dists) -&gt; dists
 </code></pre>
 
 <p>Fills <code>dists</code> with the geodesic distances of vertices in  <code>g</code> from vertex/vertices <code>source</code>. <code>dists</code> can be either a vector or a dictionary.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/c3fad06d21bb85c5b4685ccd1b23b2e5febd07c9/docs/../src/traversals/bfs.jl#L91-L96' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/f1703a01deab9d8c30e943de4d7341f670e24242/docs/../src/traversals/bfs.jl#L91-L96' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.enumerate_paths' href='#LightGraphs.enumerate_paths'>#</a>
 <strong><code>LightGraphs.enumerate_paths</code></strong> &mdash; <em>Function</em>.</p>
 <p>Given a path state <code>state</code> of type <code>AbstractPathState</code> (see below), returns a vector (indexed by vertex) of the paths between the source vertex used to compute the path state and a destination vertex <code>v</code>, a set of destination vertices <code>vs</code>, or the entire graph. For multiple destination vertices, each path is represented by a vector of vertices on the path between the source and the destination. Nonexistent paths will be indicated by an empty vector. For single destinations, the path is represented by a single vector of vertices, and will be length 0 if the path does not exist.</p>
 <p>For Floyd-Warshall path states, please note that the output is a bit different, since this algorithm calculates all shortest paths for all pairs of vertices: <code>enumerate_paths(state)</code> will return a vector (indexed by source vertex) of vectors (indexed by destination vertex) of paths. <code>enumerate_paths(state, v)</code> will return a vector (indexed by destination vertex) of paths from source <code>v</code> to all other vertices. In addition, <code>enumerate_paths(state, v, d)</code> will return a vector representing the path from vertex <code>v</code> to vertex <code>d</code>.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/c3fad06d21bb85c5b4685ccd1b23b2e5febd07c9/docs/../src/shortestpaths/bellman-ford.jl#L111-L128' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/f1703a01deab9d8c30e943de4d7341f670e24242/docs/../src/shortestpaths/bellman-ford.jl#L111-L128' class='documenter-source'>source</a><br></p>
 <p>For Floyd-Warshall path states, please note that the output is a bit different, since this algorithm calculates all shortest paths for all pairs of vertices: <code>enumerate_paths(state)</code> will return a vector (indexed by source vertex) of vectors (indexed by destination vertex) of paths. <code>enumerate_paths(state, v)</code> will return a vector (indexed by destination vertex) of paths from source <code>v</code> to all other vertices. In addition, <code>enumerate_paths(state, v, d)</code> will return a vector representing the path from vertex <code>v</code> to vertex <code>d</code>.</p>
 <p><a id='Path-States-1'></a></p>
 <h3 id="path-states">Path States</h3>
