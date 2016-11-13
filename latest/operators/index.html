@@ -342,7 +342,7 @@
 
 <p>Produces a graph with $|V(g)| + |V(h)|$ vertices and $|E(g)| + |E(h)|$ edges.</p>
 <p>Put simply, the vertices and edges from graph <code>h</code> are appended to graph <code>g</code>.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/956d14a0f640f8ed9337d054dc8a5974d3ef9bc0/docs/../src/operators.jl#L61' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/21eca24855658917699ef601214137e03aa0845d/docs/../src/operators.jl#L61' class='documenter-source'>source</a><br></p>
 <p><a id='Base.intersect-Tuple{T<:Union{LightGraphs.DiGraph,LightGraphs.Graph},T<:Union{LightGraphs.DiGraph,LightGraphs.Graph}}' href='#Base.intersect-Tuple{T<:Union{LightGraphs.DiGraph,LightGraphs.Graph},T<:Union{LightGraphs.DiGraph,LightGraphs.Graph}}'>#</a>
 <strong><code>Base.intersect</code></strong> &mdash; <em>Method</em>.</p>
 <pre><code>intersect(g, h)
@@ -350,56 +350,56 @@
 
 <p>Produces a graph with edges that are only in both graph <code>g</code> and graph <code>h</code>.</p>
 <p>Note that this function may produce a graph with 0-degree vertices.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/956d14a0f640f8ed9337d054dc8a5974d3ef9bc0/docs/../src/operators.jl#L81-L87' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/21eca24855658917699ef601214137e03aa0845d/docs/../src/operators.jl#L81-L87' class='documenter-source'>source</a><br></p>
 <p><a id='Base.join-Tuple{LightGraphs.Graph,LightGraphs.Graph}' href='#Base.join-Tuple{LightGraphs.Graph,LightGraphs.Graph}'>#</a>
 <strong><code>Base.join</code></strong> &mdash; <em>Method</em>.</p>
 <pre><code>join(g, h)
 </code></pre>
 
 <p>Merges graphs <code>g</code> and <code>h</code> using <code>blkdiag</code> and then adds all the edges between  the vertices in <code>g</code> and those in <code>h</code>.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/956d14a0f640f8ed9337d054dc8a5974d3ef9bc0/docs/../src/operators.jl#L163-L168' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/21eca24855658917699ef601214137e03aa0845d/docs/../src/operators.jl#L163-L168' class='documenter-source'>source</a><br></p>
 <p><a id='Base.reverse!-Tuple{LightGraphs.DiGraph}' href='#Base.reverse!-Tuple{LightGraphs.DiGraph}'>#</a>
 <strong><code>Base.reverse!</code></strong> &mdash; <em>Method</em>.</p>
 <pre><code>reverse!(g::DiGraph)
 </code></pre>
 
 <p>In-place reverse (modifies the original graph).</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/956d14a0f640f8ed9337d054dc8a5974d3ef9bc0/docs/../src/operators.jl#L51-L55' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/21eca24855658917699ef601214137e03aa0845d/docs/../src/operators.jl#L51-L55' class='documenter-source'>source</a><br></p>
 <p><a id='Base.reverse-Tuple{LightGraphs.DiGraph}' href='#Base.reverse-Tuple{LightGraphs.DiGraph}'>#</a>
 <strong><code>Base.reverse</code></strong> &mdash; <em>Method</em>.</p>
 <pre><code>reverse(g::DiGraph)
 </code></pre>
 
 <p>Produces a graph where all edges are reversed from the original.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/956d14a0f640f8ed9337d054dc8a5974d3ef9bc0/docs/../src/operators.jl#L33-L38' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/21eca24855658917699ef601214137e03aa0845d/docs/../src/operators.jl#L33-L38' class='documenter-source'>source</a><br></p>
 <p><a id='Base.union-Tuple{T<:Union{LightGraphs.DiGraph,LightGraphs.Graph},T<:Union{LightGraphs.DiGraph,LightGraphs.Graph}}' href='#Base.union-Tuple{T<:Union{LightGraphs.DiGraph,LightGraphs.Graph},T<:Union{LightGraphs.DiGraph,LightGraphs.Graph}}'>#</a>
 <strong><code>Base.union</code></strong> &mdash; <em>Method</em>.</p>
 <pre><code>union(g, h)
 </code></pre>
 
 <p>Merges graphs <code>g</code> and <code>h</code> by taking the set union of all vertices and edges.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/956d14a0f640f8ed9337d054dc8a5974d3ef9bc0/docs/../src/operators.jl#L139-L143' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/21eca24855658917699ef601214137e03aa0845d/docs/../src/operators.jl#L139-L143' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.cartesian_product-Tuple{G<:Union{LightGraphs.DiGraph,LightGraphs.Graph},G<:Union{LightGraphs.DiGraph,LightGraphs.Graph}}' href='#LightGraphs.cartesian_product-Tuple{G<:Union{LightGraphs.DiGraph,LightGraphs.Graph},G<:Union{LightGraphs.DiGraph,LightGraphs.Graph}}'>#</a>
 <strong><code>LightGraphs.cartesian_product</code></strong> &mdash; <em>Method</em>.</p>
 <pre><code>cartesian_product(g, h)
 </code></pre>
 
 <p>Returns the (cartesian product)[https://en.wikipedia.org/wiki/Tensor_product_of_graphs] of <code>g</code> and <code>h</code></p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/956d14a0f640f8ed9337d054dc8a5974d3ef9bc0/docs/../src/operators.jl#L239-L243' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/21eca24855658917699ef601214137e03aa0845d/docs/../src/operators.jl#L239-L243' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.complement-Tuple{LightGraphs.Graph}' href='#LightGraphs.complement-Tuple{LightGraphs.Graph}'>#</a>
 <strong><code>LightGraphs.complement</code></strong> &mdash; <em>Method</em>.</p>
 <pre><code>complement(g)
 </code></pre>
 
 <p>Produces the <a href="https://en.wikipedia.org/wiki/Complement_graph">graph complement</a> of a graph.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/956d14a0f640f8ed9337d054dc8a5974d3ef9bc0/docs/../src/operators.jl#L1-L6' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/21eca24855658917699ef601214137e03aa0845d/docs/../src/operators.jl#L1-L6' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.crosspath-Tuple{Integer,LightGraphs.Graph}' href='#LightGraphs.crosspath-Tuple{Integer,LightGraphs.Graph}'>#</a>
 <strong><code>LightGraphs.crosspath</code></strong> &mdash; <em>Method</em>.</p>
 <pre><code>crosspath(len::Integer, g::Graph)
 </code></pre>
 
 <p>Replicate <code>len</code> times <code>h</code> and connect each vertex with its copies in a path</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/956d14a0f640f8ed9337d054dc8a5974d3ef9bc0/docs/../src/operators.jl#L180-L184' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/21eca24855658917699ef601214137e03aa0845d/docs/../src/operators.jl#L180-L184' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.difference-Tuple{T<:Union{LightGraphs.DiGraph,LightGraphs.Graph},T<:Union{LightGraphs.DiGraph,LightGraphs.Graph}}' href='#LightGraphs.difference-Tuple{T<:Union{LightGraphs.DiGraph,LightGraphs.Graph},T<:Union{LightGraphs.DiGraph,LightGraphs.Graph}}'>#</a>
 <strong><code>LightGraphs.difference</code></strong> &mdash; <em>Method</em>.</p>
 <pre><code>difference(g, h)
@@ -407,14 +407,14 @@
 
 <p>Produces a graph with edges in graph <code>g</code> that are not in graph <code>h</code>.</p>
 <p>Note that this function may produce a graph with 0-degree vertices.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/956d14a0f640f8ed9337d054dc8a5974d3ef9bc0/docs/../src/operators.jl#L99-L105' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/21eca24855658917699ef601214137e03aa0845d/docs/../src/operators.jl#L99-L105' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.egonet-Tuple{Union{LightGraphs.DiGraph,LightGraphs.Graph},Int64,Int64}' href='#LightGraphs.egonet-Tuple{Union{LightGraphs.DiGraph,LightGraphs.Graph},Int64,Int64}'>#</a>
 <strong><code>LightGraphs.egonet</code></strong> &mdash; <em>Method</em>.</p>
 <pre><code>egonet(g, v::Int, d::Int; dir=:out)
 </code></pre>
 
 <p>Returns the subgraph of <code>g</code> induced by the neighbors of <code>v</code> up to distance <code>d</code>. If <code>g</code> is a <code>DiGraph</code> the <code>dir</code> optional argument specifies the edge direction the edge direction with respect to <code>v</code> (i.e. <code>:in</code> or <code>:out</code>) to be considered. This is equivalent to <a href="./#LightGraphs.induced_subgraph-Tuple{T&lt;:Union{LightGraphs.DiGraph,LightGraphs.Graph},AbstractArray{Int64,1}}"><code>induced_subgraph</code></a><code>(g, neighborhood(g, v, d, dir=dir))[1].</code></p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/956d14a0f640f8ed9337d054dc8a5974d3ef9bc0/docs/../src/operators.jl#L369-L376' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/21eca24855658917699ef601214137e03aa0845d/docs/../src/operators.jl#L369-L376' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.induced_subgraph-Tuple{T<:Union{LightGraphs.DiGraph,LightGraphs.Graph},AbstractArray{Int64,1}}' href='#LightGraphs.induced_subgraph-Tuple{T<:Union{LightGraphs.DiGraph,LightGraphs.Graph},AbstractArray{Int64,1}}'>#</a>
 <strong><code>LightGraphs.induced_subgraph</code></strong> &mdash; <em>Method</em>.</p>
 <pre><code>induced_subgraph(g, vlist)
@@ -443,7 +443,7 @@ sg, vmap = subgraph(g, elist)
 @asssert sg == g[elist]
 </code></pre>
 
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/956d14a0f640f8ed9337d054dc8a5974d3ef9bc0/docs/../src/operators.jl#L281-L316' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/21eca24855658917699ef601214137e03aa0845d/docs/../src/operators.jl#L281-L316' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.symmetric_difference-Tuple{T<:Union{LightGraphs.DiGraph,LightGraphs.Graph},T<:Union{LightGraphs.DiGraph,LightGraphs.Graph}}' href='#LightGraphs.symmetric_difference-Tuple{T<:Union{LightGraphs.DiGraph,LightGraphs.Graph},T<:Union{LightGraphs.DiGraph,LightGraphs.Graph}}'>#</a>
 <strong><code>LightGraphs.symmetric_difference</code></strong> &mdash; <em>Method</em>.</p>
 <pre><code>symmetric_difference(g, h)
@@ -451,14 +451,14 @@ sg, vmap = subgraph(g, elist)
 
 <p>Produces a graph with edges from graph <code>g</code> that do not exist in graph <code>h</code>, and vice versa.</p>
 <p>Note that this function may produce a graph with 0-degree vertices.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/956d14a0f640f8ed9337d054dc8a5974d3ef9bc0/docs/../src/operators.jl#L117-L124' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/21eca24855658917699ef601214137e03aa0845d/docs/../src/operators.jl#L117-L124' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.tensor_product-Tuple{G<:Union{LightGraphs.DiGraph,LightGraphs.Graph},G<:Union{LightGraphs.DiGraph,LightGraphs.Graph}}' href='#LightGraphs.tensor_product-Tuple{G<:Union{LightGraphs.DiGraph,LightGraphs.Graph},G<:Union{LightGraphs.DiGraph,LightGraphs.Graph}}'>#</a>
 <strong><code>LightGraphs.tensor_product</code></strong> &mdash; <em>Method</em>.</p>
 <pre><code>tensor_product(g, h)
 </code></pre>
 
 <p>Returns the (tensor product)[https://en.wikipedia.org/wiki/Tensor_product_of_graphs] of <code>g</code> and <code>h</code></p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/956d14a0f640f8ed9337d054dc8a5974d3ef9bc0/docs/../src/operators.jl#L262-L266' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/21eca24855658917699ef601214137e03aa0845d/docs/../src/operators.jl#L262-L266' class='documenter-source'>source</a><br></p>
           <aside class="copyright" role="note">
             
             Documentation built with
