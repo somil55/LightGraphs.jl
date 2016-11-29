@@ -369,36 +369,36 @@ end
 <p>The assignement is stored in nodemap and the block affinities a <code>k</code> by <code>k</code> matrix is stored in affinities.</p>
 <p><code>affinities[k,l]</code> is the probability of an edge between any vertex in block k and any vertex in block <code>l</code>.</p>
 <p>We are generating the graphs by taking random <code>i,j in vertices(g)</code> and flipping a coin with probability <code>affinities[nodemap[i],nodemap[j]]</code>.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/2efd363b4de988a1127739b4ac851141617975fd/docs/../src/generators/randgraphs.jl#L555-L575' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/e3d9cbbbdd8c6a58e3debe74bfc4996fb1a05b4c/docs/../src/generators/randgraphs.jl#L555-L575' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.StochasticBlockModel-Tuple{Array{T,1},Array{P,2}}' href='#LightGraphs.StochasticBlockModel-Tuple{Array{T,1},Array{P,2}}'>#</a>
 <strong><code>LightGraphs.StochasticBlockModel</code></strong> &mdash; <em>Method</em>.</p>
 <p>A constructor for StochasticBlockModel that uses the sizes of the blocks and the affinity matrix. This construction implies that consecutive vertices will be in the same blocks, except for the block boundaries.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/2efd363b4de988a1127739b4ac851141617975fd/docs/../src/generators/randgraphs.jl#L586-L590' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/e3d9cbbbdd8c6a58e3debe74bfc4996fb1a05b4c/docs/../src/generators/randgraphs.jl#L586-L590' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.barabasi_albert!-Tuple{Union{LightGraphs.DiGraph,LightGraphs.Graph},Integer,Integer}' href='#LightGraphs.barabasi_albert!-Tuple{Union{LightGraphs.DiGraph,LightGraphs.Graph},Integer,Integer}'>#</a>
 <strong><code>LightGraphs.barabasi_albert!</code></strong> &mdash; <em>Method</em>.</p>
 <pre><code>barabasi_albert!(g::SimpleGraph, n::Integer, k::Integer; seed::Int = -1)
 </code></pre>
 
 <p>Creates a <a href="https://en.wikipedia.org/wiki/Barab%C3%A1si%E2%80%93Albert_model">Barabási–Albert model</a> random graph with <code>n</code> vertices. It is grown by adding new vertices to an initial graph <code>g</code>. Each new vertex is attached with <code>k</code> edges to <code>k</code> different vertices already present in the system by preferential attachment.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/2efd363b4de988a1127739b4ac851141617975fd/docs/../src/generators/randgraphs.jl#L183-L190' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/e3d9cbbbdd8c6a58e3debe74bfc4996fb1a05b4c/docs/../src/generators/randgraphs.jl#L183-L190' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.barabasi_albert-Tuple{Integer,Integer,Integer}' href='#LightGraphs.barabasi_albert-Tuple{Integer,Integer,Integer}'>#</a>
 <strong><code>LightGraphs.barabasi_albert</code></strong> &mdash; <em>Method</em>.</p>
 <pre><code>barabasi_albert(n::Integer, n0::Integer, k::Integer; is_directed::Bool = false, complete::Bool = false, seed::Int = -1)
 </code></pre>
 
 <p>Creates a <a href="https://en.wikipedia.org/wiki/Barab%C3%A1si%E2%80%93Albert_model">Barabási–Albert model</a> random graph with <code>n</code> vertices. It is grown by adding new vertices to an initial graph with <code>n0</code> vertices. Each new vertex is attached with <code>k</code> edges to <code>k</code> different vertices already present in the system by preferential attachment. Initial graphs are undirected and consist of isolated vertices by default; use <code>is_directed=true</code> and <code>complete=true</code> for directed and complete initial graphs.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/2efd363b4de988a1127739b4ac851141617975fd/docs/../src/generators/randgraphs.jl#L162-L171' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/e3d9cbbbdd8c6a58e3debe74bfc4996fb1a05b4c/docs/../src/generators/randgraphs.jl#L162-L171' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.barabasi_albert-Tuple{Integer,Integer}' href='#LightGraphs.barabasi_albert-Tuple{Integer,Integer}'>#</a>
 <strong><code>LightGraphs.barabasi_albert</code></strong> &mdash; <em>Method</em>.</p>
 <pre><code>barabasi_albert(n::Integer, k::Integer; is_directed::Bool = false, complete::Bool = false, seed::Int = -1)
 </code></pre>
 
 <p>Creates a <a href="https://en.wikipedia.org/wiki/Barab%C3%A1si%E2%80%93Albert_model">Barabási–Albert model</a> random graph with <code>n</code> vertices. It is grown by adding new vertices to an initial graph with <code>k</code> vertices. Each new vertex is attached with <code>k</code> edges to <code>k</code> different vertices already present in the system by preferential attachment. Initial graphs are undirected and consist of isolated vertices by default; use <code>is_directed=true</code> and <code>complete=true</code> for directed and complete initial graphs.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/2efd363b4de988a1127739b4ac851141617975fd/docs/../src/generators/randgraphs.jl#L149-L158' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/e3d9cbbbdd8c6a58e3debe74bfc4996fb1a05b4c/docs/../src/generators/randgraphs.jl#L149-L158' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.blockcounts-Tuple{LightGraphs.StochasticBlockModel,AbstractArray{T,2}}' href='#LightGraphs.blockcounts-Tuple{LightGraphs.StochasticBlockModel,AbstractArray{T,2}}'>#</a>
 <strong><code>LightGraphs.blockcounts</code></strong> &mdash; <em>Method</em>.</p>
 <p>counts the number of edges that go between each block</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/2efd363b4de988a1127739b4ac851141617975fd/docs/../src/generators/randgraphs.jl#L700' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/e3d9cbbbdd8c6a58e3debe74bfc4996fb1a05b4c/docs/../src/generators/randgraphs.jl#L700' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.erdos_renyi-Tuple{Integer,Real}' href='#LightGraphs.erdos_renyi-Tuple{Integer,Real}'>#</a>
 <strong><code>LightGraphs.erdos_renyi</code></strong> &mdash; <em>Method</em>.</p>
 <pre><code>erdos_renyi(n::Integer, p::Real; is_directed=false, seed=-1)
@@ -407,14 +407,14 @@ erdos_renyi(n::Integer, ne::Integer; is_directed=false, seed=-1)
 
 <p>Creates an <a href="http://en.wikipedia.org/wiki/Erdős–Rényi_model">Erdős–Rényi</a> random graph with <code>n</code> vertices. Edges are added between pairs of vertices with probability <code>p</code>. Undirected graphs are created by default; use <code>is_directed=true</code> to override.</p>
 <p>Note also that Erdős–Rényi graphs may be generated quickly using <code>erdos_renyi(n, ne)</code> or the  <code>Graph(nv, ne)</code> constructor, which randomly select <code>ne</code> edges among all the potential edges.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/2efd363b4de988a1127739b4ac851141617975fd/docs/../src/generators/randgraphs.jl#L31-L43' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/e3d9cbbbdd8c6a58e3debe74bfc4996fb1a05b4c/docs/../src/generators/randgraphs.jl#L31-L43' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.make_edgestream-Tuple{LightGraphs.StochasticBlockModel}' href='#LightGraphs.make_edgestream-Tuple{LightGraphs.StochasticBlockModel}'>#</a>
 <strong><code>LightGraphs.make_edgestream</code></strong> &mdash; <em>Method</em>.</p>
 <pre><code>make_edgestream(sbm::StochasticBlockModel)
 </code></pre>
 
 <p>Take an infinite sample from the sbm. Pass to <code>Graph(nvg, neg, edgestream)</code> to get a Graph object.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/2efd363b4de988a1127739b4ac851141617975fd/docs/../src/generators/randgraphs.jl#L666-L671' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/e3d9cbbbdd8c6a58e3debe74bfc4996fb1a05b4c/docs/../src/generators/randgraphs.jl#L666-L671' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.random_configuration_model-Tuple{Int64,Array{Int64,N}}' href='#LightGraphs.random_configuration_model-Tuple{Int64,Array{Int64,N}}'>#</a>
 <strong><code>LightGraphs.random_configuration_model</code></strong> &mdash; <em>Method</em>.</p>
 <pre><code>random_configuration_model(n::Int, k::Array{Int}; seed=-1, check_graphical=false)
@@ -423,7 +423,7 @@ erdos_renyi(n::Integer, ne::Integer; is_directed=false, seed=-1)
 <p>Creates a random undirected graph according to the <a href="http://tuvalu.santafe.edu/~aaronc/courses/5352/fall2013/csci5352_2013_L11.pdf">configuration model</a>. It contains <code>n</code> vertices, the vertex <code>i</code> having degree <code>k[i]</code>.</p>
 <p>Defining <code>c = mean(k)</code>, it allocates an array of <code>nc</code> <code>Int</code>s, and takes approximately $nc^2$ time.</p>
 <p>If <code>check_graphical=true</code> makes sure that <code>k</code> is a graphical sequence (see <code>isgraphical</code>).</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/2efd363b4de988a1127739b4ac851141617975fd/docs/../src/generators/randgraphs.jl#L420' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/e3d9cbbbdd8c6a58e3debe74bfc4996fb1a05b4c/docs/../src/generators/randgraphs.jl#L420' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.random_regular_digraph-Tuple{Int64,Int64}' href='#LightGraphs.random_regular_digraph-Tuple{Int64,Int64}'>#</a>
 <strong><code>LightGraphs.random_regular_digraph</code></strong> &mdash; <em>Method</em>.</p>
 <pre><code>random_regular_digraph(n::Int, k::Int; dir::Symbol=:out, seed=-1)
@@ -431,7 +431,7 @@ erdos_renyi(n::Integer, ne::Integer; is_directed=false, seed=-1)
 
 <p>Creates a random directed <a href="https://en.wikipedia.org/wiki/Regular_graph">regular graph</a> with <code>n</code> vertices, each with degree <code>k</code>. The degree (in or out) can be specified using <code>dir=:in</code> or <code>dir=:out</code>. The default is <code>dir=:out</code>.</p>
 <p>For directed graphs, allocates an $n \times n$ sparse matrix of boolean as an adjacency matrix and uses that to generate the directed graph.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/2efd363b4de988a1127739b4ac851141617975fd/docs/../src/generators/randgraphs.jl#L456' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/e3d9cbbbdd8c6a58e3debe74bfc4996fb1a05b4c/docs/../src/generators/randgraphs.jl#L456' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.random_regular_graph-Tuple{Int64,Int64}' href='#LightGraphs.random_regular_graph-Tuple{Int64,Int64}'>#</a>
 <strong><code>LightGraphs.random_regular_graph</code></strong> &mdash; <em>Method</em>.</p>
 <pre><code>random_regular_graph(n::Int, k::Int; seed=-1)
@@ -439,7 +439,7 @@ erdos_renyi(n::Integer, ne::Integer; is_directed=false, seed=-1)
 
 <p>Creates a random undirected <a href="https://en.wikipedia.org/wiki/Regular_graph">regular graph</a> with <code>n</code> vertices, each with degree <code>k</code>.</p>
 <p>For undirected graphs, allocates an array of <code>nk</code> <code>Int</code>s, and takes approximately $nk^2$ time. For $k &gt; n/2$, generates a graph of degree <code>n-k-1</code> and returns its complement.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/2efd363b4de988a1127739b4ac851141617975fd/docs/../src/generators/randgraphs.jl#L383' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/e3d9cbbbdd8c6a58e3debe74bfc4996fb1a05b4c/docs/../src/generators/randgraphs.jl#L383' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.static_fitness_model-Tuple{Int64,Array{T<:Real,1}}' href='#LightGraphs.static_fitness_model-Tuple{Int64,Array{T<:Real,1}}'>#</a>
 <strong><code>LightGraphs.static_fitness_model</code></strong> &mdash; <em>Method</em>.</p>
 <pre><code>static_fitness_model{T&lt;:Real}(m::Int, fitness::Vector{T}; seed::Int=-1)
@@ -451,7 +451,7 @@ erdos_renyi(n::Integer, ne::Integer; is_directed=false, seed=-1)
 <li>Goh K-I, Kahng B, Kim D: Universal behaviour of load distribution</li>
 </ul>
 <p>in scale-free networks. Phys Rev Lett 87(27):278701, 2001.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/2efd363b4de988a1127739b4ac851141617975fd/docs/../src/generators/randgraphs.jl#L259-L270' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/e3d9cbbbdd8c6a58e3debe74bfc4996fb1a05b4c/docs/../src/generators/randgraphs.jl#L259-L270' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.static_scale_free-Tuple{Int64,Int64,Float64}' href='#LightGraphs.static_scale_free-Tuple{Int64,Int64,Float64}'>#</a>
 <strong><code>LightGraphs.static_scale_free</code></strong> &mdash; <em>Method</em>.</p>
 <pre><code>function static_scale_free(n::Int, m::Int, α::Float64; seed::Int=-1, finite_size_correction::Bool=true)
@@ -464,7 +464,7 @@ erdos_renyi(n::Integer, ne::Integer; is_directed=false, seed=-1)
 <li>Chung F and Lu L: Connected components in a random graph with given degree sequences. Annals of Combinatorics 6, 125-145, 2002.</li>
 <li>Cho YS, Kim JS, Park J, Kahng B, Kim D: Percolation transitions in scale-free networks under the Achlioptas process. Phys Rev Lett 103:135702, 2009.</li>
 </ul>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/2efd363b4de988a1127739b4ac851141617975fd/docs/../src/generators/randgraphs.jl#L331-L347' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/e3d9cbbbdd8c6a58e3debe74bfc4996fb1a05b4c/docs/../src/generators/randgraphs.jl#L331-L347' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.stochastic_block_model-Tuple{Array{T<:Real,2},Array{Int64,1}}' href='#LightGraphs.stochastic_block_model-Tuple{Array{T<:Real,2},Array{Int64,1}}'>#</a>
 <strong><code>LightGraphs.stochastic_block_model</code></strong> &mdash; <em>Method</em>.</p>
 <pre><code>stochastic_block_model(c::Matrix{Float64}, n::Vector{Int}; seed::Int = -1)
@@ -475,81 +475,81 @@ stochastic_block_model(cin::Float64, coff::Float64, n::Vector{Int}; seed::Int = 
 <p><code>c[a,b]</code> : Mean number of neighbors of a vertex in block <code>a</code> belonging to block <code>b</code>.            Only the upper triangular part is considered, since the lower traingular is            determined by $c[b,a] = c[a,b] * n[a]/n[b]$. <code>n[a]</code> : Number of vertices in block <code>a</code></p>
 <p>The second form samples from a SBM with <code>c[a,a]=cin</code>, and <code>c[a,b]=coff</code>.</p>
 <p>For a dynamic version of the SBM see the <code>StochasticBlockModel</code> type and related functions.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/2efd363b4de988a1127739b4ac851141617975fd/docs/../src/generators/randgraphs.jl#L497' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/e3d9cbbbdd8c6a58e3debe74bfc4996fb1a05b4c/docs/../src/generators/randgraphs.jl#L497' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.watts_strogatz-Tuple{Integer,Integer,Real}' href='#LightGraphs.watts_strogatz-Tuple{Integer,Integer,Real}'>#</a>
 <strong><code>LightGraphs.watts_strogatz</code></strong> &mdash; <em>Method</em>.</p>
 <p>Creates a <a href="https://en.wikipedia.org/wiki/Watts_and_Strogatz_model">Watts-Strogatz</a> small model random graph with <code>n</code> vertices, each with degree <code>k</code>. Edges are randomized per the model based on probability <code>β</code>. Undirected graphs are created by default; use <code>is_directed=true</code> to override.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/2efd363b4de988a1127739b4ac851141617975fd/docs/../src/generators/randgraphs.jl#L59-L64' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/e3d9cbbbdd8c6a58e3debe74bfc4996fb1a05b4c/docs/../src/generators/randgraphs.jl#L59-L64' class='documenter-source'>source</a><br></p>
 <p><a id='Static-Graphs-1'></a></p>
 <h2 id="static-graphs">Static Graphs</h2>
 <p><em>LightGraphs.jl</em> also implements a collection of classic graph generators:</p>
 <p><a id='LightGraphs.BinaryTree-Tuple{Int64}' href='#LightGraphs.BinaryTree-Tuple{Int64}'>#</a>
 <strong><code>LightGraphs.BinaryTree</code></strong> &mdash; <em>Method</em>.</p>
 <p>create a binary tree with k-levels vertices are numbered 1:2^levels-1</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/2efd363b4de988a1127739b4ac851141617975fd/docs/../src/generators/staticgraphs.jl#L150' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/e3d9cbbbdd8c6a58e3debe74bfc4996fb1a05b4c/docs/../src/generators/staticgraphs.jl#L150' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.CliqueGraph-Tuple{Integer,Integer}' href='#LightGraphs.CliqueGraph-Tuple{Integer,Integer}'>#</a>
 <strong><code>LightGraphs.CliqueGraph</code></strong> &mdash; <em>Method</em>.</p>
 <p>This function generates <code>n</code> connected k-cliques </p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/2efd363b4de988a1127739b4ac851141617975fd/docs/../src/generators/staticgraphs.jl#L186' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/e3d9cbbbdd8c6a58e3debe74bfc4996fb1a05b4c/docs/../src/generators/staticgraphs.jl#L186' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.CompleteBipartiteGraph-Tuple{Integer,Integer}' href='#LightGraphs.CompleteBipartiteGraph-Tuple{Integer,Integer}'>#</a>
 <strong><code>LightGraphs.CompleteBipartiteGraph</code></strong> &mdash; <em>Method</em>.</p>
 <p>Creates a complete bipartite graph with <code>n1+n2</code> vertices. It has edges connecting each pair of vertices in the two sets.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/2efd363b4de988a1127739b4ac851141617975fd/docs/../src/generators/staticgraphs.jl#L18-L21' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/e3d9cbbbdd8c6a58e3debe74bfc4996fb1a05b4c/docs/../src/generators/staticgraphs.jl#L18-L21' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.CompleteDiGraph-Tuple{Integer}' href='#LightGraphs.CompleteDiGraph-Tuple{Integer}'>#</a>
 <strong><code>LightGraphs.CompleteDiGraph</code></strong> &mdash; <em>Method</em>.</p>
 <p>Creates a complete digraph with <code>n</code> vertices. A complete digraph has edges connecting each pair of vertices (both an ingoing and outgoing edge).</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/2efd363b4de988a1127739b4ac851141617975fd/docs/../src/generators/staticgraphs.jl#L29-L32' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/e3d9cbbbdd8c6a58e3debe74bfc4996fb1a05b4c/docs/../src/generators/staticgraphs.jl#L29-L32' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.CompleteGraph-Tuple{Integer}' href='#LightGraphs.CompleteGraph-Tuple{Integer}'>#</a>
 <strong><code>LightGraphs.CompleteGraph</code></strong> &mdash; <em>Method</em>.</p>
 <p>Creates a complete graph with <code>n</code> vertices. A complete graph has edges connecting each pair of vertices.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/2efd363b4de988a1127739b4ac851141617975fd/docs/../src/generators/staticgraphs.jl#L4-L7' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/e3d9cbbbdd8c6a58e3debe74bfc4996fb1a05b4c/docs/../src/generators/staticgraphs.jl#L4-L7' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.CycleDiGraph-Tuple{Integer}' href='#LightGraphs.CycleDiGraph-Tuple{Integer}'>#</a>
 <strong><code>LightGraphs.CycleDiGraph</code></strong> &mdash; <em>Method</em>.</p>
 <p>Creates a cycle digraph with <code>n</code> vertices. A cycle digraph is a closed path digraph.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/2efd363b4de988a1127739b4ac851141617975fd/docs/../src/generators/staticgraphs.jl#L95-L97' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/e3d9cbbbdd8c6a58e3debe74bfc4996fb1a05b4c/docs/../src/generators/staticgraphs.jl#L95-L97' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.CycleGraph-Tuple{Integer}' href='#LightGraphs.CycleGraph-Tuple{Integer}'>#</a>
 <strong><code>LightGraphs.CycleGraph</code></strong> &mdash; <em>Method</em>.</p>
 <p>Creates a cycle graph with <code>n</code> vertices. A cycle graph is a closed path graph.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/2efd363b4de988a1127739b4ac851141617975fd/docs/../src/generators/staticgraphs.jl#L84-L86' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/e3d9cbbbdd8c6a58e3debe74bfc4996fb1a05b4c/docs/../src/generators/staticgraphs.jl#L84-L86' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.DoubleBinaryTree-Tuple{Int64}' href='#LightGraphs.DoubleBinaryTree-Tuple{Int64}'>#</a>
 <strong><code>LightGraphs.DoubleBinaryTree</code></strong> &mdash; <em>Method</em>.</p>
 <p>create a double complete binary tree with k-levels used as an example for spectral clustering by Guattery and Miller 1998.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/2efd363b4de988a1127739b4ac851141617975fd/docs/../src/generators/staticgraphs.jl#L162-L164' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/e3d9cbbbdd8c6a58e3debe74bfc4996fb1a05b4c/docs/../src/generators/staticgraphs.jl#L162-L164' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.Grid-Tuple{AbstractArray{T<:Integer,1}}' href='#LightGraphs.Grid-Tuple{AbstractArray{T<:Integer,1}}'>#</a>
 <strong><code>LightGraphs.Grid</code></strong> &mdash; <em>Method</em>.</p>
 <pre><code>Grid{T&lt;:Integer}(dims::AbstractVector{T}; periodic=false)
 </code></pre>
 
 <p>Creates a <code>d</code>-dimensional cubic lattice, with <code>d=length(dims)</code> and length  <code>dims[i]</code> in dimension <code>i</code>. If <code>periodic=true</code> the resulting lattice will have periodic boundary condition in each dimension.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/2efd363b4de988a1127739b4ac851141617975fd/docs/../src/generators/staticgraphs.jl#L135-L140' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/e3d9cbbbdd8c6a58e3debe74bfc4996fb1a05b4c/docs/../src/generators/staticgraphs.jl#L135-L140' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.PathDiGraph-Tuple{Integer}' href='#LightGraphs.PathDiGraph-Tuple{Integer}'>#</a>
 <strong><code>LightGraphs.PathDiGraph</code></strong> &mdash; <em>Method</em>.</p>
 <p>Creates a path digraph with <code>n</code> vertices. A path graph connects each successive vertex by a single directed edge.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/2efd363b4de988a1127739b4ac851141617975fd/docs/../src/generators/staticgraphs.jl#L74-L76' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/e3d9cbbbdd8c6a58e3debe74bfc4996fb1a05b4c/docs/../src/generators/staticgraphs.jl#L74-L76' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.PathGraph-Tuple{Integer}' href='#LightGraphs.PathGraph-Tuple{Integer}'>#</a>
 <strong><code>LightGraphs.PathGraph</code></strong> &mdash; <em>Method</em>.</p>
 <p>Creates a path graph with <code>n</code> vertices. A path graph connects each successive vertex by a single edge.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/2efd363b4de988a1127739b4ac851141617975fd/docs/../src/generators/staticgraphs.jl#L64-L66' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/e3d9cbbbdd8c6a58e3debe74bfc4996fb1a05b4c/docs/../src/generators/staticgraphs.jl#L64-L66' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.RoachGraph-Tuple{Int64}' href='#LightGraphs.RoachGraph-Tuple{Int64}'>#</a>
 <strong><code>LightGraphs.RoachGraph</code></strong> &mdash; <em>Method</em>.</p>
 <p>The Roach Graph from Guattery and Miller 1998</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/2efd363b4de988a1127739b4ac851141617975fd/docs/../src/generators/staticgraphs.jl#L173' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/e3d9cbbbdd8c6a58e3debe74bfc4996fb1a05b4c/docs/../src/generators/staticgraphs.jl#L173' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.StarDiGraph-Tuple{Integer}' href='#LightGraphs.StarDiGraph-Tuple{Integer}'>#</a>
 <strong><code>LightGraphs.StarDiGraph</code></strong> &mdash; <em>Method</em>.</p>
 <p>Creates a star digraph with <code>n</code> vertices. A star digraph has a central vertex with directed edges to every other vertex.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/2efd363b4de988a1127739b4ac851141617975fd/docs/../src/generators/staticgraphs.jl#L53-L56' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/e3d9cbbbdd8c6a58e3debe74bfc4996fb1a05b4c/docs/../src/generators/staticgraphs.jl#L53-L56' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.StarGraph-Tuple{Integer}' href='#LightGraphs.StarGraph-Tuple{Integer}'>#</a>
 <strong><code>LightGraphs.StarGraph</code></strong> &mdash; <em>Method</em>.</p>
 <p>Creates a star graph with <code>n</code> vertices. A star graph has a central vertex with edges to each other vertex.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/2efd363b4de988a1127739b4ac851141617975fd/docs/../src/generators/staticgraphs.jl#L42-L45' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/e3d9cbbbdd8c6a58e3debe74bfc4996fb1a05b4c/docs/../src/generators/staticgraphs.jl#L42-L45' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.WheelDiGraph-Tuple{Integer}' href='#LightGraphs.WheelDiGraph-Tuple{Integer}'>#</a>
 <strong><code>LightGraphs.WheelDiGraph</code></strong> &mdash; <em>Method</em>.</p>
 <p>Creates a wheel digraph with <code>n</code> vertices. A wheel graph is a star digraph with the outer vertices connected via a closed path graph.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/2efd363b4de988a1127739b4ac851141617975fd/docs/../src/generators/staticgraphs.jl#L121-L124' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/e3d9cbbbdd8c6a58e3debe74bfc4996fb1a05b4c/docs/../src/generators/staticgraphs.jl#L121-L124' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.WheelGraph-Tuple{Integer}' href='#LightGraphs.WheelGraph-Tuple{Integer}'>#</a>
 <strong><code>LightGraphs.WheelGraph</code></strong> &mdash; <em>Method</em>.</p>
 <p>Creates a wheel graph with <code>n</code> vertices. A wheel graph is a star graph with the outer vertices connected via a closed path graph.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/2efd363b4de988a1127739b4ac851141617975fd/docs/../src/generators/staticgraphs.jl#L107-L110' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/e3d9cbbbdd8c6a58e3debe74bfc4996fb1a05b4c/docs/../src/generators/staticgraphs.jl#L107-L110' class='documenter-source'>source</a><br></p>
 <p><a id='Small-Graphs-1'></a></p>
 <h2 id="small-graphs">Small Graphs</h2>
 <p>Other classical graphs can be generated by the following function:</p>
@@ -658,7 +658,7 @@ smallgraph(s::AbstractString)
 </tr>
 </tbody>
 </table>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/2efd363b4de988a1127739b4ac851141617975fd/docs/../src/generators/smallgraphs.jl#L21' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/e3d9cbbbdd8c6a58e3debe74bfc4996fb1a05b4c/docs/../src/generators/smallgraphs.jl#L21' class='documenter-source'>source</a><br></p>
 <p><a id='Euclidean-Graphs-1'></a></p>
 <h2 id="euclidean-graphs">Euclidean Graphs</h2>
 <p>Generation of random and static graphs embedded in Euclidean space.</p>
@@ -675,7 +675,7 @@ smallgraph(s::AbstractString)
 
 <p>Generates <code>N</code> uniformly distributed points in the box $[0,L]^d$ and builds and Euclidean graph.</p>
 <p>Returns a graph, a Dict containing the distance on each edge and a matrix with the points' positions.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/2efd363b4de988a1127739b4ac851141617975fd/docs/../src/generators/euclideangraphs.jl#L1-L23' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/e3d9cbbbdd8c6a58e3debe74bfc4996fb1a05b4c/docs/../src/generators/euclideangraphs.jl#L1-L23' class='documenter-source'>source</a><br></p>
 <p><a id='Datasets-1'></a></p>
 <h2 id="datasets">Datasets</h2>
 <p>Other notorious graphs and integration with the <code>MatrixDepot.jl</code> package are available in the <code>Datasets</code> submodule of the companion package <em>LightGraphsExtras.jl</em> ```</p>
