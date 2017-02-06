@@ -215,7 +215,7 @@ degree(g::SimpleGraph, v::AbstractArray{Int,1} = vertices(g)) = [degree(g,x) for
 "computes the extreme value of `[f(g,i) for i=i:nv(g)]` without gathering them all"
 function noallocextreme(f, comparison, initial, g)
     value = initial
-    for i in 1:nv(g)
+    Threads.@threads for i in 1:nv(g)
         funci = f(g, i)
         if comparison(funci, value)
             value = funci

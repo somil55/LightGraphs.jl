@@ -8,7 +8,7 @@ function closeness_centrality(
     n_v = nv(g)
     closeness = zeros(n_v)
 
-    for u = 1:n_v
+    Threads.@threads for u = 1:n_v
         if degree(g, u) == 0     # no need to do Dijkstra here
             closeness[u] = 0.0
         else

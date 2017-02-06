@@ -59,7 +59,7 @@ function betweenness_centrality(
     else
         nodes = sample!([1:n_v;], k)   #112
     end
-    for s in nodes
+    Threads.@threads for s in nodes
         if degree(g,s) > 0  # this might be 1?
             state = dijkstra_shortest_paths(g, s; allpaths=true)
             if endpoints
