@@ -13,10 +13,13 @@ g = load(joinpath(testdir,"testdata","graph-50-500.jgz"), "graph-50-500")
 
 c = readcentrality(joinpath(testdir,"testdata","graph-50-500-bc.txt"))
 z = betweenness_centrality(g)
+zp = betweenness_centrality_par(g)
 
-@test map(Float32, z) == map(Float32, c)
+@test map(Float32, z) == map(Float32, c) == map(Float32, zp)
 
 y = betweenness_centrality(g, endpoints=true, normalize=false)
+yp = betweenness_centrality_par(g, endpoints=true, normalize=false)
+@test y == yp
 @test round(y[1:3],4) ==
     round([122.10760591498584, 159.0072453120582, 176.39547945994505], 4)
 

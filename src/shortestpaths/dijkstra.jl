@@ -14,6 +14,13 @@ type DijkstraState{T}<: AbstractDijkstraState
     pathcounts::Vector{Int}
 end
 
+=={T}(a::DijkstraState{T}, b::DijkstraState{T}) = (
+  a.parents == b.parents &&
+  a.dists == b.dists &&
+  a.pathcounts == b.pathcounts &&
+  a.predecessors == b.predecessors
+)
+
 """Performs [Dijkstra's algorithm](http://en.wikipedia.org/wiki/Dijkstra%27s_algorithm)
 on a graph, computing shortest distances between a source vertex `s` and all
 other nodes. Returns a `DijkstraState` that contains various traversal
@@ -89,3 +96,12 @@ end
 
 dijkstra_shortest_paths{T}(g::AbstractGraph, src::Int, distmx::AbstractArray{T,2}=DefaultDistance(); allpaths=false) =
   dijkstra_shortest_paths(g, [src;], distmx; allpaths=allpaths)
+
+function dijkstra_shortest_paths_par{T}(g::AbstractGraph, srcs::AbstractArray{Int, 1}, distmx::AbstractArray{T,2}=DefaultDistance(); allpaths=false)
+  nsrcs = length(srcs)
+  states = Vector{DijkstraState{Int}}(nsrcs)
+  Threads.@threads for ind = 1:nsrcs
+    states[ind] = dijkstra_shortest_paths(g, srcs[ind], distmx, allpaths=allpaths)
+  end
+  return states
+end

@@ -61,12 +61,12 @@ condensation, attracting_components, neighborhood, isgraphical,
 MaximumAdjacency, AbstractMASVisitor, mincut, maximum_adjacency_visit,
 
 # a-star, dijkstra, bellman-ford, floyd-warshall
-a_star, dijkstra_shortest_paths,
+a_star, dijkstra_shortest_paths, dijkstra_shortest_paths_par,
 bellman_ford_shortest_paths, has_negative_edge_cycle, enumerate_paths,
 floyd_warshall_shortest_paths, transitiveclosure!, transitiveclosure,
 
 # centrality
-betweenness_centrality, closeness_centrality, degree_centrality,
+betweenness_centrality, betweenness_centrality_par, closeness_centrality, degree_centrality,
 indegree_centrality, outdegree_centrality, katz_centrality, pagerank,
 
 # spectral

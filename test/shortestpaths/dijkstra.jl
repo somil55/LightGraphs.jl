@@ -3,13 +3,21 @@ d2 = sparse(float([ 0 1 2 3 4; 5 0 6 7 8; 9 10 0 11 12; 13 14 15 0 16; 17 18 19 
 
 y = dijkstra_shortest_paths(g4, 2, d1)
 z = dijkstra_shortest_paths(g4, 2, d2)
-
-@test y.parents == z.parents == [0, 0, 2, 3, 4]
-@test y.dists == z.dists == [Inf, 0, 6, 17, 33]
+@test y == z
 
 y = dijkstra_shortest_paths(g4, 2, d1; allpaths=true)
 z = dijkstra_shortest_paths(g4, 2, d2; allpaths=true)
-@test z.predecessors[3] == y.predecessors[3] == [2]
+@test y == z
+
+states = Vector{LightGraphs.DijkstraState{Int}}(3)
+for i = 1:3
+  states[i] = dijkstra_shortest_paths(g4, i; allpaths=true)
+end
+
+pstates = dijkstra_shortest_paths_par(g4, 1:3; allpaths=true)
+
+@test states == pstates
+
 
 @test enumerate_paths(z) == enumerate_paths(y)
 @test enumerate_paths(z)[4] ==
@@ -34,7 +42,7 @@ function spaths(ds, targets, source)
         push!(shortest_paths,spath(i,ds,source))
     end
     return shortest_paths
-    
+
 end
 
 
@@ -63,4 +71,3 @@ shortest_paths = []
 @test spaths(ds, [1,3,4], 2) == Array[[2 1],
                                       [2 3],
                                       [2 1 4]]
-

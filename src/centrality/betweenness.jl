@@ -78,6 +78,39 @@ end
 betweenness_centrality(g::AbstractGraph, k::Int; normalize=true, endpoints=false) =
     betweenness_centrality(g, sample(vertices(g), k); normalize=normalize, endpoints=endpoints)
 
+function betweenness_centrality_par(g::AbstractGraph,
+    nodes::AbstractArray{Int, 1} = vertices(g);
+    normalize=true,
+    endpoints=false)
+
+    n_v = nv(g)
+    k = length(nodes)
+    isdir = is_directed(g)
+
+    betweenness = zeros(n_v)
+    states = dijkstra_shortest_paths_par(g, nodes; allpaths=true)
+
+    for (i, s) in enumerate(nodes)
+      state = states[i]
+      if endpoints
+          _accumulate_endpoints!(betweenness, state, g, s)
+      else
+          _accumulate_basic!(betweenness, state, g, s)
+      end
+    end
+    _rescale!(betweenness,
+              n_v,
+              normalize,
+              isdir,
+              k)
+
+    return betweenness
+end
+
+betweenness_centrality_par(g::AbstractGraph, k::Int; normalize=true, endpoints=false) =
+    betweenness_centrality_par(g, sample(vertices(g), k); normalize=normalize, endpoints=endpoints)
+
+
 
 
 function _accumulate_basic!(
