@@ -101,7 +101,25 @@ function dijkstra_shortest_paths_par{T}(g::AbstractGraph, srcs::AbstractArray{In
   nsrcs = length(srcs)
   states = Vector{DijkstraState{Int}}(nsrcs)
   Threads.@threads for ind = 1:nsrcs
-    states[ind] = dijkstra_shortest_paths(g, srcs[ind], distmx, allpaths=allpaths)
+      states[ind] = dijkstra_shortest_paths(g, srcs[ind], distmx, allpaths=allpaths)
+  end
+  return states
+end
+
+function dijkstra_shortest_paths_par2{T}(g::AbstractGraph, srcs::AbstractArray{Int, 1}, distmx::AbstractArray{T,2}=DefaultDistance(); allpaths=false)
+  nsrcs = length(srcs)
+  states = SharedVector(DijkstraState{Int}, nsrcs)
+  @parallel for ind = 1:nsrcs
+      states[ind] = dijkstra_shortest_paths(g, srcs[ind], distmx, allpaths=allpaths)
+  end
+  return states
+end
+
+function test_dijkstra(g::AbstractGraph, srcs::AbstractArray{Int, 1})
+  nsrcs = length(srcs)
+  states = Vector{DijkstraState{Int}}(nsrcs)
+  for ind = 1:nsrcs
+    states[ind] = dijkstra_shortest_paths(g, srcs[ind]; allpaths=true)
   end
   return states
 end
