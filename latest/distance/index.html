@@ -1,460 +1,593 @@
+
 <!DOCTYPE html>
-<!--[if lt IE 7 ]><html class="no-js ie6"><![endif]-->
-<!--[if IE 7 ]><html class="no-js ie7"><![endif]-->
-<!--[if IE 8 ]><html class="no-js ie8"><![endif]-->
-<!--[if IE 9 ]><html class="no-js ie9"><![endif]-->
-<!--[if (gt IE 9)|!(IE)]><!--> <html class="no-js"> <!--<![endif]-->
+<html class="no-js">
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1">
     
-      
-        <title>Distance - LightGraphs.jl</title>
-      
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
       
       
       
         <meta name="author" content="Seth Bromberger">
       
-    
-    <meta property="og:url" content="None">
-    <meta property="og:title" content="LightGraphs.jl">
-    <meta property="og:image" content="None/../">
-    <meta name="apple-mobile-web-app-title" content="LightGraphs.jl">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    
-    
-    <link rel="shortcut icon" type="image/x-icon" href="../assets/images/favicon-e565ddfa3b.ico">
-    <link rel="icon" type="image/x-icon" href="../assets/images/favicon-e565ddfa3b.ico">
-    <style>
-      @font-face {
-      	font-family: 'Icon';
-      	src: url('../assets/fonts/icon.eot?52m981');
-      	src: url('../assets/fonts/icon.eot?#iefix52m981')
-               format('embedded-opentype'),
-      		   url('../assets/fonts/icon.woff?52m981')
-               format('woff'),
-      		   url('../assets/fonts/icon.ttf?52m981')
-               format('truetype'),
-      		   url('../assets/fonts/icon.svg?52m981#icon')
-               format('svg');
-      	font-weight: normal;
-      	font-style: normal;
-      }
-    </style>
-    <link rel="stylesheet" href="../assets/stylesheets/application-a422ff04cc.css">
-    
-      <link rel="stylesheet" href="../assets/stylesheets/palettes-05ab2406df.css">
+      
+        <link rel="shortcut icon" href="../assets/images/favicon.png">
+      
+      <meta name="generator" content="mkdocs-0.16.3, mkdocs-material-1.5.4">
     
     
       
+        <title>Distance - LightGraphs.jl</title>
       
+    
+    
+      <script src="../assets/javascripts/modernizr-56ade86843.js"></script>
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/application-b1a1975878.css">
       
-      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:400,700|Ubuntu+Mono">
-      <style>
-        body, input {
-          font-family: 'Ubuntu', Helvetica, Arial, sans-serif;
-        }
-        pre, code {
-          font-family: 'Ubuntu Mono', 'Courier New', 'Courier', monospace;
-        }
-      </style>
+        <link rel="stylesheet" href="../assets/stylesheets/application-f78e5cb881.palette.css">
+      
+    
+    
+      
+        
+        
+        
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     
     
       <link rel="stylesheet" href="../assets/Documenter.css">
     
-    <script src="../assets/javascripts/modernizr-4ab42b99fd.js"></script>
     
   </head>
   
   
   
-  <body class="palette-primary-indigo palette-accent-blue">
-    
-      
-      
-        
-      
-    
-    <div class="backdrop">
-      <div class="backdrop-paper"></div>
-    </div>
-    <input class="toggle" type="checkbox" id="toggle-drawer">
-    <input class="toggle" type="checkbox" id="toggle-search">
-    <label class="toggle-button overlay" for="toggle-drawer"></label>
-    <header class="header">
-      <nav aria-label="Header">
-  <div class="bar default">
-    <div class="button button-menu" role="button" aria-label="Menu">
-      <label class="toggle-button icon icon-menu" for="toggle-drawer">
-        <span></span>
-      </label>
-    </div>
-    <div class="stretch">
-      <div class="title">
-        
-          <span class="path">
-            
-          </span>
-        
-        Distance
-      </div>
-    </div>
-    
-    
-    <div class="button button-search" role="button" aria-label="Search">
-      <label class="toggle-button icon icon-search" title="Search" for="toggle-search"></label>
-    </div>
-  </div>
-  <div class="bar search">
-    <div class="button button-close" role="button" aria-label="Close">
-      <label class="toggle-button icon icon-back" for="toggle-search"></label>
-    </div>
-    <div class="stretch">
-      <div class="field">
-        <input class="query" type="text" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck>
-      </div>
-    </div>
-    <div class="button button-reset" role="button" aria-label="Search">
-      <button class="toggle-button icon icon-close" id="reset-search"></button>
-    </div>
-  </div>
-</nav>
-    </header>
-    <main class="main">
-      
-      <div class="drawer">
-        <nav aria-label="Navigation">
   
-  <a href="https://github.com/JuliaGraphs/LightGraphs.jl/" class="project">
-    <div class="banner">
-      
-      <div class="name">
-        <strong>
-          LightGraphs.jl
-          <span class="version">
-            
-          </span>
-        </strong>
+    <body data-md-color-primary="indigo" data-md-color-accent="blue">
+  
+    <svg class="md-svg">
+      <defs>
         
-          <br>
-          JuliaGraphs/LightGraphs.jl
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="drawer">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="search">
+    <label class="md-overlay" data-md-component="overlay" for="drawer"></label>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <a href=".." title="LightGraphs.jl" class="md-icon md-icon--home md-header-nav__button">
+          </a>
         
       </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <span class="md-flex__ellipsis md-header-nav__title">
+          
+            
+              
+            
+            Distance
+          
+        </span>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="search"></label>
+          
+<div class="md-search" data-md-component="search">
+  <div class="md-search__overlay"></div>
+  <div class="md-search__inner">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" required placeholder="Search" accesskey="s" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query">
+      <label class="md-icon md-search__icon" for="search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset">close</button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta" data-md-lang-result-none="No matching documents" data-md-lang-result-one="1 matching document" data-md-lang-result-other="# matching documents">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <div class="md-header-nav__source">
+          
+            
+
+
+  
+
+
+  <a href="https://github.com/JuliaGraphs/LightGraphs.jl/" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      GitHub
     </div>
   </a>
-  <div class="scrollable">
-    <div class="wrapper">
+
+          
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
       
-        <ul class="repo">
-          <li class="repo-download">
-            
-            <a href="https://github.com/JuliaGraphs/LightGraphs.jl//archive/master.zip" target="_blank" title="Download" data-action="download">
-              <i class="icon icon-download"></i> Download
-            </a>
-          </li>
-          <li class="repo-stars">
-            <a href="https://github.com/JuliaGraphs/LightGraphs.jl//stargazers" target="_blank" title="Stargazers" data-action="star">
-              <i class="icon icon-star"></i> Stars
-              <span class="count">&ndash;</span>
-            </a>
-          </li>
-        </ul>
-        <hr>
       
-      <div class="toc">
-        <ul>
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
           
             
-  <li>
-    <a class="" title="Getting Started" href="..">
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="drawer">
+    
+      <i class="md-icon md-icon--home md-nav__button"></i>
+    
+    LightGraphs.jl
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+
+  <a href="https://github.com/JuliaGraphs/LightGraphs.jl/" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      GitHub
+    </div>
+  </a>
+
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href=".." title="Getting Started" class="md-nav__link">
       Getting Started
     </a>
-    
   </li>
 
-          
-            
-  <li>
-    <a class="" title="Basic Functions" href="../basicmeasures/">
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../basicmeasures/" title="Basic Functions" class="md-nav__link">
       Basic Functions
     </a>
-    
   </li>
 
-          
-            
-  <li>
-    <a class="" title="Operators" href="../operators/">
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../operators/" title="Operators" class="md-nav__link">
       Operators
     </a>
-    
   </li>
 
-          
-            
-  <li>
-    <a class="" title="Path and Traversal" href="../pathing/">
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../pathing/" title="Path and Traversal" class="md-nav__link">
       Path and Traversal
     </a>
-    
   </li>
 
-          
-            
-  <li>
-    <a class="current" title="Distance" href="./">
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
+    
+      
+    
+    
+    <a href="./" title="Distance" class="md-nav__link md-nav__link--active">
       Distance
     </a>
     
-      
-        
-      
-      
-    
   </li>
 
-          
-            
-  <li>
-    <a class="" title="Centrality Measures" href="../centrality/">
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../centrality/" title="Centrality Measures" class="md-nav__link">
       Centrality Measures
     </a>
-    
   </li>
 
-          
-            
-  <li>
-    <a class="" title="Linear Algebra" href="../linalg/">
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../linalg/" title="Linear Algebra" class="md-nav__link">
       Linear Algebra
     </a>
-    
   </li>
 
-          
-            
-  <li>
-    <a class="" title="Matching" href="../matching/">
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../matching/" title="Matching" class="md-nav__link">
       Matching
     </a>
-    
   </li>
 
-          
-            
-  <li>
-    <a class="" title="Community Structures" href="../community/">
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../community/" title="Community Structures" class="md-nav__link">
       Community Structures
     </a>
-    
   </li>
 
-          
-            
-  <li>
-    <a class="" title="Flow and Cut" href="../flowcut/">
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../flowcut/" title="Flow and Cut" class="md-nav__link">
       Flow and Cut
     </a>
-    
   </li>
 
-          
-            
-  <li>
-    <a class="" title="Graph Generators" href="../generators/">
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../generators/" title="Graph Generators" class="md-nav__link">
       Graph Generators
     </a>
-    
   </li>
 
-          
-            
-  <li>
-    <a class="" title="Reading / Writing Graphs" href="../persistence/">
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../persistence/" title="Reading / Writing Graphs" class="md-nav__link">
       Reading / Writing Graphs
     </a>
-    
   </li>
 
-          
-            
-  <li>
-    <a class="" title="Integration with other packages" href="../integration/">
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../integration/" title="Integration with other packages" class="md-nav__link">
       Integration with other packages
     </a>
-    
   </li>
 
-          
-            
-  <li>
-    <a class="" title="Contributing" href="../contributing/">
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../contributing/" title="Contributing" class="md-nav__link">
       Contributing
     </a>
-    
   </li>
 
-          
-            
-  <li>
-    <a class="" title="License Information" href="../license/">
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../license/" title="License Information" class="md-nav__link">
       License Information
     </a>
-    
   </li>
 
-          
-        </ul>
-        
-      </div>
-    </div>
-  </div>
+    
+  </ul>
 </nav>
-      </div>
-      <article class="article">
-        <div class="wrapper">
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
           
-          <p><a id='Distance-1'></a></p>
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/JuliaGraphs/LightGraphs.jl/edit/master/docs/distance.md" title="Edit this page" class="md-icon md-content__icon">edit</a>
+                
+                
+                <p><a id='Distance-1'></a></p>
 <h1 id="distance">Distance</h1>
 <p><em>LightGraphs.jl</em> includes the following distance measurements:</p>
-<p><a id='LightGraphs.BoundedMinkowskiCost-Tuple{AbstractArray{T,1},AbstractArray{T,1}}' href='#LightGraphs.BoundedMinkowskiCost-Tuple{AbstractArray{T,1},AbstractArray{T,1}}'>#</a>
+<p><a id='LightGraphs.BoundedMinkowskiCost-Tuple{AbstractArray{T,1} where T,AbstractArray{T,1} where T}' href='#LightGraphs.BoundedMinkowskiCost-Tuple{AbstractArray{T,1} where T,AbstractArray{T,1} where T}'>#</a>
 <strong><code>LightGraphs.BoundedMinkowskiCost</code></strong> &mdash; <em>Method</em>.</p>
-<p>Similar to MinkowskiCost, but ensures costs smaller than 2τ.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/fb37e75a7ed79fdbff4317632b2c95e2e2b9a159/docs/../src/edit_distance.jl#L116-L118' class='documenter-source'>source</a><br></p>
-<p><a id='LightGraphs.MinkowskiCost-Tuple{AbstractArray{T,1},AbstractArray{T,1}}' href='#LightGraphs.MinkowskiCost-Tuple{AbstractArray{T,1},AbstractArray{T,1}}'>#</a>
+<pre><code>BoundedMinkowskiCost(μ₁, μ₂)
+</code></pre>
+
+<p>Return value similar to <code>MinkowskiCost</code>, but ensure costs smaller than 2τ.</p>
+<p><strong>Optional Arguments</strong></p>
+<p><code>p=1</code>: the p value for p-norm calculation. <code>τ=1</code>: value specifying half of the upper limit of the Minkowski cost.</p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/3e7badab7766232ebdb706dfab74246c66b0baeb/docs/../src/edit_distance.jl#L125-L133' class='documenter-source'>source</a><br></p>
+<p><a id='LightGraphs.MinkowskiCost-Tuple{AbstractArray{T,1} where T,AbstractArray{T,1} where T}' href='#LightGraphs.MinkowskiCost-Tuple{AbstractArray{T,1} where T,AbstractArray{T,1} where T}'>#</a>
 <strong><code>LightGraphs.MinkowskiCost</code></strong> &mdash; <em>Method</em>.</p>
+<pre><code>MinkowskiCost(μ₁, μ₂; p::Real=1)
+</code></pre>
+
 <p>For labels μ₁ on the vertices of graph G₁ and labels μ₂ on the vertices of graph G₂, compute the p-norm cost of substituting vertex u ∈ G₁ by vertex v ∈ G₂.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/fb37e75a7ed79fdbff4317632b2c95e2e2b9a159/docs/../src/edit_distance.jl#L107-L111' class='documenter-source'>source</a><br></p>
-<p><a id='LightGraphs.center-Tuple{Array{T,1}}' href='#LightGraphs.center-Tuple{Array{T,1}}'>#</a>
+<p><strong>Optional Arguments</strong></p>
+<p><code>p=1</code>: the p value for p-norm calculation.</p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/3e7badab7766232ebdb706dfab74246c66b0baeb/docs/../src/edit_distance.jl#L111-L120' class='documenter-source'>source</a><br></p>
+<p><a id='LightGraphs.center-Tuple{Array{T,1} where T}' href='#LightGraphs.center-Tuple{Array{T,1} where T}'>#</a>
 <strong><code>LightGraphs.center</code></strong> &mdash; <em>Method</em>.</p>
-<p>Returns the set of all vertices whose eccentricity is equal to the graph's radius (that is, the set of vertices with the smallest eccentricity).</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/fb37e75a7ed79fdbff4317632b2c95e2e2b9a159/docs/../src/distance.jl#L79-L82' class='documenter-source'>source</a><br></p>
-<p><a id='LightGraphs.diameter-Tuple{Array{T,1}}' href='#LightGraphs.diameter-Tuple{Array{T,1}}'>#</a>
+<pre><code>center(g, distmx=DefaultDistance())
+center(eccentricities)
+</code></pre>
+
+<p>Given a graph and optional distance matrix, or a vector of precomputed eccentricities, return the set of all vertices whose eccentricity is equal to the graph's radius (that is, the set of vertices with the smallest eccentricity).</p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/3e7badab7766232ebdb706dfab74246c66b0baeb/docs/../src/distance.jl#L98-L105' class='documenter-source'>source</a><br></p>
+<p><a id='LightGraphs.diameter-Tuple{Array{T,1} where T}' href='#LightGraphs.diameter-Tuple{Array{T,1} where T}'>#</a>
 <strong><code>LightGraphs.diameter</code></strong> &mdash; <em>Method</em>.</p>
-<p>Returns the maximum eccentricity of the graph.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/fb37e75a7ed79fdbff4317632b2c95e2e2b9a159/docs/../src/distance.jl#L57' class='documenter-source'>source</a><br></p>
-<p><a id='LightGraphs.eccentricity' href='#LightGraphs.eccentricity'>#</a>
-<strong><code>LightGraphs.eccentricity</code></strong> &mdash; <em>Function</em>.</p>
-<p>Calculates the eccentricity[ies] of a vertex <code>v</code>, vertex vector <code>vs</code>, or the entire graph. An optional matrix of edge distances may be supplied.</p>
+<pre><code>diameter(g, distmx=DefaultDistance())
+diameter(eccentricities)
+</code></pre>
+
+<p>Given a graph and optional distance matrix, or a vector of precomputed eccentricities, return the maximum eccentricity of the graph.</p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/3e7badab7766232ebdb706dfab74246c66b0baeb/docs/../src/distance.jl#L59-L65' class='documenter-source'>source</a><br></p>
+<p><a id='LightGraphs.eccentricity-Union{Tuple{LightGraphs.AbstractGraph,Integer,AbstractArray{T,2}}, Tuple{LightGraphs.AbstractGraph,Integer}, Tuple{T}} where T' href='#LightGraphs.eccentricity-Union{Tuple{LightGraphs.AbstractGraph,Integer,AbstractArray{T,2}}, Tuple{LightGraphs.AbstractGraph,Integer}, Tuple{T}} where T'>#</a>
+<strong><code>LightGraphs.eccentricity</code></strong> &mdash; <em>Method</em>.</p>
+<pre><code>eccentricity(g[, v][, distmx])
+</code></pre>
+
+<p>Return the eccentricity[ies] of a vertex / vertex list <code>v</code> or the entire graph. An optional matrix of edge distances may be supplied; if missing, edge distances default to <code>1</code>.</p>
 <p>The eccentricity of a vertex is the maximum shortest-path distance between it and all other vertices in the graph.</p>
-<p>Because this function must calculate shortest paths for all vertices supplied in the argument list, it may take a long time.</p>
 <p>The output is either a single float (when a single vertex is provided) or a vector of floats corresponding to the vertex vector. If no vertex vector is provided, the vector returned corresponds to each vertex in the graph.</p>
-<p>Note: the eccentricity vector returned by <code>eccentricity()</code> may be used as input for the rest of the distance measures below. If an eccentricity vector is provided, it will be used. Otherwise, an eccentricity vector will be calculated for each call to the function. It may therefore be more efficient to calculate, store, and pass the eccentricities if multiple distance measures are desired.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/fb37e75a7ed79fdbff4317632b2c95e2e2b9a159/docs/../src/distance.jl#L16-L35' class='documenter-source'>source</a><br></p>
-<p><a id='LightGraphs.edit_distance-Tuple{Union{LightGraphs.DiGraph,LightGraphs.Graph},Union{LightGraphs.DiGraph,LightGraphs.Graph}}' href='#LightGraphs.edit_distance-Tuple{Union{LightGraphs.DiGraph,LightGraphs.Graph},Union{LightGraphs.DiGraph,LightGraphs.Graph}}'>#</a>
+<p><strong>Performance</strong></p>
+<p>Because this function must calculate shortest paths for all vertices supplied in the argument list, it may take a long time.</p>
+<p><strong>Implementation Notes</strong></p>
+<p>The eccentricity vector returned by <code>eccentricity()</code> may be used as input for the rest of the distance measures below. If an eccentricity vector is provided, it will be used. Otherwise, an eccentricity vector will be calculated for each call to the function. It may therefore be more efficient to calculate, store, and pass the eccentricities if multiple distance measures are desired.</p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/3e7badab7766232ebdb706dfab74246c66b0baeb/docs/../src/distance.jl#L14-L38' class='documenter-source'>source</a><br></p>
+<p><a id='LightGraphs.edit_distance-Tuple{LightGraphs.AbstractGraph,LightGraphs.AbstractGraph}' href='#LightGraphs.edit_distance-Tuple{LightGraphs.AbstractGraph,LightGraphs.AbstractGraph}'>#</a>
 <strong><code>LightGraphs.edit_distance</code></strong> &mdash; <em>Method</em>.</p>
-<p>Computes the edit distance between graphs G₁ and G₂.</p>
-<p>Returns the minimum edit cost and edit path to transform graph G₁ into graph G₂. An edit path consists of a sequence of pairs of vertices (u,v) ∈ [0,|G₁|] × [0,|G₂|] representing vertex operations:</p>
+<pre><code>edit_distance(G₁::AbstractGraph, G₂::AbstractGraph)
+</code></pre>
+
+<p>Compute the edit distance between graphs <code>G₁</code> and <code>G₂</code>. Return the minimum edit cost and edit path to transform graph <code>G₁</code> into graph `G₂<code>. An edit path consists of a sequence of pairs of vertices</code>(u,v) ∈ [0,|G₁|] × [0,|G₂|]`` representing vertex operations:</p>
 <ul>
-<li>(0,v): insertion of vertex v ∈ G₂</li>
-<li>(u,0): deletion of vertex u ∈ G₁</li>
-<li>(u&gt;0,v&gt;0): substitution of vertex u ∈ G₁ by vertex v ∈ G₂</li>
+<li>$(0,v)$: insertion of vertex $v ∈ G₂$</li>
+<li>$(u,0)$: deletion of vertex $u ∈ G₁$</li>
+<li>$(u&gt;0,v&gt;0)$: substitution of vertex $u ∈ G₁$ by vertex $v ∈ G₂$</li>
+</ul>
+<p><strong>Optional Arguments</strong></p>
+<ul>
+<li><code>insert_cost::Function=v-&gt;1.0</code></li>
+<li><code>delete_cost::Function=u-&gt;1.0</code></li>
+<li><code>subst_cost::Function=(u,v)-&gt;0.5</code></li>
 </ul>
 <p>By default, the algorithm uses constant operation costs. The user can provide classical Minkowski costs computed from vertex labels μ₁ (for G₁) and μ₂ (for G₂) in order to further guide the search, for example:</p>
 <pre><code>edit_distance(G₁, G₂, subst_cost=MinkowskiCost(μ₁, μ₂))
 </code></pre>
 
-<p>A custom heuristic can be provided to the A* search in case the default heuristic is not satisfactory.</p>
-<p><strong>Performance tips:</strong></p>
 <ul>
-<li>Given two graphs |G₁| &lt; |G₂|, <code>edit_distance(G₁, G₂)</code> is faster to</li>
+<li><code>heuristic::Function=DefaultEditHeuristic</code>: a custom heuristic provided to the A*</li>
 </ul>
-<p>compute than <code>edit_distance(G₂, G₁)</code>. Consider swapping the arguments if involved costs are ``symmetric''.</p>
+<p>search in case the default heuristic is not satisfactory.</p>
+<p><strong>Performance</strong></p>
+<ul>
+<li>Given two graphs $|G₁| &lt; |G₂|$, <code>edit_distance(G₁, G₂)</code> is faster to</li>
+</ul>
+<p>compute than <code>edit_distance(G₂, G₁)</code>. Consider swapping the arguments if involved costs are equivalent.</p>
 <ul>
 <li>The use of simple Minkowski costs can improve performance considerably.</li>
 <li>Exploit vertex attributes when designing operation costs.</li>
 </ul>
-<p>For further details, please refer to:</p>
-<p>RIESEN, K., 2015. Structural Pattern Recognition with Graph Edit Distance: Approximation Algorithms and Applications. (Chapter 2)</p>
-<p>Author: Júlio Hoffimann Mendes (juliohm@stanford.edu)</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/fb37e75a7ed79fdbff4317632b2c95e2e2b9a159/docs/../src/edit_distance.jl#L1-L39' class='documenter-source'>source</a><br></p>
-<p><a id='LightGraphs.periphery-Tuple{Array{T,1}}' href='#LightGraphs.periphery-Tuple{Array{T,1}}'>#</a>
+<p><strong>References</strong></p>
+<ul>
+<li>RIESEN, K., 2015. Structural Pattern Recognition with Graph Edit Distance: Approximation Algorithms and Applications. (Chapter 2)</li>
+</ul>
+<p><strong>Author</strong></p>
+<ul>
+<li>Júlio Hoffimann Mendes (juliohm@stanford.edu)</li>
+</ul>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/3e7badab7766232ebdb706dfab74246c66b0baeb/docs/../src/edit_distance.jl#L1' class='documenter-source'>source</a><br></p>
+<p><a id='LightGraphs.periphery-Tuple{Array{T,1} where T}' href='#LightGraphs.periphery-Tuple{Array{T,1} where T}'>#</a>
 <strong><code>LightGraphs.periphery</code></strong> &mdash; <em>Method</em>.</p>
-<p>Returns the set of all vertices whose eccentricity is equal to the graph's diameter (that is, the set of vertices with the largest eccentricity).</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/fb37e75a7ed79fdbff4317632b2c95e2e2b9a159/docs/../src/distance.jl#L62-L65' class='documenter-source'>source</a><br></p>
-<p><a id='LightGraphs.radius-Tuple{Array{T,1}}' href='#LightGraphs.radius-Tuple{Array{T,1}}'>#</a>
-<strong><code>LightGraphs.radius</code></strong> &mdash; <em>Method</em>.</p>
-<p>Returns the minimum eccentricity of the graph.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/fb37e75a7ed79fdbff4317632b2c95e2e2b9a159/docs/../src/distance.jl#L74' class='documenter-source'>source</a><br></p>
-          <aside class="copyright" role="note">
-            
-            Documentation built with
-            <a href="http://www.mkdocs.org" target="_blank">MkDocs</a>
-            using the
-            <a href="http://squidfunk.github.io/mkdocs-material/" target="_blank">
-              Material
-            </a>
-            theme.
-          </aside>
-          
-            <footer class="footer">
-              
-  <nav class="pagination" aria-label="Footer">
-    <div class="previous">
-      
-        <a href="../pathing/" title="Path and Traversal">
-          <span class="direction">
-            Previous
-          </span>
-          <div class="page">
-            <div class="button button-previous" role="button" aria-label="Previous">
-              <i class="icon icon-back"></i>
-            </div>
-            <div class="stretch">
-              <div class="title">
-                Path and Traversal
-              </div>
-            </div>
-          </div>
-        </a>
-      
-    </div>
-    <div class="next">
-      
-        <a href="../centrality/" title="Centrality Measures">
-          <span class="direction">
-            Next
-          </span>
-          <div class="page">
-            <div class="stretch">
-              <div class="title">
-                Centrality Measures
-              </div>
-            </div>
-            <div class="button button-next" role="button" aria-label="Next">
-              <i class="icon icon-forward"></i>
-            </div>
-          </div>
-        </a>
-      
-    </div>
-  </nav>
+<pre><code>periphery(g, distmx=DefaultDistance())
+periphery(eccentricities)
+</code></pre>
 
-            </footer>
-          
-        </div>
-      </article>
-      <div class="results" role="status" aria-live="polite">
-        <div class="scrollable">
-          <div class="wrapper">
-            <div class="meta"></div>
-            <div class="list"></div>
+<p>Given a graph and optional distance matrix, or a vector of precomputed eccentricities, return the set of all vertices whose eccentricity is equal to the graph's diameter (that is, the set of vertices with the largest eccentricity).</p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/3e7badab7766232ebdb706dfab74246c66b0baeb/docs/../src/distance.jl#L70-L78' class='documenter-source'>source</a><br></p>
+<p><a id='LightGraphs.radius-Tuple{Array{T,1} where T}' href='#LightGraphs.radius-Tuple{Array{T,1} where T}'>#</a>
+<strong><code>LightGraphs.radius</code></strong> &mdash; <em>Method</em>.</p>
+<pre><code>radius(g, distmx=DefaultDistance())
+radius(eccentricities)
+</code></pre>
+
+<p>Given a graph and optional distance matrix, or a vector of precomputed eccentricities, return the minimum eccentricity of the graph.</p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/3e7badab7766232ebdb706dfab74246c66b0baeb/docs/../src/distance.jl#L87-L93' class='documenter-source'>source</a><br></p>
+                
+                  
+                
+              
+              
+                
+              
+            </article>
           </div>
         </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../pathing/" title="Path and Traversal" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Path and Traversal
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../centrality/" title="Centrality Measures" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Centrality Measures
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        powered by
+        <a href="http://www.mkdocs.org" title="MkDocs">MkDocs</a>
+        and
+        <a href="http://squidfunk.github.io/mkdocs-material/" title="Material for MkDocs">
+          Material for MkDocs</a>
       </div>
-    </main>
-    <script>
-      var base_url = '..';
-      var repo_id  = 'JuliaGraphs/LightGraphs.jl';
-    </script>
-    <script src="../assets/javascripts/application-997097ee0c.js"></script>
+      
+        
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
     
-      <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
+      <script src="../assets/javascripts/application-0b7df094bf.js"></script>
+      <script>app.initialize({url:{base:".."}})</script>
+      
+        <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
+      
+        <script src="../assets/mathjaxhelper.js"></script>
+      
     
-      <script src="../assets/mathjaxhelper.js"></script>
     
+      
     
   </body>
 </html>

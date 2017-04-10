@@ -1,554 +1,654 @@
+
 <!DOCTYPE html>
-<!--[if lt IE 7 ]><html class="no-js ie6"><![endif]-->
-<!--[if IE 7 ]><html class="no-js ie7"><![endif]-->
-<!--[if IE 8 ]><html class="no-js ie8"><![endif]-->
-<!--[if IE 9 ]><html class="no-js ie9"><![endif]-->
-<!--[if (gt IE 9)|!(IE)]><!--> <html class="no-js"> <!--<![endif]-->
+<html class="no-js">
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1">
     
-      
-        <title>Flow and Cut - LightGraphs.jl</title>
-      
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
       
       
       
         <meta name="author" content="Seth Bromberger">
       
-    
-    <meta property="og:url" content="None">
-    <meta property="og:title" content="LightGraphs.jl">
-    <meta property="og:image" content="None/../">
-    <meta name="apple-mobile-web-app-title" content="LightGraphs.jl">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    
-    
-    <link rel="shortcut icon" type="image/x-icon" href="../assets/images/favicon-e565ddfa3b.ico">
-    <link rel="icon" type="image/x-icon" href="../assets/images/favicon-e565ddfa3b.ico">
-    <style>
-      @font-face {
-      	font-family: 'Icon';
-      	src: url('../assets/fonts/icon.eot?52m981');
-      	src: url('../assets/fonts/icon.eot?#iefix52m981')
-               format('embedded-opentype'),
-      		   url('../assets/fonts/icon.woff?52m981')
-               format('woff'),
-      		   url('../assets/fonts/icon.ttf?52m981')
-               format('truetype'),
-      		   url('../assets/fonts/icon.svg?52m981#icon')
-               format('svg');
-      	font-weight: normal;
-      	font-style: normal;
-      }
-    </style>
-    <link rel="stylesheet" href="../assets/stylesheets/application-a422ff04cc.css">
-    
-      <link rel="stylesheet" href="../assets/stylesheets/palettes-05ab2406df.css">
+      
+        <link rel="shortcut icon" href="../assets/images/favicon.png">
+      
+      <meta name="generator" content="mkdocs-0.16.3, mkdocs-material-1.5.4">
     
     
       
+        <title>Flow and Cut - LightGraphs.jl</title>
       
+    
+    
+      <script src="../assets/javascripts/modernizr-56ade86843.js"></script>
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/application-b1a1975878.css">
       
-      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu:400,700|Ubuntu+Mono">
-      <style>
-        body, input {
-          font-family: 'Ubuntu', Helvetica, Arial, sans-serif;
-        }
-        pre, code {
-          font-family: 'Ubuntu Mono', 'Courier New', 'Courier', monospace;
-        }
-      </style>
+        <link rel="stylesheet" href="../assets/stylesheets/application-f78e5cb881.palette.css">
+      
+    
+    
+      
+        
+        
+        
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     
     
       <link rel="stylesheet" href="../assets/Documenter.css">
     
-    <script src="../assets/javascripts/modernizr-4ab42b99fd.js"></script>
     
   </head>
   
   
   
-  <body class="palette-primary-indigo palette-accent-blue">
-    
-      
-      
-        
-      
-    
-    <div class="backdrop">
-      <div class="backdrop-paper"></div>
-    </div>
-    <input class="toggle" type="checkbox" id="toggle-drawer">
-    <input class="toggle" type="checkbox" id="toggle-search">
-    <label class="toggle-button overlay" for="toggle-drawer"></label>
-    <header class="header">
-      <nav aria-label="Header">
-  <div class="bar default">
-    <div class="button button-menu" role="button" aria-label="Menu">
-      <label class="toggle-button icon icon-menu" for="toggle-drawer">
-        <span></span>
-      </label>
-    </div>
-    <div class="stretch">
-      <div class="title">
-        
-          <span class="path">
-            
-          </span>
-        
-        Flow and Cut
-      </div>
-    </div>
-    
-    
-    <div class="button button-search" role="button" aria-label="Search">
-      <label class="toggle-button icon icon-search" title="Search" for="toggle-search"></label>
-    </div>
-  </div>
-  <div class="bar search">
-    <div class="button button-close" role="button" aria-label="Close">
-      <label class="toggle-button icon icon-back" for="toggle-search"></label>
-    </div>
-    <div class="stretch">
-      <div class="field">
-        <input class="query" type="text" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck>
-      </div>
-    </div>
-    <div class="button button-reset" role="button" aria-label="Search">
-      <button class="toggle-button icon icon-close" id="reset-search"></button>
-    </div>
-  </div>
-</nav>
-    </header>
-    <main class="main">
-      
-      <div class="drawer">
-        <nav aria-label="Navigation">
   
-  <a href="https://github.com/JuliaGraphs/LightGraphs.jl/" class="project">
-    <div class="banner">
-      
-      <div class="name">
-        <strong>
-          LightGraphs.jl
-          <span class="version">
-            
-          </span>
-        </strong>
+    <body data-md-color-primary="indigo" data-md-color-accent="blue">
+  
+    <svg class="md-svg">
+      <defs>
         
-          <br>
-          JuliaGraphs/LightGraphs.jl
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="drawer">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="search">
+    <label class="md-overlay" data-md-component="overlay" for="drawer"></label>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <a href=".." title="LightGraphs.jl" class="md-icon md-icon--home md-header-nav__button">
+          </a>
         
       </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <span class="md-flex__ellipsis md-header-nav__title">
+          
+            
+              
+            
+            Flow and Cut
+          
+        </span>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="search"></label>
+          
+<div class="md-search" data-md-component="search">
+  <div class="md-search__overlay"></div>
+  <div class="md-search__inner">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" required placeholder="Search" accesskey="s" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query">
+      <label class="md-icon md-search__icon" for="search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset">close</button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta" data-md-lang-result-none="No matching documents" data-md-lang-result-one="1 matching document" data-md-lang-result-other="# matching documents">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <div class="md-header-nav__source">
+          
+            
+
+
+  
+
+
+  <a href="https://github.com/JuliaGraphs/LightGraphs.jl/" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      GitHub
     </div>
   </a>
-  <div class="scrollable">
-    <div class="wrapper">
+
+          
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
       
-        <ul class="repo">
-          <li class="repo-download">
-            
-            <a href="https://github.com/JuliaGraphs/LightGraphs.jl//archive/master.zip" target="_blank" title="Download" data-action="download">
-              <i class="icon icon-download"></i> Download
-            </a>
-          </li>
-          <li class="repo-stars">
-            <a href="https://github.com/JuliaGraphs/LightGraphs.jl//stargazers" target="_blank" title="Stargazers" data-action="star">
-              <i class="icon icon-star"></i> Stars
-              <span class="count">&ndash;</span>
-            </a>
-          </li>
-        </ul>
-        <hr>
       
-      <div class="toc">
-        <ul>
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
           
             
-  <li>
-    <a class="" title="Getting Started" href="..">
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="drawer">
+    
+      <i class="md-icon md-icon--home md-nav__button"></i>
+    
+    LightGraphs.jl
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+
+  <a href="https://github.com/JuliaGraphs/LightGraphs.jl/" title="Go to repository" class="md-source" data-md-source="github">
+    
+      <div class="md-source__icon">
+        <svg viewBox="0 0 24 24" width="24" height="24">
+          <use xlink:href="#github" width="24" height="24"></use>
+        </svg>
+      </div>
+    
+    <div class="md-source__repository">
+      GitHub
+    </div>
+  </a>
+
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href=".." title="Getting Started" class="md-nav__link">
       Getting Started
     </a>
-    
   </li>
 
-          
-            
-  <li>
-    <a class="" title="Basic Functions" href="../basicmeasures/">
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../basicmeasures/" title="Basic Functions" class="md-nav__link">
       Basic Functions
     </a>
-    
   </li>
 
-          
-            
-  <li>
-    <a class="" title="Operators" href="../operators/">
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../operators/" title="Operators" class="md-nav__link">
       Operators
     </a>
-    
   </li>
 
-          
-            
-  <li>
-    <a class="" title="Path and Traversal" href="../pathing/">
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../pathing/" title="Path and Traversal" class="md-nav__link">
       Path and Traversal
     </a>
-    
   </li>
 
-          
-            
-  <li>
-    <a class="" title="Distance" href="../distance/">
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../distance/" title="Distance" class="md-nav__link">
       Distance
     </a>
-    
   </li>
 
-          
-            
-  <li>
-    <a class="" title="Centrality Measures" href="../centrality/">
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../centrality/" title="Centrality Measures" class="md-nav__link">
       Centrality Measures
     </a>
-    
   </li>
 
-          
-            
-  <li>
-    <a class="" title="Linear Algebra" href="../linalg/">
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../linalg/" title="Linear Algebra" class="md-nav__link">
       Linear Algebra
     </a>
-    
   </li>
 
-          
-            
-  <li>
-    <a class="" title="Matching" href="../matching/">
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../matching/" title="Matching" class="md-nav__link">
       Matching
     </a>
-    
   </li>
 
-          
-            
-  <li>
-    <a class="" title="Community Structures" href="../community/">
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../community/" title="Community Structures" class="md-nav__link">
       Community Structures
     </a>
-    
   </li>
 
-          
-            
-  <li>
-    <a class="current" title="Flow and Cut" href="./">
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="toc">
+    
+      
+    
+    
+    <a href="./" title="Flow and Cut" class="md-nav__link md-nav__link--active">
       Flow and Cut
     </a>
     
-      
-        
-      
-      
-    
   </li>
 
-          
-            
-  <li>
-    <a class="" title="Graph Generators" href="../generators/">
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../generators/" title="Graph Generators" class="md-nav__link">
       Graph Generators
     </a>
-    
   </li>
 
-          
-            
-  <li>
-    <a class="" title="Reading / Writing Graphs" href="../persistence/">
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../persistence/" title="Reading / Writing Graphs" class="md-nav__link">
       Reading / Writing Graphs
     </a>
-    
   </li>
 
-          
-            
-  <li>
-    <a class="" title="Integration with other packages" href="../integration/">
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../integration/" title="Integration with other packages" class="md-nav__link">
       Integration with other packages
     </a>
-    
   </li>
 
-          
-            
-  <li>
-    <a class="" title="Contributing" href="../contributing/">
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../contributing/" title="Contributing" class="md-nav__link">
       Contributing
     </a>
-    
   </li>
 
-          
-            
-  <li>
-    <a class="" title="License Information" href="../license/">
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../license/" title="License Information" class="md-nav__link">
       License Information
     </a>
-    
   </li>
 
-          
-        </ul>
-        
-      </div>
-    </div>
-  </div>
+    
+  </ul>
 </nav>
-      </div>
-      <article class="article">
-        <div class="wrapper">
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
           
-          <p><a id='Flow-and-Cut-1'></a></p>
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/JuliaGraphs/LightGraphs.jl/edit/master/docs/flowcut.md" title="Edit this page" class="md-icon md-content__icon">edit</a>
+                
+                
+                <p><a id='Flow-and-Cut-1'></a></p>
 <h1 id="flow-and-cut">Flow and Cut</h1>
 <p><em>LightGraphs.jl</em> provides different algorithms for <a href="https://en.wikipedia.org/wiki/Maximum_flow_problem">maximum flow</a> and minimum cut computations.</p>
 <p><a id='LightGraphs.BoykovKolmogorovAlgorithm' href='#LightGraphs.BoykovKolmogorovAlgorithm'>#</a>
 <strong><code>LightGraphs.BoykovKolmogorovAlgorithm</code></strong> &mdash; <em>Type</em>.</p>
+<pre><code>BoykovKolmogorovAlgorithm &lt;: AbstractFlowAlgorithm
+</code></pre>
+
 <p>Forces the maximum_flow function to use the Boykov-Kolmogorov algorithm.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/fb37e75a7ed79fdbff4317632b2c95e2e2b9a159/docs/../src/flow/maximum_flow.jl#L18-L20' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/3e7badab7766232ebdb706dfab74246c66b0baeb/docs/../src/flow/maximum_flow.jl#L22-L26' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.DinicAlgorithm' href='#LightGraphs.DinicAlgorithm'>#</a>
 <strong><code>LightGraphs.DinicAlgorithm</code></strong> &mdash; <em>Type</em>.</p>
+<pre><code>DinicAlgorithm &lt;: AbstractFlowAlgorithm
+</code></pre>
+
 <p>Forces the maximum_flow function to use Dinic's algorithm.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/fb37e75a7ed79fdbff4317632b2c95e2e2b9a159/docs/../src/flow/maximum_flow.jl#L12-L14' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/3e7badab7766232ebdb706dfab74246c66b0baeb/docs/../src/flow/maximum_flow.jl#L15-L19' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.EdmondsKarpAlgorithm' href='#LightGraphs.EdmondsKarpAlgorithm'>#</a>
 <strong><code>LightGraphs.EdmondsKarpAlgorithm</code></strong> &mdash; <em>Type</em>.</p>
+<pre><code>EdmondsKarpAlgorithm &lt;: AbstractFlowAlgorithm
+</code></pre>
+
 <p>Forces the maximum_flow function to use the Edmonds–Karp algorithm.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/fb37e75a7ed79fdbff4317632b2c95e2e2b9a159/docs/../src/flow/maximum_flow.jl#L6-L8' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/3e7badab7766232ebdb706dfab74246c66b0baeb/docs/../src/flow/maximum_flow.jl#L8-L12' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.PushRelabelAlgorithm' href='#LightGraphs.PushRelabelAlgorithm'>#</a>
 <strong><code>LightGraphs.PushRelabelAlgorithm</code></strong> &mdash; <em>Type</em>.</p>
 <p>Forces the maximum_flow function to use the Push-Relabel algorithm.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/fb37e75a7ed79fdbff4317632b2c95e2e2b9a159/docs/../src/flow/maximum_flow.jl#L24-L26' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/3e7badab7766232ebdb706dfab74246c66b0baeb/docs/../src/flow/maximum_flow.jl#L29-L31' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.maximum_flow' href='#LightGraphs.maximum_flow'>#</a>
 <strong><code>LightGraphs.maximum_flow</code></strong> &mdash; <em>Function</em>.</p>
-<p>Generic maximum_flow function. Requires arguments:</p>
+<pre><code>maximum_flow(flow_graph, source, target[, capacity_matrix][, algorithm][, restriction])
+</code></pre>
+
+<p>Generic maximum_flow function for <code>flow_graph</code> from <code>source</code> to <code>target</code> with capacities in <code>capacity_matrix</code>. Uses flow algorithm <code>algorithm</code> and cutoff restriction <code>restriction</code>.</p>
 <ul>
-<li>flow_graph::DiGraph                   # the input graph</li>
-<li>source::Int                           # the source vertex</li>
-<li>target::Int                           # the target vertex</li>
-<li>capacity_matrix::AbstractArray{T,2}   # edge flow capacities</li>
-<li>algorithm::AbstractFlowAlgorithm      # keyword argument for algorithm</li>
-<li>restriction::T                        # keyword argument for a restriction</li>
+<li>If <code>capacity_matrix</code> is not specified, <code>DefaultCapacity(flow_graph)</code> will be used.</li>
+<li>If <code>algorithm</code> is not specified, it will default to <a href="./#LightGraphs.PushRelabelAlgorithm"><code>PushRelabelAlgorithm</code></a>.</li>
+<li>If <code>restriction</code> is not specified, it will default to <code>0</code>.</li>
 </ul>
-<p>The function defaults to the Push-relabel algorithm. Alternatively, the algorithm to be used can also be specified through a keyword argument. A default capacity of 1 is assumed for each link if no capacity matrix is provided. If the restriction is bigger than 0, it is applied to capacity_matrix.</p>
-<p>All algorithms return a tuple with 1) the maximum flow and 2) the flow matrix. For the Boykov-Kolmogorov algorithm, the associated mincut is returned as a third output.</p>
+<p>Return a tuple of (maximum flow, flow matrix). For the Boykov-Kolmogorov algorithm, the associated mincut is returned as a third output.</p>
 <p><strong>Usage Example:</strong></p>
-<pre><code class="julia">
-# Create a flow-graph and a capacity matrix
-flow_graph = DiGraph(8)
-flow_edges = [
-    (1,2,10),(1,3,5),(1,4,15),(2,3,4),(2,5,9),
-    (2,6,15),(3,4,4),(3,6,8),(4,7,16),(5,6,15),
-    (5,8,10),(6,7,15),(6,8,10),(7,3,6),(7,8,10)
+<pre><code class="jldoctest">julia&gt; flow_graph = DiGraph(8) # Create a flow-graph
+julia&gt; flow_edges = [
+(1,2,10),(1,3,5),(1,4,15),(2,3,4),(2,5,9),
+(2,6,15),(3,4,4),(3,6,8),(4,7,16),(5,6,15),
+(5,8,10),(6,7,15),(6,8,10),(7,3,6),(7,8,10)
 ]
-capacity_matrix = zeros(Int, 8, 8)
-for e in flow_edges
+
+julia&gt; capacity_matrix = zeros(Int, 8, 8)  # Create a capacity matrix
+
+julia&gt; for e in flow_edges
     u, v, f = e
     add_edge!(flow_graph, u, v)
     capacity_matrix[u,v] = f
 end
 
-# Run default maximum_flow without the capacity_matrix
-f, F = maximum_flow(flow_graph, 1, 8)
+julia&gt; f, F = maximum_flow(flow_graph, 1, 8) # Run default maximum_flow without the capacity_matrix
 
-# Run default maximum_flow with the capacity_matrix
-f, F = maximum_flow(flow_graph, 1, 8)
+julia&gt; f, F = maximum_flow(flow_graph, 1, 8) # Run default maximum_flow with the capacity_matrix
 
-# Run Endmonds-Karp algorithm
-f, F = maximum_flow(flow_graph,1,8,capacity_matrix,algorithm=EdmondsKarpAlgorithm())
+julia&gt; f, F = maximum_flow(flow_graph,1,8,capacity_matrix,algorithm=EdmondsKarpAlgorithm()) # Run Edmonds-Karp algorithm
 
-# Run Dinic's algorithm
-f, F = maximum_flow(flow_graph,1,8,capacity_matrix,algorithm=DinicAlgorithm())
+julia&gt; f, F = maximum_flow(flow_graph,1,8,capacity_matrix,algorithm=DinicAlgorithm()) # Run Dinic's algorithm
 
-# Run Boykov-Kolmogorov algorithm
-f, F, labels = maximum_flow(flow_graph,1,8,capacity_matrix,algorithm=BoykovKolmogorovAlgorithm())
+julia&gt; f, F, labels = maximum_flow(flow_graph,1,8,capacity_matrix,algorithm=BoykovKolmogorovAlgorithm()) # Run Boykov-Kolmogorov algorithm
 
 </code></pre>
 
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/fb37e75a7ed79fdbff4317632b2c95e2e2b9a159/docs/../src/flow/maximum_flow.jl#L117-L169' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/3e7badab7766232ebdb706dfab74246c66b0baeb/docs/../src/flow/maximum_flow.jl#L122-L165' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.ExtendedMultirouteFlowAlgorithm' href='#LightGraphs.ExtendedMultirouteFlowAlgorithm'>#</a>
 <strong><code>LightGraphs.ExtendedMultirouteFlowAlgorithm</code></strong> &mdash; <em>Type</em>.</p>
-<p>Forces the multiroute_flow function to use the Extended Multiroute Flow algorithm.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/fb37e75a7ed79fdbff4317632b2c95e2e2b9a159/docs/../src/flow/multiroute_flow.jl#L12-L14' class='documenter-source'>source</a><br></p>
+<pre><code>ExtendedMultirouteFlowAlgorithm
+</code></pre>
+
+<p>Used to specify the Extended Multiroute Flow algorithm.</p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/3e7badab7766232ebdb706dfab74246c66b0baeb/docs/../src/flow/multiroute_flow.jl#L15-L19' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.KishimotoAlgorithm' href='#LightGraphs.KishimotoAlgorithm'>#</a>
 <strong><code>LightGraphs.KishimotoAlgorithm</code></strong> &mdash; <em>Type</em>.</p>
-<p>Forces the multiroute_flow function to use the Kishimoto algorithm.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/fb37e75a7ed79fdbff4317632b2c95e2e2b9a159/docs/../src/flow/multiroute_flow.jl#L6-L8' class='documenter-source'>source</a><br></p>
-<p><a id='LightGraphs.multiroute_flow' href='#LightGraphs.multiroute_flow'>#</a>
-<strong><code>LightGraphs.multiroute_flow</code></strong> &mdash; <em>Function</em>.</p>
-<p>The generic multiroute_flow function will output three kinds of results:</p>
+<pre><code>KishimotoAlgorithm
+</code></pre>
+
+<p>Used to specify the Kishimoto algorithm.</p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/3e7badab7766232ebdb706dfab74246c66b0baeb/docs/../src/flow/multiroute_flow.jl#L8-L12' class='documenter-source'>source</a><br></p>
+<p><a id='LightGraphs.multiroute_flow-Union{Tuple{LightGraphs.AbstractGraph,Integer,Integer,AbstractArray{T,2} where T}, Tuple{LightGraphs.AbstractGraph,Integer,Integer}, Tuple{R}} where R<:Real' href='#LightGraphs.multiroute_flow-Union{Tuple{LightGraphs.AbstractGraph,Integer,Integer,AbstractArray{T,2} where T}, Tuple{LightGraphs.AbstractGraph,Integer,Integer}, Tuple{R}} where R<:Real'>#</a>
+<strong><code>LightGraphs.multiroute_flow</code></strong> &mdash; <em>Method</em>.</p>
+<pre><code>multiroute_flow(flow_graph, source, target[, DefaultCapacity][, flow_algorithm][, mrf_algorithm][, routes])
+</code></pre>
+
+<p>The generic multiroute_flow function.</p>
+<p>The output will vary depending on the input:</p>
 <ul>
-<li>When the number of routes is 0 or non-specified, the set of breaking points of</li>
+<li>When the number of <code>route</code>s is <code>0</code>, return the set of breaking points of</li>
 </ul>
-<p>the multiroute flow is returned.</p>
+<p>the multiroute flow.</p>
 <ul>
-<li>When the input is limited to a set of breaking points and a route value k,</li>
+<li>When the number of <code>route</code>s is <code>1</code>, return a flow with a set of 1-disjoint paths</li>
 </ul>
-<p>only the value of the k-route flow is returned</p>
+<p>(this is the classical max-flow implementation).</p>
+<ul>
+<li>When the input is limited to a set of breaking points and a route value <code>k</code>,</li>
+</ul>
+<p>return only the k-route flow.</p>
 <ul>
 <li>Otherwise, a tuple with 1) the maximum flow and 2) the flow matrix. When the</li>
 </ul>
 <p>max-flow subroutine is the Boykov-Kolmogorov algorithm, the associated mincut is returned as a third output.</p>
 <p>When the input is a network, it requires the following arguments:</p>
 <ul>
-<li>flow_graph::DiGraph                   # the input graph</li>
-<li>source::Int                           # the source vertex</li>
-<li>target::Int                           # the target vertex</li>
-<li>capacity_matrix::AbstractArray{T, 2}  # edge flow capacities with T&lt;:Real</li>
-<li>flow_algorithm::AbstractFlowAlgorithm # keyword argument for flow algorithm</li>
-<li>mrf_algorithm::AbstractFlowAlgorithm  # keyword argument for multiroute flow algorithm</li>
-<li>routes::R&lt;:Real                       # keyword argument for the number of routes</li>
+<li><code>flow_graph</code>: the input graph</li>
+<li><code>source</code>: the source vertex</li>
+<li><code>target</code>: the target vertex</li>
+<li><code>capacity_matrix</code>: matrix of edge flow capacities</li>
+<li><code>flow_algorithm</code>: keyword argument for flow algorithm</li>
+<li><code>mrf_algorithm</code>: keyword argument for multiroute flow algorithm</li>
+<li><code>routes</code>: keyword argument for the number of routes</li>
 </ul>
 <p>When the input is only the set of (breaking) points and the number of route, it requires the following arguments:</p>
 <ul>
-<li>breakingpoints::Vector{Tuple{T, T, Int}},    # vector of breaking points</li>
-<li>routes::R&lt;:Real,                             # number of routes</li>
+<li><code>breakingpoints</code>: vector of breaking points</li>
+<li><code>routes</code>: number of routes</li>
 </ul>
 <p>When the input is the set of (breaking) points, the number of routes, and the network descriptors, it requires the following arguments:</p>
 <ul>
-<li>breakingpoints::Vector{Tuple{T1, T1, Int}} # vector of breaking points (T1&lt;:Real)</li>
-<li>routes::R&lt;:Real                            # number of routes</li>
-<li>flow_graph::DiGraph                        # the input graph</li>
-<li>source::Int                                # the source vertex</li>
-<li>target::Int                                # the target vertex</li>
-<li>capacity_matrix::AbstractArray{T2, 2}      # optional edge flow capacities (T2&lt;:Real)</li>
-<li>flow_algorithm::AbstractFlowAlgorithm      # keyword argument for algorithm</li>
+<li><code>breakingpoints</code>: vector of breaking points</li>
+<li><code>routes</code>: number of routes</li>
+<li><code>flow_graph</code>: the input graph</li>
+<li><code>source</code>: the source vertex</li>
+<li><code>target</code>: the target vertex</li>
+<li><code>capacity_matrix</code>: matrix of edge flow capacities</li>
+<li><code>flow_algorithm</code>: keyword argument for flow algorithm</li>
 </ul>
-<p>The function defaults to the Push-relabel (classical flow) and Kishimoto (multiroute) algorithms. Alternatively, the algorithms to be used can also be specified through  keyword arguments. A default capacity of 1 is assumed for each link if no capacity matrix is provided.</p>
-<p>The mrf_algorithm keyword is inforced to Extended Multiroute Flow in the following cases:</p>
+<p>The function defaults to the Push-relabel (classical flow) and Kishimoto (multiroute) algorithms. Alternatively, the algorithms to be used can also be specified through  keyword arguments. A default capacity of <code>1</code> is assumed for each link if no capacity matrix is provided.</p>
+<p>The <code>mrf_algorithm</code> keyword is inforced to Extended Multiroute Flow in the following cases:</p>
 <ul>
 <li>The number of routes is non-integer</li>
 <li>The number of routes is 0 or non-specified</li>
 </ul>
 <p><strong>Usage Example :</strong></p>
-<p>(please consult the  max_flow section for options about flow_algorithm and capacity_matrix)</p>
-<pre><code class="julia">
-# Create a flow-graph and a capacity matrix
-flow_graph = DiGraph(8)
-flow_edges = [
-    (1, 2, 10), (1, 3, 5),  (1, 4, 15), (2, 3, 4),  (2, 5, 9),
-    (2, 6, 15), (3, 4, 4),  (3, 6, 8),  (4, 7, 16), (5, 6, 15),
-    (5, 8, 10), (6, 7, 15), (6, 8, 10), (7, 3, 6),  (7, 8, 10)
+<p>(please consult the  <a href="../@ref"><code>max_flow</code></a> section for options about flow_algorithm and capacity_matrix)</p>
+<pre><code class="jldoctest">julia&gt; flow_graph = DiGraph(8) # Create a flow graph
+
+julia&gt; flow_edges = [
+(1, 2, 10), (1, 3, 5),  (1, 4, 15), (2, 3, 4),  (2, 5, 9),
+(2, 6, 15), (3, 4, 4),  (3, 6, 8),  (4, 7, 16), (5, 6, 15),
+(5, 8, 10), (6, 7, 15), (6, 8, 10), (7, 3, 6),  (7, 8, 10)
 ]
-capacity_matrix = zeros(Int, 8, 8)
-for e in flow_edges
+
+julia&gt; capacity_matrix = zeros(Int, 8, 8) # Create a capacity matrix
+
+julia&gt; for e in flow_edges
     u, v, f = e
     add_edge!(flow_graph, u, v)
     capacity_matrix[u, v] = f
 end
 
-# Run default multiroute_flow with an integer number of routes = 2
-f, F = multiroute_flow(flow_graph, 1, 8, capacity_matrix, routes = 2)
+julia&gt; f, F = multiroute_flow(flow_graph, 1, 8, capacity_matrix, routes = 2) # Run default multiroute_flow with an integer number of routes = 2
 
-# Run default multiroute_flow with a noninteger number of routes = 1.5
-f, F = multiroute_flow(flow_graph, 1, 8, capacity_matrix, routes = 1.5)
+julia&gt; f, F = multiroute_flow(flow_graph, 1, 8, capacity_matrix, routes = 1.5) # Run default multiroute_flow with a noninteger number of routes = 1.5
 
-# Run default multiroute_flow for all the breaking points values
-points = multiroute_flow(flow_graph, 1, 8, capacity_matrix)
-# Then run multiroute flow algorithm for any positive number of routes
-f, F = multiroute_flow(points, 1.5)
-f = multiroute_flow(points, 1.5, valueonly = true)
+julia&gt; points = multiroute_flow(flow_graph, 1, 8, capacity_matrix) # Run default multiroute_flow for all the breaking points values
 
-# Run multiroute flow algorithm using Boykov-Kolmogorov algorithm as max_flow routine
-f, F, labels = multiroute_flow(flow_graph, 1, 8, capacity_matrix,
-               algorithm = BoykovKolmogorovAlgorithm(), routes = 2)
+julia&gt; f, F = multiroute_flow(points, 1.5) # Then run multiroute flow algorithm for any positive number of routes
+
+julia&gt; f = multiroute_flow(points, 1.5, valueonly = true)
+
+julia&gt; f, F, labels = multiroute_flow(flow_graph, 1, 8, capacity_matrix, algorithm = BoykovKolmogorovAlgorithm(), routes = 2) # Run multiroute flow algorithm using Boykov-Kolmogorov algorithm as max_flow routine
 
 </code></pre>
 
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/fb37e75a7ed79fdbff4317632b2c95e2e2b9a159/docs/../src/flow/multiroute_flow.jl#L94-L180' class='documenter-source'>source</a><br></p>
-          <aside class="copyright" role="note">
-            
-            Documentation built with
-            <a href="http://www.mkdocs.org" target="_blank">MkDocs</a>
-            using the
-            <a href="http://squidfunk.github.io/mkdocs-material/" target="_blank">
-              Material
-            </a>
-            theme.
-          </aside>
-          
-            <footer class="footer">
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/3e7badab7766232ebdb706dfab74246c66b0baeb/docs/../src/flow/multiroute_flow.jl#L100-L189' class='documenter-source'>source</a><br></p>
+                
+                  
+                
               
-  <nav class="pagination" aria-label="Footer">
-    <div class="previous">
+              
+                
+              
+            </article>
+          </div>
+        </div>
+      </main>
       
-        <a href="../community/" title="Community Structures">
-          <span class="direction">
-            Previous
-          </span>
-          <div class="page">
-            <div class="button button-previous" role="button" aria-label="Previous">
-              <i class="icon icon-back"></i>
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../community/" title="Community Structures" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
-            <div class="stretch">
-              <div class="title">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
                 Community Structures
-              </div>
+              </span>
             </div>
-          </div>
-        </a>
-      
-    </div>
-    <div class="next">
-      
-        <a href="../generators/" title="Graph Generators">
-          <span class="direction">
-            Next
-          </span>
-          <div class="page">
-            <div class="stretch">
-              <div class="title">
+          </a>
+        
+        
+          <a href="../generators/" title="Graph Generators" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
                 Graph Generators
-              </div>
+              </span>
             </div>
-            <div class="button button-next" role="button" aria-label="Next">
-              <i class="icon icon-forward"></i>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
             </div>
-          </div>
-        </a>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        powered by
+        <a href="http://www.mkdocs.org" title="MkDocs">MkDocs</a>
+        and
+        <a href="http://squidfunk.github.io/mkdocs-material/" title="Material for MkDocs">
+          Material for MkDocs</a>
+      </div>
+      
+        
       
     </div>
-  </nav>
-
-            </footer>
-          
-        </div>
-      </article>
-      <div class="results" role="status" aria-live="polite">
-        <div class="scrollable">
-          <div class="wrapper">
-            <div class="meta"></div>
-            <div class="list"></div>
-          </div>
-        </div>
-      </div>
-    </main>
-    <script>
-      var base_url = '..';
-      var repo_id  = 'JuliaGraphs/LightGraphs.jl';
-    </script>
-    <script src="../assets/javascripts/application-997097ee0c.js"></script>
+  </div>
+</footer>
+      
+    </div>
     
-      <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
+      <script src="../assets/javascripts/application-0b7df094bf.js"></script>
+      <script>app.initialize({url:{base:".."}})</script>
+      
+        <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
+      
+        <script src="../assets/mathjaxhelper.js"></script>
+      
     
-      <script src="../assets/mathjaxhelper.js"></script>
     
+      
     
   </body>
 </html>
