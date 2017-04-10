@@ -411,7 +411,7 @@
 <p>Return value similar to <code>MinkowskiCost</code>, but ensure costs smaller than 2τ.</p>
 <p><strong>Optional Arguments</strong></p>
 <p><code>p=1</code>: the p value for p-norm calculation. <code>τ=1</code>: value specifying half of the upper limit of the Minkowski cost.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/3e7badab7766232ebdb706dfab74246c66b0baeb/docs/../src/edit_distance.jl#L125-L133' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/6b522c381949116515fc6dbd3f7ac903b78b6841/docs/../src/edit_distance.jl#L125-L133' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.MinkowskiCost-Tuple{AbstractArray{T,1} where T,AbstractArray{T,1} where T}' href='#LightGraphs.MinkowskiCost-Tuple{AbstractArray{T,1} where T,AbstractArray{T,1} where T}'>#</a>
 <strong><code>LightGraphs.MinkowskiCost</code></strong> &mdash; <em>Method</em>.</p>
 <pre><code>MinkowskiCost(μ₁, μ₂; p::Real=1)
@@ -420,7 +420,7 @@
 <p>For labels μ₁ on the vertices of graph G₁ and labels μ₂ on the vertices of graph G₂, compute the p-norm cost of substituting vertex u ∈ G₁ by vertex v ∈ G₂.</p>
 <p><strong>Optional Arguments</strong></p>
 <p><code>p=1</code>: the p value for p-norm calculation.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/3e7badab7766232ebdb706dfab74246c66b0baeb/docs/../src/edit_distance.jl#L111-L120' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/6b522c381949116515fc6dbd3f7ac903b78b6841/docs/../src/edit_distance.jl#L111-L120' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.center-Tuple{Array{T,1} where T}' href='#LightGraphs.center-Tuple{Array{T,1} where T}'>#</a>
 <strong><code>LightGraphs.center</code></strong> &mdash; <em>Method</em>.</p>
 <pre><code>center(g, distmx=DefaultDistance())
@@ -428,7 +428,7 @@ center(eccentricities)
 </code></pre>
 
 <p>Given a graph and optional distance matrix, or a vector of precomputed eccentricities, return the set of all vertices whose eccentricity is equal to the graph's radius (that is, the set of vertices with the smallest eccentricity).</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/3e7badab7766232ebdb706dfab74246c66b0baeb/docs/../src/distance.jl#L98-L105' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/6b522c381949116515fc6dbd3f7ac903b78b6841/docs/../src/distance.jl#L98-L105' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.diameter-Tuple{Array{T,1} where T}' href='#LightGraphs.diameter-Tuple{Array{T,1} where T}'>#</a>
 <strong><code>LightGraphs.diameter</code></strong> &mdash; <em>Method</em>.</p>
 <pre><code>diameter(g, distmx=DefaultDistance())
@@ -436,7 +436,7 @@ diameter(eccentricities)
 </code></pre>
 
 <p>Given a graph and optional distance matrix, or a vector of precomputed eccentricities, return the maximum eccentricity of the graph.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/3e7badab7766232ebdb706dfab74246c66b0baeb/docs/../src/distance.jl#L59-L65' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/6b522c381949116515fc6dbd3f7ac903b78b6841/docs/../src/distance.jl#L59-L65' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.eccentricity-Union{Tuple{LightGraphs.AbstractGraph,Integer,AbstractArray{T,2}}, Tuple{LightGraphs.AbstractGraph,Integer}, Tuple{T}} where T' href='#LightGraphs.eccentricity-Union{Tuple{LightGraphs.AbstractGraph,Integer,AbstractArray{T,2}}, Tuple{LightGraphs.AbstractGraph,Integer}, Tuple{T}} where T'>#</a>
 <strong><code>LightGraphs.eccentricity</code></strong> &mdash; <em>Method</em>.</p>
 <pre><code>eccentricity(g[, v][, distmx])
@@ -449,7 +449,7 @@ diameter(eccentricities)
 <p>Because this function must calculate shortest paths for all vertices supplied in the argument list, it may take a long time.</p>
 <p><strong>Implementation Notes</strong></p>
 <p>The eccentricity vector returned by <code>eccentricity()</code> may be used as input for the rest of the distance measures below. If an eccentricity vector is provided, it will be used. Otherwise, an eccentricity vector will be calculated for each call to the function. It may therefore be more efficient to calculate, store, and pass the eccentricities if multiple distance measures are desired.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/3e7badab7766232ebdb706dfab74246c66b0baeb/docs/../src/distance.jl#L14-L38' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/6b522c381949116515fc6dbd3f7ac903b78b6841/docs/../src/distance.jl#L14-L38' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.edit_distance-Tuple{LightGraphs.AbstractGraph,LightGraphs.AbstractGraph}' href='#LightGraphs.edit_distance-Tuple{LightGraphs.AbstractGraph,LightGraphs.AbstractGraph}'>#</a>
 <strong><code>LightGraphs.edit_distance</code></strong> &mdash; <em>Method</em>.</p>
 <pre><code>edit_distance(G₁::AbstractGraph, G₂::AbstractGraph)
@@ -492,7 +492,7 @@ diameter(eccentricities)
 <ul>
 <li>Júlio Hoffimann Mendes (juliohm@stanford.edu)</li>
 </ul>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/3e7badab7766232ebdb706dfab74246c66b0baeb/docs/../src/edit_distance.jl#L1' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/6b522c381949116515fc6dbd3f7ac903b78b6841/docs/../src/edit_distance.jl#L1' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.periphery-Tuple{Array{T,1} where T}' href='#LightGraphs.periphery-Tuple{Array{T,1} where T}'>#</a>
 <strong><code>LightGraphs.periphery</code></strong> &mdash; <em>Method</em>.</p>
 <pre><code>periphery(g, distmx=DefaultDistance())
@@ -500,7 +500,7 @@ periphery(eccentricities)
 </code></pre>
 
 <p>Given a graph and optional distance matrix, or a vector of precomputed eccentricities, return the set of all vertices whose eccentricity is equal to the graph's diameter (that is, the set of vertices with the largest eccentricity).</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/3e7badab7766232ebdb706dfab74246c66b0baeb/docs/../src/distance.jl#L70-L78' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/6b522c381949116515fc6dbd3f7ac903b78b6841/docs/../src/distance.jl#L70-L78' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.radius-Tuple{Array{T,1} where T}' href='#LightGraphs.radius-Tuple{Array{T,1} where T}'>#</a>
 <strong><code>LightGraphs.radius</code></strong> &mdash; <em>Method</em>.</p>
 <pre><code>radius(g, distmx=DefaultDistance())
@@ -508,7 +508,7 @@ radius(eccentricities)
 </code></pre>
 
 <p>Given a graph and optional distance matrix, or a vector of precomputed eccentricities, return the minimum eccentricity of the graph.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/3e7badab7766232ebdb706dfab74246c66b0baeb/docs/../src/distance.jl#L87-L93' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/6b522c381949116515fc6dbd3f7ac903b78b6841/docs/../src/distance.jl#L87-L93' class='documenter-source'>source</a><br></p>
                 
                   
                 
