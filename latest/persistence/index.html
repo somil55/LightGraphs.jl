@@ -446,20 +446,20 @@
 <p>Graphs may be written to I/O streams and files using the <code>save</code> function and read with the <code>load</code> function. Currently supported graph formats are the  <em>LightGraphs.jl</em> format <code>lg</code> and the common formats <code>gml, graphml, gexf, dot, net</code>.</p>
 <p><a id='LightGraphs.load' href='#LightGraphs.load'>#</a>
 <strong><code>LightGraphs.load</code></strong> &mdash; <em>Function</em>.</p>
-<pre><code>load(file, name, t=:lg)
-</code></pre>
-
-<p>Load a graph with name <code>name</code> from <code>file</code> in format <code>t</code>.</p>
-<p>Currently supported formats are <code>:lg</code>, <code>:gml</code>, <code>:graphml</code>, <code>:gexf</code>, <code>:dot</code>, <code>:net</code>, and <code>graph6</code>.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/87839867f673e10fc30e24f89ad171744f7c1feb/docs/../src/persistence/common.jl#L30-L36' class='documenter-source'>source</a><br></p>
-<p><a id='LightGraphs.load' href='#LightGraphs.load'>#</a>
-<strong><code>LightGraphs.load</code></strong> &mdash; <em>Function</em>.</p>
 <pre><code>load(file, t=:lg)
 </code></pre>
 
 <p>Load multiple graphs from  <code>file</code> in the format <code>t</code>. Return a dictionary mapping graph name to graph.</p>
 <p>For unnamed graphs the default names "graph" and "digraph" will be used.</p>
 <p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/87839867f673e10fc30e24f89ad171744f7c1feb/docs/../src/persistence/common.jl#L42-L49' class='documenter-source'>source</a><br></p>
+<p><a id='LightGraphs.load' href='#LightGraphs.load'>#</a>
+<strong><code>LightGraphs.load</code></strong> &mdash; <em>Function</em>.</p>
+<pre><code>load(file, name, t=:lg)
+</code></pre>
+
+<p>Load a graph with name <code>name</code> from <code>file</code> in format <code>t</code>.</p>
+<p>Currently supported formats are <code>:lg</code>, <code>:gml</code>, <code>:graphml</code>, <code>:gexf</code>, <code>:dot</code>, <code>:net</code>, and <code>graph6</code>.</p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/87839867f673e10fc30e24f89ad171744f7c1feb/docs/../src/persistence/common.jl#L30-L36' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.loadgraph-Tuple{String,Vararg{Any,N} where N}' href='#LightGraphs.loadgraph-Tuple{String,Vararg{Any,N} where N}'>#</a>
 <strong><code>LightGraphs.loadgraph</code></strong> &mdash; <em>Method</em>.</p>
 <pre><code>loadgraph(file, t=:lg)
