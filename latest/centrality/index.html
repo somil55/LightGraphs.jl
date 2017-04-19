@@ -430,7 +430,7 @@ betweenness_centrality(g, k)
 <ul>
 <li>Brandes 2001 &amp; Brandes 2008</li>
 </ul>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/87839867f673e10fc30e24f89ad171744f7c1feb/docs/../src/centrality/betweenness.jl#L5' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/79f341c3ce58693ccb67ba120aceac849fc58061/docs/../src/centrality/betweenness.jl#L5' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.closeness_centrality-Tuple{LightGraphs.AbstractGraph}' href='#LightGraphs.closeness_centrality-Tuple{LightGraphs.AbstractGraph}'>#</a>
 <strong><code>LightGraphs.closeness_centrality</code></strong> &mdash; <em>Method</em>.</p>
 <pre><code>closeness_centrality(g)
@@ -442,7 +442,7 @@ betweenness_centrality(g, k)
 <li><code>normalize=true</code>: If true, normalize the centrality value of each</li>
 </ul>
 <p>node <code>n</code> by $\frac{|δ_n|}{|V|-1}$, where $δ_n$ is the set of vertices reachable from node <code>n</code>.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/87839867f673e10fc30e24f89ad171744f7c1feb/docs/../src/centrality/closeness.jl#L1' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/79f341c3ce58693ccb67ba120aceac849fc58061/docs/../src/centrality/closeness.jl#L1' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.degree_centrality-Tuple{LightGraphs.AbstractGraph}' href='#LightGraphs.degree_centrality-Tuple{LightGraphs.AbstractGraph}'>#</a>
 <strong><code>LightGraphs.degree_centrality</code></strong> &mdash; <em>Method</em>.</p>
 <pre><code>degree_centrality(g)
@@ -455,21 +455,21 @@ outdegree_centrality(g)
 <ul>
 <li><code>normalize=true</code>: If true, normalize each centrality measure by $\frac{1}{|V|-1}$.</li>
 </ul>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/87839867f673e10fc30e24f89ad171744f7c1feb/docs/../src/centrality/degree.jl#L18-L28' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/79f341c3ce58693ccb67ba120aceac849fc58061/docs/../src/centrality/degree.jl#L18-L28' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.katz_centrality' href='#LightGraphs.katz_centrality'>#</a>
 <strong><code>LightGraphs.katz_centrality</code></strong> &mdash; <em>Function</em>.</p>
 <pre><code>katz_centrality(g, α=0.3)
 </code></pre>
 
 <p>Calculate the <a href="https://en.wikipedia.org/wiki/Katz_centrality">Katz centrality</a> of the graph <code>g</code> optionally parameterized by <code>α</code>. Return a vector representing the centrality calculated for each node in <code>g</code>.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/87839867f673e10fc30e24f89ad171744f7c1feb/docs/../src/centrality/katz.jl#L24-L29' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/79f341c3ce58693ccb67ba120aceac849fc58061/docs/../src/centrality/katz.jl#L24-L29' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.pagerank' href='#LightGraphs.pagerank'>#</a>
 <strong><code>LightGraphs.pagerank</code></strong> &mdash; <em>Function</em>.</p>
 <pre><code>pagerank(g, α=0.85, n=100, ϵ=1.0e-6)
 </code></pre>
 
 <p>Calculate the <a href="https://en.wikipedia.org/wiki/PageRank">PageRank</a> of the directed graph <code>g</code> parameterized by damping factor <code>α</code>, number of iterations <code>n</code>, and convergence threshold <code>ϵ</code>. Return a vector representing the centrality calculated for each node in <code>g</code>, or an error if convergence is not reached within <code>n</code> iterations.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/87839867f673e10fc30e24f89ad171744f7c1feb/docs/../src/centrality/pagerank.jl#L4-L12' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/79f341c3ce58693ccb67ba120aceac849fc58061/docs/../src/centrality/pagerank.jl#L4-L12' class='documenter-source'>source</a><br></p>
                 
                   
                 
