@@ -13,7 +13,7 @@
       
         <link rel="shortcut icon" href="../assets/images/favicon.png">
       
-      <meta name="generator" content="mkdocs-0.16.3, mkdocs-material-1.5.4">
+      <meta name="generator" content="mkdocs-0.16.3, mkdocs-material-1.5.5">
     
     
       
@@ -451,7 +451,7 @@
 
 <p>Load a graph with name <code>name</code> from <code>file</code> in format <code>t</code>.</p>
 <p>Currently supported formats are <code>:lg</code>, <code>:gml</code>, <code>:graphml</code>, <code>:gexf</code>, <code>:dot</code>, <code>:net</code>, and <code>graph6</code>.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/8b21b297f09688e67aaf36fe546ea9d577f7857a/docs/../src/persistence/common.jl#L30-L36' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/0fe9b7bf08c2fd289808e1c107c9948fabbbe48b/docs/../src/persistence/common.jl#L30-L36' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.load' href='#LightGraphs.load'>#</a>
 <strong><code>LightGraphs.load</code></strong> &mdash; <em>Function</em>.</p>
 <pre><code>load(file, t=:lg)
@@ -459,14 +459,14 @@
 
 <p>Load multiple graphs from  <code>file</code> in the format <code>t</code>. Return a dictionary mapping graph name to graph.</p>
 <p>For unnamed graphs the default names "graph" and "digraph" will be used.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/8b21b297f09688e67aaf36fe546ea9d577f7857a/docs/../src/persistence/common.jl#L42-L49' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/0fe9b7bf08c2fd289808e1c107c9948fabbbe48b/docs/../src/persistence/common.jl#L42-L49' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.loadgraph-Tuple{String,Vararg{Any,N} where N}' href='#LightGraphs.loadgraph-Tuple{String,Vararg{Any,N} where N}'>#</a>
 <strong><code>LightGraphs.loadgraph</code></strong> &mdash; <em>Method</em>.</p>
 <pre><code>loadgraph(file, t=:lg)
 </code></pre>
 
 <p>Read a graph from  <code>file</code> in the format <code>t</code>. Supported formats are <code>:lg</code>, <code>:gml</code>, <code>:dot</code>, <code>:graphml</code>, <code>:gexf</code>, <code>:net</code>, <code>:jld</code>, and <code>:graph6</code>.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/8b21b297f09688e67aaf36fe546ea9d577f7857a/docs/../src/persistence/common.jl#L11-L16' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/0fe9b7bf08c2fd289808e1c107c9948fabbbe48b/docs/../src/persistence/common.jl#L11-L16' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.save' href='#LightGraphs.save'>#</a>
 <strong><code>LightGraphs.save</code></strong> &mdash; <em>Function</em>.</p>
 <pre><code>save(file, g, t=:lg)
@@ -477,14 +477,14 @@ save(file, dict, t=:lg)
 <p>Saves a graph <code>g</code> with name <code>name</code> to <code>file</code> in the format <code>t</code>. If <code>name</code> is not given the default names "graph" and "digraph" will be used. Return the number of graphs written.</p>
 <p>Currently supported formats are <code>:lg</code>, <code>:gml</code>, :<code>graphml</code>, <code>:gexf</code>, <code>:dot</code>, <code>:net</code>, and <code>:graph6</code>.</p>
 <p>For some graph formats, multiple graphs in a  <code>dict</code> <code>"name"=&gt;g</code> can be saved in the same file.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/8b21b297f09688e67aaf36fe546ea9d577f7857a/docs/../src/persistence/common.jl#L71-L82' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/0fe9b7bf08c2fd289808e1c107c9948fabbbe48b/docs/../src/persistence/common.jl#L71-L82' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.savegraph-Tuple{Any,LightGraphs.AbstractGraph,Vararg{Any,N} where N}' href='#LightGraphs.savegraph-Tuple{Any,LightGraphs.AbstractGraph,Vararg{Any,N} where N}'>#</a>
 <strong><code>LightGraphs.savegraph</code></strong> &mdash; <em>Method</em>.</p>
 <pre><code>savegraph(f, g, ...)
 </code></pre>
 
 <p>Save a graph to file. See <a href="./#LightGraphs.save"><code>save</code></a>.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/8b21b297f09688e67aaf36fe546ea9d577f7857a/docs/../src/persistence/common.jl#L64-L68' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/0fe9b7bf08c2fd289808e1c107c9948fabbbe48b/docs/../src/persistence/common.jl#L64-L68' class='documenter-source'>source</a><br></p>
 <p><a id='Examples-1'></a></p>
 <h2 id="examples">Examples</h2>
 <pre><code class="julia">save(STDOUT, g)
@@ -568,7 +568,7 @@ g = laoadgraph(&quot;mygraph.gml&quot;,  :gml)
       
     </div>
     
-      <script src="../assets/javascripts/application-0b7df094bf.js"></script>
+      <script src="../assets/javascripts/application-ad1183cb07.js"></script>
       <script>app.initialize({url:{base:".."}})</script>
       
         <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
