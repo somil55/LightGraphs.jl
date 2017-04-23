@@ -1,6 +1,6 @@
 
 <!DOCTYPE html>
-<html class="no-js">
+<html lang="en" class="no-js">
   <head>
     
       <meta charset="utf-8">
@@ -13,7 +13,7 @@
       
         <link rel="shortcut icon" href="../assets/images/favicon.png">
       
-      <meta name="generator" content="mkdocs-0.16.3, mkdocs-material-1.5.5">
+      <meta name="generator" content="mkdocs-0.16.3, mkdocs-material-1.6.0">
     
     
       
@@ -24,7 +24,7 @@
       <script src="../assets/javascripts/modernizr-56ade86843.js"></script>
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/application-b1a1975878.css">
+      <link rel="stylesheet" href="../assets/stylesheets/application-72266791c5.css">
       
         <link rel="stylesheet" href="../assets/stylesheets/application-f78e5cb881.palette.css">
       
@@ -89,7 +89,7 @@
           <label class="md-icon md-icon--search md-header-nav__button" for="search"></label>
           
 <div class="md-search" data-md-component="search">
-  <div class="md-search__overlay"></div>
+  <label class="md-search__overlay" for="search"></label>
   <div class="md-search__inner">
     <form class="md-search__form" name="search">
       <input type="text" class="md-search__input" name="query" required placeholder="Search" accesskey="s" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query">
@@ -446,20 +446,20 @@
 <p>Graphs may be written to I/O streams and files using the <code>save</code> function and read with the <code>load</code> function. Currently supported graph formats are the  <em>LightGraphs.jl</em> format <code>lg</code> and the common formats <code>gml, graphml, gexf, dot, net</code>.</p>
 <p><a id='LightGraphs.load' href='#LightGraphs.load'>#</a>
 <strong><code>LightGraphs.load</code></strong> &mdash; <em>Function</em>.</p>
-<pre><code>load(file, name, t=:lg)
-</code></pre>
-
-<p>Load a graph with name <code>name</code> from <code>file</code> in format <code>t</code>.</p>
-<p>Currently supported formats are <code>:lg</code>, <code>:gml</code>, <code>:graphml</code>, <code>:gexf</code>, <code>:dot</code>, <code>:net</code>, and <code>graph6</code>.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/0fe9b7bf08c2fd289808e1c107c9948fabbbe48b/docs/../src/persistence/common.jl#L30-L36' class='documenter-source'>source</a><br></p>
-<p><a id='LightGraphs.load' href='#LightGraphs.load'>#</a>
-<strong><code>LightGraphs.load</code></strong> &mdash; <em>Function</em>.</p>
 <pre><code>load(file, t=:lg)
 </code></pre>
 
 <p>Load multiple graphs from  <code>file</code> in the format <code>t</code>. Return a dictionary mapping graph name to graph.</p>
 <p>For unnamed graphs the default names "graph" and "digraph" will be used.</p>
 <p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/0fe9b7bf08c2fd289808e1c107c9948fabbbe48b/docs/../src/persistence/common.jl#L42-L49' class='documenter-source'>source</a><br></p>
+<p><a id='LightGraphs.load' href='#LightGraphs.load'>#</a>
+<strong><code>LightGraphs.load</code></strong> &mdash; <em>Function</em>.</p>
+<pre><code>load(file, name, t=:lg)
+</code></pre>
+
+<p>Load a graph with name <code>name</code> from <code>file</code> in format <code>t</code>.</p>
+<p>Currently supported formats are <code>:lg</code>, <code>:gml</code>, <code>:graphml</code>, <code>:gexf</code>, <code>:dot</code>, <code>:net</code>, and <code>graph6</code>.</p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/0fe9b7bf08c2fd289808e1c107c9948fabbbe48b/docs/../src/persistence/common.jl#L30-L36' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.loadgraph-Tuple{String,Vararg{Any,N} where N}' href='#LightGraphs.loadgraph-Tuple{String,Vararg{Any,N} where N}'>#</a>
 <strong><code>LightGraphs.loadgraph</code></strong> &mdash; <em>Method</em>.</p>
 <pre><code>loadgraph(file, t=:lg)
@@ -568,7 +568,7 @@ g = laoadgraph(&quot;mygraph.gml&quot;,  :gml)
       
     </div>
     
-      <script src="../assets/javascripts/application-ad1183cb07.js"></script>
+      <script src="../assets/javascripts/application-7018102a8b.js"></script>
       <script>app.initialize({url:{base:".."}})</script>
       
         <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
