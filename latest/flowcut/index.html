@@ -409,25 +409,25 @@
 </code></pre>
 
 <p>Forces the maximum_flow function to use the Boykov-Kolmogorov algorithm.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/79aa5a9d1066f6771788bbfce2765e86e96c6c79/docs/../src/flow/maximum_flow.jl#L22-L26' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/72ff259bd32eed646623d17905bb3d4851f19ea4/docs/../src/flow/maximum_flow.jl#L22-L26' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.DinicAlgorithm' href='#LightGraphs.DinicAlgorithm'>#</a>
 <strong><code>LightGraphs.DinicAlgorithm</code></strong> &mdash; <em>Type</em>.</p>
 <pre><code>DinicAlgorithm &lt;: AbstractFlowAlgorithm
 </code></pre>
 
 <p>Forces the maximum_flow function to use Dinic's algorithm.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/79aa5a9d1066f6771788bbfce2765e86e96c6c79/docs/../src/flow/maximum_flow.jl#L15-L19' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/72ff259bd32eed646623d17905bb3d4851f19ea4/docs/../src/flow/maximum_flow.jl#L15-L19' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.EdmondsKarpAlgorithm' href='#LightGraphs.EdmondsKarpAlgorithm'>#</a>
 <strong><code>LightGraphs.EdmondsKarpAlgorithm</code></strong> &mdash; <em>Type</em>.</p>
 <pre><code>EdmondsKarpAlgorithm &lt;: AbstractFlowAlgorithm
 </code></pre>
 
 <p>Forces the maximum_flow function to use the Edmonds–Karp algorithm.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/79aa5a9d1066f6771788bbfce2765e86e96c6c79/docs/../src/flow/maximum_flow.jl#L8-L12' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/72ff259bd32eed646623d17905bb3d4851f19ea4/docs/../src/flow/maximum_flow.jl#L8-L12' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.PushRelabelAlgorithm' href='#LightGraphs.PushRelabelAlgorithm'>#</a>
 <strong><code>LightGraphs.PushRelabelAlgorithm</code></strong> &mdash; <em>Type</em>.</p>
 <p>Forces the maximum_flow function to use the Push-Relabel algorithm.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/79aa5a9d1066f6771788bbfce2765e86e96c6c79/docs/../src/flow/maximum_flow.jl#L29-L31' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/72ff259bd32eed646623d17905bb3d4851f19ea4/docs/../src/flow/maximum_flow.jl#L29-L31' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.maximum_flow' href='#LightGraphs.maximum_flow'>#</a>
 <strong><code>LightGraphs.maximum_flow</code></strong> &mdash; <em>Function</em>.</p>
 <pre><code>maximum_flow(flow_graph, source, target[, capacity_matrix][, algorithm][, restriction])
@@ -468,21 +468,21 @@ julia&gt; f, F, labels = maximum_flow(flow_graph,1,8,capacity_matrix,algorithm=B
 
 </code></pre>
 
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/79aa5a9d1066f6771788bbfce2765e86e96c6c79/docs/../src/flow/maximum_flow.jl#L122-L165' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/72ff259bd32eed646623d17905bb3d4851f19ea4/docs/../src/flow/maximum_flow.jl#L122-L165' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.ExtendedMultirouteFlowAlgorithm' href='#LightGraphs.ExtendedMultirouteFlowAlgorithm'>#</a>
 <strong><code>LightGraphs.ExtendedMultirouteFlowAlgorithm</code></strong> &mdash; <em>Type</em>.</p>
 <pre><code>ExtendedMultirouteFlowAlgorithm
 </code></pre>
 
 <p>Used to specify the Extended Multiroute Flow algorithm.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/79aa5a9d1066f6771788bbfce2765e86e96c6c79/docs/../src/flow/multiroute_flow.jl#L15-L19' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/72ff259bd32eed646623d17905bb3d4851f19ea4/docs/../src/flow/multiroute_flow.jl#L15-L19' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.KishimotoAlgorithm' href='#LightGraphs.KishimotoAlgorithm'>#</a>
 <strong><code>LightGraphs.KishimotoAlgorithm</code></strong> &mdash; <em>Type</em>.</p>
 <pre><code>KishimotoAlgorithm
 </code></pre>
 
 <p>Used to specify the Kishimoto algorithm.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/79aa5a9d1066f6771788bbfce2765e86e96c6c79/docs/../src/flow/multiroute_flow.jl#L8-L12' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/72ff259bd32eed646623d17905bb3d4851f19ea4/docs/../src/flow/multiroute_flow.jl#L8-L12' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.multiroute_flow-Union{Tuple{LightGraphs.AbstractGraph,Integer,Integer,AbstractArray{T,2} where T}, Tuple{LightGraphs.AbstractGraph,Integer,Integer}, Tuple{R}} where R<:Real' href='#LightGraphs.multiroute_flow-Union{Tuple{LightGraphs.AbstractGraph,Integer,Integer,AbstractArray{T,2} where T}, Tuple{LightGraphs.AbstractGraph,Integer,Integer}, Tuple{R}} where R<:Real'>#</a>
 <strong><code>LightGraphs.multiroute_flow</code></strong> &mdash; <em>Method</em>.</p>
 <pre><code>multiroute_flow(flow_graph, source, target[, DefaultCapacity][, flow_algorithm][, mrf_algorithm][, routes])
@@ -569,7 +569,7 @@ julia&gt; f, F, labels = multiroute_flow(flow_graph, 1, 8, capacity_matrix, algo
 
 </code></pre>
 
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/79aa5a9d1066f6771788bbfce2765e86e96c6c79/docs/../src/flow/multiroute_flow.jl#L100-L189' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/72ff259bd32eed646623d17905bb3d4851f19ea4/docs/../src/flow/multiroute_flow.jl#L100-L189' class='documenter-source'>source</a><br></p>
                 
                   
                 

@@ -409,7 +409,7 @@
 </code></pre>
 
 <p>Return the <a href="https://en.wikipedia.org/wiki/Clustering_coefficient">global clustering coefficient</a> of graph <code>g</code>.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/79aa5a9d1066f6771788bbfce2765e86e96c6c79/docs/../src/community/clustering.jl#L66-L71' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/72ff259bd32eed646623d17905bb3d4851f19ea4/docs/../src/community/clustering.jl#L66-L71' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.local_clustering-Tuple{LightGraphs.AbstractGraph,Integer}' href='#LightGraphs.local_clustering-Tuple{LightGraphs.AbstractGraph,Integer}'>#</a>
 <strong><code>LightGraphs.local_clustering</code></strong> &mdash; <em>Method</em>.</p>
 <pre><code>local_clustering(g, v)
@@ -418,7 +418,7 @@ local_clustering(g, vs)
 
 <p>Return a tuple <code>(a, b)</code>, where <code>a</code> is the number of triangles in the neighborhood of <code>v</code> and <code>b</code> is the maximum number of possible triangles. If a list of vertices <code>vs</code> is specified, return two vectors representing the number of triangles and the maximum number of possible triangles, respectively, for each node in the list.</p>
 <p>This function is related to the local clustering coefficient <code>r</code> by $r=rac{a}{b}$.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/79aa5a9d1066f6771788bbfce2765e86e96c6c79/docs/../src/community/clustering.jl#L18' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/72ff259bd32eed646623d17905bb3d4851f19ea4/docs/../src/community/clustering.jl#L18' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.local_clustering_coefficient-Tuple{LightGraphs.AbstractGraph,Integer}' href='#LightGraphs.local_clustering_coefficient-Tuple{LightGraphs.AbstractGraph,Integer}'>#</a>
 <strong><code>LightGraphs.local_clustering_coefficient</code></strong> &mdash; <em>Method</em>.</p>
 <pre><code>local_clustering_coefficient(g, v)
@@ -426,7 +426,7 @@ local_clustering_coefficient(g, vs)
 </code></pre>
 
 <p>Return the <a href="https://en.wikipedia.org/wiki/Clustering_coefficient">local clustering coefficient</a> for node <code>v</code> in graph <code>g</code>. If a list of vertices <code>vs</code> is specified, return a vector of coefficients for each node in the list.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/79aa5a9d1066f6771788bbfce2765e86e96c6c79/docs/../src/community/clustering.jl#L1-L8' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/72ff259bd32eed646623d17905bb3d4851f19ea4/docs/../src/community/clustering.jl#L1-L8' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.triangles-Tuple{LightGraphs.AbstractGraph,Integer}' href='#LightGraphs.triangles-Tuple{LightGraphs.AbstractGraph,Integer}'>#</a>
 <strong><code>LightGraphs.triangles</code></strong> &mdash; <em>Method</em>.</p>
 <pre><code>triangles(g[, v])
@@ -434,7 +434,7 @@ triangles(g, vs)
 </code></pre>
 
 <p>Return the number of triangles in the neighborhood of node <code>v</code> in graph <code>g</code>. If a list of vertices <code>vs</code> is specified, return a vector of number of triangles for each node in the list. If no vertices are specified, return the number of triangles for each node in the graph.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/79aa5a9d1066f6771788bbfce2765e86e96c6c79/docs/../src/community/clustering.jl#L53-L61' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/72ff259bd32eed646623d17905bb3d4851f19ea4/docs/../src/community/clustering.jl#L53-L61' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.core_periphery_deg' href='#LightGraphs.core_periphery_deg'>#</a>
 <strong><code>LightGraphs.core_periphery_deg</code></strong> &mdash; <em>Function</em>.</p>
 <pre><code>core_periphery_deg(g)
@@ -442,7 +442,7 @@ triangles(g, vs)
 
 <p>Compute the degree-based core-periphery for graph <code>g</code>. Return the vertex assignments (<code>1</code> for core and <code>2</code> for periphery) for each node in <code>g</code>.</p>
 <p>References:     <a href="http://arxiv.org/abs/1102.5511">Lip</a>)</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/79aa5a9d1066f6771788bbfce2765e86e96c6c79/docs/../src/community/core-periphery.jl#L1-L9' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/72ff259bd32eed646623d17905bb3d4851f19ea4/docs/../src/community/core-periphery.jl#L1-L9' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.label_propagation' href='#LightGraphs.label_propagation'>#</a>
 <strong><code>LightGraphs.label_propagation</code></strong> &mdash; <em>Function</em>.</p>
 <pre><code>label_propagation(g, maxiter=1000)
@@ -453,14 +453,14 @@ triangles(g, vs)
 <ul>
 <li><a href="http://arxiv.org/abs/0709.2938">Raghavan et al.</a></li>
 </ul>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/79aa5a9d1066f6771788bbfce2765e86e96c6c79/docs/../src/community/label_propagation.jl#L1-L11' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/72ff259bd32eed646623d17905bb3d4851f19ea4/docs/../src/community/label_propagation.jl#L1-L11' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.modularity' href='#LightGraphs.modularity'>#</a>
 <strong><code>LightGraphs.modularity</code></strong> &mdash; <em>Function</em>.</p>
 <pre><code>modularity(g, c)
 </code></pre>
 
 <p>Return a value representing Newman's modularity <code>Q</code> for the undirected graph <code>g</code> given the partitioning vector <code>c</code>.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/79aa5a9d1066f6771788bbfce2765e86e96c6c79/docs/../src/community/modularity.jl#L1-L6' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/72ff259bd32eed646623d17905bb3d4851f19ea4/docs/../src/community/modularity.jl#L1-L6' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.maximal_cliques' href='#LightGraphs.maximal_cliques'>#</a>
 <strong><code>LightGraphs.maximal_cliques</code></strong> &mdash; <em>Function</em>.</p>
 <pre><code>maximal_cliques(g)
@@ -477,7 +477,7 @@ julia&gt; maximal_cliques(g)
  [2,1]
 </code></pre>
 
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/79aa5a9d1066f6771788bbfce2765e86e96c6c79/docs/../src/community/cliques.jl#L8-L24' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/72ff259bd32eed646623d17905bb3d4851f19ea4/docs/../src/community/cliques.jl#L8-L24' class='documenter-source'>source</a><br></p>
                 
                   
                 
