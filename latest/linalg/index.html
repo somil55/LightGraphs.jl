@@ -411,7 +411,7 @@
 <p>Return a sparse adjacency matrix for a graph, indexed by <code>[u, v]</code> vertices. Non-zero values indicate an edge between <code>u</code> and <code>v</code>. Users may specify a direction (<code>:in</code>, <code>:out</code>, or <code>:both</code> are currently supported; <code>:out</code> is default for both directed and undirected graphs) and a data type for the matrix (defaults to <code>Int</code>).</p>
 <p><strong>Implementation Notes</strong></p>
 <p>This function is optimized for speed and directly manipulates CSC sparse matrix fields.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/1e4e4472cd8909ef7cdf4e4100442d0f264f6e31/docs/../src/linalg/./spectral.jl#L9-L20' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/1b291e1e629fd06ab6464f123e864169b9a537f4/docs/../src/linalg/./spectral.jl#L9-L20' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.adjacency_spectrum' href='#LightGraphs.adjacency_spectrum'>#</a>
 <strong><code>LightGraphs.adjacency_spectrum</code></strong> &mdash; <em>Function</em>.</p>
 <p>Return the eigenvalues of the adjacency matrix for a graph <code>g</code>, indexed by vertex. Default values for <code>dir</code> and <code>T</code> are the same as those in <a href="./#LightGraphs.adjacency_matrix"><code>adjacency_matrix</code></a>.</p>
@@ -419,7 +419,7 @@
 <p>Converts the matrix to dense with $nv^2$ memory usage.</p>
 <p><strong>Implementation Notes</strong></p>
 <p>Use <code>eigs(adjacency_matrix(g);  kwargs...)</code> to compute some of the eigenvalues/eigenvectors.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/1e4e4472cd8909ef7cdf4e4100442d0f264f6e31/docs/../src/linalg/./spectral.jl#L103' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/1b291e1e629fd06ab6464f123e864169b9a537f4/docs/../src/linalg/./spectral.jl#L103' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.incidence_matrix' href='#LightGraphs.incidence_matrix'>#</a>
 <strong><code>LightGraphs.incidence_matrix</code></strong> &mdash; <em>Function</em>.</p>
 <pre><code>incidence_matrix(g, T=Int)
@@ -431,14 +431,14 @@
 <li><code>oriented=false</code>: If true, for an undirected graph <code>g</code>, the matrix will</li>
 </ul>
 <p>contain arbitrary non-zero values representing connectivity between <code>v</code> and <code>i</code>.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/1e4e4472cd8909ef7cdf4e4100442d0f264f6e31/docs/../src/linalg/./spectral.jl#L122-L135' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/1b291e1e629fd06ab6464f123e864169b9a537f4/docs/../src/linalg/./spectral.jl#L122-L135' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.laplacian_matrix' href='#LightGraphs.laplacian_matrix'>#</a>
 <strong><code>LightGraphs.laplacian_matrix</code></strong> &mdash; <em>Function</em>.</p>
 <pre><code>laplacian_matrix(g, dir=:unspec, T=Int)
 </code></pre>
 
 <p>Return a sparse <a href="https://en.wikipedia.org/wiki/Laplacian_matrix">Laplacian matrix</a> for a graph <code>g</code>, indexed by <code>[u, v]</code> vertices. For undirected graphs, <code>dir</code> defaults to <code>:out</code>; for directed graphs, <code>dir</code> defaults to <code>:both</code>. <code>T</code> defaults to <code>Int</code> for both graph types.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/1e4e4472cd8909ef7cdf4e4100442d0f264f6e31/docs/../src/linalg/./spectral.jl#L70-L77' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/1b291e1e629fd06ab6464f123e864169b9a537f4/docs/../src/linalg/./spectral.jl#L70-L77' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.laplacian_spectrum' href='#LightGraphs.laplacian_spectrum'>#</a>
 <strong><code>LightGraphs.laplacian_spectrum</code></strong> &mdash; <em>Function</em>.</p>
 <pre><code>laplacian_spectrum(g, dir=:unspec, T=Int)
@@ -449,7 +449,7 @@
 <p>Converts the matrix to dense with $nv^2$ memory usage.</p>
 <p><strong>Implementation Notes</strong></p>
 <p>Use <code>eigs(laplacian_matrix(g);  kwargs...)</code> to compute some of the eigenvalues/eigenvectors.</p>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/1e4e4472cd8909ef7cdf4e4100442d0f264f6e31/docs/../src/linalg/./spectral.jl#L87' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/1b291e1e629fd06ab6464f123e864169b9a537f4/docs/../src/linalg/./spectral.jl#L87' class='documenter-source'>source</a><br></p>
 <p><a id='LightGraphs.spectral_distance' href='#LightGraphs.spectral_distance'>#</a>
 <strong><code>LightGraphs.spectral_distance</code></strong> &mdash; <em>Function</em>.</p>
 <pre><code>spectral_distance(G₁, G₂ [, k])
@@ -460,7 +460,7 @@
 <ul>
 <li>JOVANOVIC, I.; STANIC, Z., 2014. Spectral Distances of Graphs Based on their Different Matrix Representations</li>
 </ul>
-<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/1e4e4472cd8909ef7cdf4e4100442d0f264f6e31/docs/../src/linalg/./spectral.jl#L163' class='documenter-source'>source</a><br></p>
+<p><a target='_blank' href='https://github.com/JuliaGraphs/LightGraphs.jl/tree/1b291e1e629fd06ab6464f123e864169b9a537f4/docs/../src/linalg/./spectral.jl#L163' class='documenter-source'>source</a><br></p>
                 
                   
                 
