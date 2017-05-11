@@ -63,15 +63,16 @@ simplecycles_hadwick_james,
 # maximum_adjacency_visit
 MaximumAdjacency, AbstractMASVisitor, mincut, maximum_adjacency_visit,
 
-# a-star, dijkstra, bellman-ford, floyd-warshall
-a_star, dijkstra_shortest_paths,
+# a-star, dijkstra,,parallel_dijkastra, bellman-ford, floyd-warshall
+a_star, dijkstra_shortest_paths,parallel_dijkstra_shortest_paths,
 bellman_ford_shortest_paths, has_negative_edge_cycle, enumerate_paths,
 floyd_warshall_shortest_paths, transitiveclosure!, transitiveclosure,
 
 # centrality
 betweenness_centrality, closeness_centrality, degree_centrality,
 indegree_centrality, outdegree_centrality, katz_centrality, pagerank,
-eigenvector_centrality,
+eigenvector_centrality, parallel_betweenness_centrality, parallel_accumulate_basic!,
+parallel_accumulate_endpoints!
 
 # spectral
 adjacency_matrix,laplacian_matrix, adjacency_spectrum, laplacian_spectrum,
@@ -161,6 +162,7 @@ include("core.jl")
         include("shortestpaths/astar.jl")
         include("shortestpaths/bellman-ford.jl")
         include("shortestpaths/dijkstra.jl")
+        include("shortestpaths/parallel_dijkstra.jl")
         include("shortestpaths/floyd-warshall.jl")
         include("linalg/LinAlg.jl")
         include("operators.jl")
@@ -171,6 +173,7 @@ include("core.jl")
             include("generators/euclideangraphs.jl")
             include("generators/smallgraphs.jl")
         include("centrality/betweenness.jl")
+        include("centrality/parallel_betweenness.jl")
         include("centrality/closeness.jl")
         include("centrality/degree.jl")
         include("centrality/katz.jl")

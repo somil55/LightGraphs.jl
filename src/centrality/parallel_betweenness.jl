@@ -1,5 +1,5 @@
 
-include("/home/divyansh/Desktop/small_graph.jl")
+#use verbose to see infoabout running
 
 function parallel_betweenness_centrality(
     g::AbstractGraph,
@@ -8,19 +8,19 @@ function parallel_betweenness_centrality(
     endpoints=false,
     verbose=false)
 
-    vs = vertices(z)
-    n_v = nv(z)
+    vs = vertices(g)
+    n_v = nv(g)
     k = length(vs)
-    isdir = is_directed(z)
+    isdir = is_directed(g)
     betweenness = SharedArray{Float64}(n_v)
 
     @sync @parallel for s in vs
-        if degree(z,s) > 0  # this might be 1?
-            state = parallel_dijkstra_shortest_paths(z, s; allpaths=true)
+        if degree(g,s) > 0  # this might be 1?
+            state = parallel_dijkstra_shortest_paths(g, s; allpaths=true)
             if endpoints
-                parallel_accumulate_endpoints!(betweenness, state, z, s)
+                parallel_accumulate_endpoints!(betweenness, state, g, s)
             else
-                parallel_accumulate_basic!(betweenness, state, z, s)
+                parallel_accumulate_basic!(betweenness, state, g, s)
             end
         end
         if verbose
@@ -37,7 +37,7 @@ function parallel_betweenness_centrality(
     return betweenness
 end
 
-@everywhere function parallel_accumulate_basic!(
+function parallel_accumulate_basic!(
     betweenness::SharedArray{Float64},
     state::ParallelDijkstraState,
     g::AbstractGraph,
@@ -53,6 +53,7 @@ end
     P[si] = []
 
     # we need to order the source vertices by decreasing distance for this to work.
+    #This is chnged as cmpared to _accumulate_basic!
     S = reverse(state.closest_vertices)
 
     for w in S
@@ -69,7 +70,7 @@ end
 end
 
 
-@everywhere function parallel_accumulate_endpoints!(
+function parallel_accumulate_endpoints!(
     betweenness::SharedArray{Float64},
     state::ParallelDijkstraState,
     g::AbstractGraph,
@@ -82,8 +83,12 @@ end
     P = state.predecessors
     v1 = [1:n_v;]
     v2 = state.dists
+
+    # we need to order the source vertices by decreasing distance for this to work.
+    #This is chnged as cmpared to _accumulate_endpoints!
     S = reverse(state.closest_vertices)
     s = vertices(g)[si]
+
     betweenness[s] += length(S) - 1    # 289
 
     for w in S

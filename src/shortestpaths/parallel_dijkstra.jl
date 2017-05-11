@@ -12,9 +12,7 @@ isless(e1::ParallelDijkstraHeapEntry, e2::ParallelDijkstraHeapEntry) = e1.dist <
 An [`AbstractPathState`](@ref) designed for Dijkstra shortest-paths calculations.
 """
 
-abstract type ParallelAbstractPathState end
-
-struct ParallelDijkstraState{T, U<:Integer}<: ParallelAbstractPathState
+struct ParallelDijkstraState{T, U<:Integer}<: AbstractPathState
     parents::Vector{U}
     dists::Vector{T}
     predecessors::Vector{Vector{U}}
@@ -39,10 +37,11 @@ function parallel_dijkstra_shortest_paths(
     distmx::AbstractMatrix{T}=DefaultDistance();
     allpaths=false
     ) where T where U<:Integer
+
     nvg = nv(g)
     dists = fill(typemax(T), nvg)
     parents = zeros(U, nvg)
-    closest_vertices = Vector{U}()
+    closest_vertices = Vector{U}()  #to maintain ordering of distance from source
     preds = fill(Vector{U}(),nvg)
     visited = zeros(Bool, nvg)
     pathcounts = zeros(Int, nvg)
@@ -77,11 +76,9 @@ function parallel_dijkstra_shortest_paths(
                 # info("Pushed $v")
             else
                 if alt < dists[v]
-                    dists[v] = alt
-                    pathcounts[v] = 0
-                    preds[v] = []
-                    parents[v] = u
-                    heappush!(H, ParallelDijkstraHeapEntry{T, U}(v, alt))
+                  dists[v] = alt
+                  parents[v] = u
+                  heappush!(H, ParallelDijkstraHeapEntry{T, U}(v, alt))
                 end
                 if alt == dists[v]
                     pathcounts[v] += pathcounts[u]
