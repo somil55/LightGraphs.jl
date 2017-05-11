@@ -10,12 +10,14 @@ isless(e1::DijkstraHeapEntry, e2::DijkstraHeapEntry) = e1.dist < e2.dist
 
 An [`AbstractPathState`](@ref) designed for Dijkstra shortest-paths calculations.
 """
+
 struct DijkstraState{T, U<:Integer}<: AbstractPathState
     parents::Vector{U}
     dists::Vector{T}
     predecessors::Vector{Vector{U}}
     pathcounts::Vector{U}
 end
+
 
 """
     dijkstra_shortest_paths(g, srcs, distmx=DefaultDistance());
@@ -44,7 +46,9 @@ function dijkstra_shortest_paths(
     dists[srcs] = zero(T)
     pathcounts[srcs] = 1
 
+
     sizehint!(H, nvg)
+
 
     for v in srcs
         heappush!(H, DijkstraHeapEntry{T, U}(v, dists[v]))
@@ -55,6 +59,7 @@ function dijkstra_shortest_paths(
         hentry = heappop!(H)
             # info("Popped H - got $(hentry.vertex)")
         u = hentry.vertex
+
         for v in out_neighbors(g,u)
             alt = (dists[u] == typemax(T))? typemax(T) : dists[u] + distmx[u,v]
 
@@ -83,6 +88,12 @@ function dijkstra_shortest_paths(
             end
         end
     end
+
+    #Space left to maintain homogenity with parallel dikstras
+
+
+
+
 
     pathcounts[srcs] = 1
     parents[srcs] = 0

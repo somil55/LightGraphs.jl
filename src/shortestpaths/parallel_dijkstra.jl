@@ -1,4 +1,3 @@
-#Stores the parallel Heap entry
 struct ParallelDijkstraHeapEntry{T, U<:Integer}
     vertex::U
     dist::T
@@ -37,17 +36,16 @@ function parallel_dijkstra_shortest_paths(
     distmx::AbstractMatrix{T}=DefaultDistance();
     allpaths=false
     ) where T where U<:Integer
-
     nvg = nv(g)
     dists = fill(typemax(T), nvg)
     parents = zeros(U, nvg)
-    closest_vertices = Vector{U}()  #to maintain ordering of distance from source
     preds = fill(Vector{U}(),nvg)
     visited = zeros(Bool, nvg)
     pathcounts = zeros(Int, nvg)
     H = Vector{ParallelDijkstraHeapEntry{T, U}}()  # this should be Vector{T}() in 0.4, I think.
     dists[srcs] = zero(T)
     pathcounts[srcs] = 1
+    closest_vertices = Vector{U}()  #to maintain ordering of distance from source
 
     sizehint!(H, nvg)
     sizehint!(closest_vertices, nvg)
@@ -64,6 +62,7 @@ function parallel_dijkstra_shortest_paths(
         push!(closest_vertices, u)
         for v in out_neighbors(g,u)
             alt = (dists[u] == typemax(T))? typemax(T) : dists[u] + distmx[u,v]
+
             if !visited[v]
                 dists[v] = alt
                 parents[v] = u
@@ -89,7 +88,6 @@ function parallel_dijkstra_shortest_paths(
             end
         end
     end
-
 
     for s in vertices(g)
       if !visited[s]
