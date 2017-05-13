@@ -7,7 +7,7 @@
     betweenness_centrality(g, k)
 
 Calculate the [betweenness centrality](https://en.wikipedia.org/wiki/Centrality#Betweenness_centrality)
-of a graph `g` across all vertices, a specified subset of vertices `vs`, or a random subset of `k`
+in parallel of a graph `g` across all vertices, a specified subset of vertices `vs`, or a random subset of `k`
 vertices. Return a vector representing the centrality calculated for each node in `g`.
 
 ### Optional Arguments
@@ -36,7 +36,7 @@ function parallel_betweenness_centrality(
     k = length(vs)
     isdir = is_directed(g)
 
-
+    # Parallel reduction
     betweenness = @parallel (+) for s in vs
         if degree(g,s) > 0  # this might be 1?
             state = parallel_dijkstra_shortest_paths(g, s; allpaths=true)
@@ -78,9 +78,9 @@ function parallel_accumulate_basic!(
 
     # make sure the source index has no parents.
     P[si] = []
-    # we need to order the source vertices by decreasing distance for this to work.#This is chnged as cmpared to _accumulate_basic!# S = sortperm(state.dists, rev=true)
-    S = reverse(state.closest_vertices)
-    # S = sortperm(state.dists, rev=true)
+    # we need to order the source vertices by decreasing distance for this to work.
+    #This is changed as compared to _accumulate_basic!
+    S = reverse(state.closest_vertices) #Replace sortperm with this
     for w in S
         coeff = (1.0 + δ[w]) / σ[w]
         for v in P[w]
@@ -110,7 +110,6 @@ function parallel_accumulate_endpoints!(
     v1 = [1:n_v;]
     v2 = state.dists # we need to order the source vertices by decreasing distance for this to work.#This is chnged as cmpared to _accumulate_endpoints!  #
     S = reverse(state.closest_vertices)
-    # S = sortperm(state.dists, rev=true)
     s = vertices(g)[si]
     betweenness[s] += length(S) - 1    # 289
 

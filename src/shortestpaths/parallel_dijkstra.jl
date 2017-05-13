@@ -1,3 +1,6 @@
+# This file implements an parallel_dijkstra_shortest_paths which
+# replaces the need for using sortper function
+
 struct ParallelDijkstraHeapEntry{T, U<:Integer}
     vertex::U
     dist::T
@@ -6,7 +9,7 @@ end
 isless(e1::ParallelDijkstraHeapEntry, e2::ParallelDijkstraHeapEntry) = e1.dist < e2.dist
 
 """
-    struct DijkstraState{T, U}
+    struct ParallelDijkstraState{T, U}
 
 An [`AbstractPathState`](@ref) designed for Dijkstra shortest-paths calculations.
 """
@@ -20,14 +23,14 @@ struct ParallelDijkstraState{T, U<:Integer}<: AbstractPathState
 end
 
 """
-    dijkstra_shortest_paths(g, srcs, distmx=DefaultDistance());
+    parallel_dijkstra_shortest_paths(g, srcs, distmx=DefaultDistance());
 
 Perform [Dijkstra's algorithm](http://en.wikipedia.org/wiki/Dijkstra%27s_algorithm)
 on a graph, computing shortest distances between `srcs` and all other vertices.
-Return a [`DijkstraState`](@ref) that contains various traversal information.
+Return a [`ParallelDijkstraState`](@ref) that contains various traversal information.
 
 ### Optional Arguments
-- `allpaths=false`: If true, returns a [`DijkstraState`](@ref) that keeps track of all
+- `allpaths=false`: If true, returns a [`ParallelDijkstraState`](@ref) that keeps track of all
 predecessors of a given vertex.
 """
 function parallel_dijkstra_shortest_paths(
@@ -45,7 +48,7 @@ function parallel_dijkstra_shortest_paths(
     H = Vector{ParallelDijkstraHeapEntry{T, U}}()  # this should be Vector{T}() in 0.4, I think.
     dists[srcs] = zero(T)
     pathcounts[srcs] = 1
-    closest_vertices = Vector{U}()  #to maintain ordering of distance from source
+    closest_vertices = Vector{U}()  # to maintain ordering of distance from source
 
     sizehint!(H, nvg)
     sizehint!(closest_vertices, nvg)
@@ -77,8 +80,6 @@ function parallel_dijkstra_shortest_paths(
                 if alt < dists[v]
                   dists[v] = alt
                   parents[v] = u
-                  pathcounts = 0
-                  predecessors = []
                   heappush!(H, ParallelDijkstraHeapEntry{T, U}(v, alt))
                 end
                 if alt == dists[v]

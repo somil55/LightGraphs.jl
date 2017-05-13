@@ -30,40 +30,23 @@ function betweenness_centrality(
     g::AbstractGraph,
     vs::AbstractVector = vertices(g);
     normalize=true,
-    endpoints=false, parallel=true)
+    endpoints=false)
 
     n_v = nv(g)
     k = length(vs)
     isdir = is_directed(g)
 
-    if parallel
-      betweenness = SharedArray{Float64}(n_v)
-      @time @sync begin
-          @parallel for s in vs
-            if degree(g,s) > 0  # this might be 1?
-                state = dijkstra_shortest_paths(g, s; allpaths=true)
-                if endpoints
-                    _accumulate_endpoints!(betweenness, state, g, s)
-                else
-                    _accumulate_basic!(betweenness, state, g, s)
-                end
+    betweenness = zeros(n_v)
+    for s in vs
+        if degree(g,s) > 0  # this might be 1?
+            state = dijkstra_shortest_paths(g, s; allpaths=true)
+            if endpoints
+                _accumulate_endpoints!(betweenness, state, g, s)
+            else
+                _accumulate_basic!(betweenness, state, g, s)
             end
         end
-      end
-    else
-      betweenness = zeros(Float64,n_v)
-      @time for s in vs
-          if degree(g,s) > 0  # this might be 1?
-              state = dijkstra_shortest_paths(g, s; allpaths=true)
-              if endpoints
-                  _accumulate_endpoints!(betweenness, state, g, s)
-              else
-                  _accumulate_basic!(betweenness, state, g, s)
-              end
-          end
-      end
     end
-
 
     _rescale!(betweenness,
     n_v,
@@ -74,11 +57,13 @@ function betweenness_centrality(
     return betweenness
 end
 
-betweenness_centrality(g::AbstractGraph, k::Integer; normalize=true, endpoints=false, parallel=true) =
-betweenness_centrality(g, sample(vertices(g), k); normalize=normalize, endpoints=endpoints, parallel=parallel)
+betweenness_centrality(g::AbstractGraph, k::Integer; normalize=true, endpoints=false) =
+betweenness_centrality(g, sample(vertices(g), k); normalize=normalize, endpoints=endpoints)
+
+
 
 function _accumulate_basic!(
-    betweenness::Union{Vector{Float64},SharedArray{Float64}},
+    betweenness::Vector{Float64},
     state::DijkstraState,
     g::AbstractGraph,
     si::Integer
@@ -101,13 +86,13 @@ function _accumulate_basic!(
             end
         end
         if w != si
-            betweenness[w] = betweenness[w] + δ[w]
+            betweenness[w] += δ[w]
         end
     end
 end
 
 function _accumulate_endpoints!(
-    betweenness::Union{Vector{Float64},SharedArray{Float64}},
+    betweenness::Vector{Float64},
     state::DijkstraState,
     g::AbstractGraph,
     si::Integer
@@ -121,7 +106,7 @@ function _accumulate_endpoints!(
     v2 = state.dists
     S = sortperm(state.dists, rev=true)
     s = vertices(g)[si]
-    betweenness[s] = betweenness[s] + length(S) - 1    # 289
+    betweenness[s] += length(S) - 1    # 289
 
     for w in S
         coeff = (1.0 + δ[w]) / σ[w]
@@ -129,12 +114,12 @@ function _accumulate_endpoints!(
             δ[v] += σ[v] * coeff
         end
         if w != si
-            betweenness[w] = betweenness[w] + (δ[w] + 1)
+            betweenness[w] += (δ[w] + 1)
         end
     end
 end
 
-function _rescale!(betweenness::Union{Vector{Float64},SharedArray{Float64}}, n::Integer, normalize::Bool, directed::Bool, k::Int)
+function _rescale!(betweenness::Vector{Float64}, n::Integer, normalize::Bool, directed::Bool, k::Int)
     if normalize
         if n <= 2
             do_scale = false
