@@ -77,6 +77,8 @@ function parallel_dijkstra_shortest_paths(
                 if alt < dists[v]
                   dists[v] = alt
                   parents[v] = u
+                  pathcounts = 0
+                  predecessors = []
                   heappush!(H, ParallelDijkstraHeapEntry{T, U}(v, alt))
                 end
                 if alt == dists[v]

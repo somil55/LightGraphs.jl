@@ -77,6 +77,8 @@ function dijkstra_shortest_paths(
                 if alt < dists[v]
                     dists[v] = alt
                     parents[v] = u
+                    pathcounts = 0
+                    predecessors = []
                     heappush!(H, DijkstraHeapEntry{T, U}(v, alt))
                 end
                 if alt == dists[v]
