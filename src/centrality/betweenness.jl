@@ -39,7 +39,7 @@ function betweenness_centrality(
     betweenness = zeros(n_v)
     for s in vs
         if degree(g,s) > 0  # this might be 1?
-            state = dijkstra_shortest_paths(g, s; allpaths=true)
+            state = parallel_dijkstra_shortest_paths(g, s; allpaths=true)
             if endpoints
                 _accumulate_endpoints!(betweenness, state, g, s)
             else
@@ -64,7 +64,7 @@ betweenness_centrality(g, sample(vertices(g), k); normalize=normalize, endpoints
 
 function _accumulate_basic!(
     betweenness::Vector{Float64},
-    state::DijkstraState,
+    state::ParallelDijkstraState,
     g::AbstractGraph,
     si::Integer
     )
@@ -77,7 +77,8 @@ function _accumulate_basic!(
     # make sure the source index has no parents.
     P[si] = []
     # we need to order the source vertices by decreasing distance for this to work.
-    S = sortperm(state.dists, rev=true)
+    #S = sortperm(state.dists, rev=true)
+    S = reverse(state.closest_vertices)
     for w in S
         coeff = (1.0 + δ[w]) / σ[w]
         for v in P[w]
@@ -93,7 +94,7 @@ end
 
 function _accumulate_endpoints!(
     betweenness::Vector{Float64},
-    state::DijkstraState,
+    state::ParallelDijkstraState,
     g::AbstractGraph,
     si::Integer
     )
@@ -104,7 +105,8 @@ function _accumulate_endpoints!(
     P = state.predecessors
     v1 = [1:n_v;]
     v2 = state.dists
-    S = sortperm(state.dists, rev=true)
+    #S = sortperm(state.dists, rev=true)
+    S = reverse(state.closest_vertices)
     s = vertices(g)[si]
     betweenness[s] += length(S) - 1    # 289
 
