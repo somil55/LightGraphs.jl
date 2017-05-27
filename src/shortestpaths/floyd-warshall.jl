@@ -64,6 +64,61 @@ function floyd_warshall_shortest_paths{T}(
     return fws
 end
 
+function parallel_floyd_warshall_shortest_paths{T}(
+    g::AbstractGraph,
+    distmx::AbstractMatrix{T} = DefaultDistance()
+)
+    U = eltype(g)
+    n_v = nv(g)
+    dists = SharedArray{T}(fill(typemax(T), (Int(n_v),Int(n_v))))
+    parents = zeros(U, (Int(n_v),Int(n_v)))
+
+    # fws = FloydWarshallState(Matrix{T}(), Matrix{Int}())
+    for v in 1:n_v
+        dists[v,v] = zero(T)
+    end
+
+    undirected = !is_directed(g)
+    for e in edges(g)
+        u = src(e)
+        v = dst(e)
+
+        d = distmx[u,v]
+
+        dists[u,v] = min(d, dists[u,v])
+        parents[u,v] = u
+        if undirected
+            dists[v,u] = min(d, dists[v,u])
+            parents[v,u] = v
+        end
+    end
+
+    for w in vertices(g)
+      println(w)
+      @parallel for u in vertices(g)
+        for v in vertices(g)
+          pmap()
+        end
+      end
+    end
+
+    fws = FloydWarshallState(dists, parents)
+    return fws
+end
+
+function update_dists()
+  if dists[u,w] == typemax(T) || dists[w,v] == typemax(T)
+      ans = typemax(T)
+  else
+      ans = dists[u,w] + dists[w,v]
+  end
+  if dists[u,v] > ans
+      dists[u,v] = ans
+      parents[u,v] = parents[w,v]
+  end
+  return
+end
+
 function enumerate_paths(s::FloydWarshallState{T, U}, v::Integer) where T where U<:Integer
     pathinfo = s.parents[v,:]
     paths = Vector{Vector{U}}()
