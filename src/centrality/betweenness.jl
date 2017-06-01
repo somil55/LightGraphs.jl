@@ -180,3 +180,108 @@ function _rescale!(betweenness::Vector{Float64}, n::Integer, normalize::Bool, di
     end
     return nothing
 end
+
+
+function multithreaded_betweenness_centrality(
+    g::AbstractGraph,
+    vs::AbstractVector = vertices(g);
+    normalize=true,
+    endpoints=false)
+
+    n_v = nv(g)
+    k = length(vs)
+    isdir = is_directed(g)
+
+    betweenness = Vector{Threads.Atomic{Float64}}(n_v)
+    for s in vertices(g)
+      betweenness[s] = Threads.Atomic{Float64}(0.0)
+    end
+
+    # Multithreaded reduction
+
+     Threads.@threads for s in vs
+        if degree(g, s) > 0  # this might be 1?
+            state = dijkstra_shortest_paths(g, s; allpaths=true, trackvertices=true)
+            if endpoints
+                _multithreaded_accumulate_endpoints!(betweenness, state, g, s)
+            else
+                _multithreaded_accumulate_basic!(betweenness, state, g, s)
+            end
+        end
+    end
+
+    betweenness_float = zeros(n_v)
+    for s in vs
+      betweenness_float[s] = betweenness[s][]
+    end
+
+    _rescale!(betweenness_float,
+    n_v,
+    normalize,
+    isdir,
+    k)
+
+    return betweenness_float
+end
+
+multithreaded_betweenness_centrality(g::AbstractGraph, k::Integer; normalize=true, endpoints=false) =
+    multithreaded_betweenness_centrality(g, sample(vertices(g), k); normalize=normalize, endpoints=endpoints)
+
+
+function _multithreaded_accumulate_basic!(
+    betweenness::Vector{Threads.Atomic{Float64}},
+    state::DijkstraState,
+    g::AbstractGraph,
+    si::Integer
+    )
+
+    n_v = length(state.parents) # this is the ttl number of vertices
+    δ = zeros(n_v)
+    σ = state.pathcounts
+    P = state.predecessors
+
+    # make sure the source index has no parents.
+    P[si] = []
+    # we need to order the source vertices by decreasing distance for this to work.
+    S = reverse(state.closest_vertices) #Replaced sortperm with this
+    for w in S
+        coeff = (1.0 + δ[w]) / σ[w]
+        for v in P[w]
+            if v > 0
+                δ[v] += (σ[v] * coeff)
+            end
+        end
+        if w != si
+            Threads.atomic_add!(betweenness[w],δ[w])
+        end
+    end
+    return nothing
+end
+
+function _multithreaded_accumulate_endpoints!(
+    betweenness::Vector{Threads.Atomic{Float64}},
+    state::DijkstraState,
+    g::AbstractGraph,
+    si::Integer
+    )
+
+    n_v = nv(g) # this is the ttl number of vertices
+    δ = zeros(n_v)
+    σ = state.pathcounts
+    P = state.predecessors
+    v1 = [1:n_v;]
+    v2 = state.dists
+    S = reverse(state.closest_vertices)
+    s = vertices(g)[si]
+    betweenness[s] += length(S) - 1    # 289
+
+    for w in S
+        coeff = (1.0 + δ[w]) / σ[w]
+        for v in P[w]
+            δ[v] += σ[v] * coeff
+        end
+        if w != si
+            Threads.atomic_add!(betweenness[w],δ[w])
+        end
+    end
+end
