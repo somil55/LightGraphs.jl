@@ -49,7 +49,8 @@ function floyd_warshall_shortest_paths{T}(
             parents[v,u] = v
         end
     end
-    for w in vertices(g), u in vertices(g), v in vertices(g)
+    for w in vertices(g)
+      for u in vertices(g), v in vertices(g)
         if dists[u,w] == typemax(T) || dists[w,v] == typemax(T)
             ans = typemax(T)
         else
@@ -59,6 +60,7 @@ function floyd_warshall_shortest_paths{T}(
             dists[u,v] = dists[u,w] + dists[w,v]
             parents[u,v] = parents[w,v]
         end
+      end
     end
     fws = FloydWarshallState(dists, parents)
     return fws
