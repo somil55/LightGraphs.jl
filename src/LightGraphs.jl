@@ -67,7 +67,8 @@ MaximumAdjacency, AbstractMASVisitor, mincut, maximum_adjacency_visit,
 # a-star, dijkstra, bellman-ford, floyd-warshall
 a_star, dijkstra_shortest_paths, bellman_ford_shortest_paths,
 has_negative_edge_cycle, enumerate_paths, floyd_warshall_shortest_paths,
-transitiveclosure!, transitiveclosure, yen_k_shortest_paths,
+parallel_floyd_warshall_shortest_paths,transitiveclosure!, transitiveclosure,
+yen_k_shortest_paths,
 
 # centrality
 betweenness_centrality, closeness_centrality, degree_centrality,
