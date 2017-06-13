@@ -50,7 +50,7 @@ function floyd_warshall_shortest_paths{T}(
         end
     end
     for w in vertices(g)
-      print(w)
+      println(w)
       for u in vertices(g), v in vertices(g)
         if dists[u,w] == typemax(T) || dists[w,v] == typemax(T)
             ans = typemax(T)
