@@ -10,6 +10,7 @@ import LightGraphs: tree
         @test t == [1, 1, 1, 3]
         @test nv(z) == 4 && ne(z) == 3 && !has_edge(z, 2, 3)
     end
+    
     for g in testgraphs(g6)
         t1 = @inferred(gdistances(g, 2))
         t2 = @inferred(gdistances(g, [1, 2]))
